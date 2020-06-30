@@ -45,7 +45,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 42px;
             }
 
             .links > a {
@@ -81,7 +81,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    ComiGeo: Geolocalizacion de comisarias
+                    <p align="center"><img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1593486684/comigeo/t4y7shwt6ds5fnlyaa8d.png" width="600"></p>
+                    Localiza comisarias peruanas
                 </div>
 
                 <div class="links">
