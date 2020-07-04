@@ -14,8 +14,35 @@ class CreateComisariasTable extends Migration
     public function up()
     {
         Schema::create('comisarias', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            //Definiendo las columnas / Atributos
+            $table->integer('ComCod');
+            $table->integer('ComCodInei');
+            $table->string('ComDepCod', 2);
+            $table->string('ComProCod', 4);
+            $table->string('ComDisCod', 6);
+            $table->float('ComLat');
+            $table->float('ComLon');
+            $table->string('ComMacRegPol', 40);
+            $table->string('ComRegPol', 40);
+            $table->string('ComDivPol', 40);
+            $table->string('ComNom', 50);
+            //Definiendo los indices
+            $table->primary('ComCod');
+            $table->foreign('ComDepCod')
+                    ->references('DepCod')
+                    ->on('departamentos')
+                    ->onDelete('restrict')
+                    ->onUpdate('restrict');
+            $table->foreign('ComProCod')
+                    ->references('ProCod')
+                    ->on('provincias')
+                    ->onDelete('restrict')
+                    ->onUpdate('restrict');
+            $table->foreign('ComDisCod')
+                    ->references('DisCod')
+                    ->on('distritos')
+                    ->onDelete('restrict')
+                    ->onUpdate('restrict');
         });
     }
 

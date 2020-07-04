@@ -14,8 +14,17 @@ class CreateVotoComisariasTable extends Migration
     public function up()
     {
         Schema::create('voto_comisarias', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            //Definiendo columnas / Atributos
+            $table->string('ip', 15);
+            $table->int('ComCod');
+            $table->int('VotPun');
+            //Definiendo indices
+            $table->primary('ip');
+            $table->foreign('ComCod')
+                    ->references('ComCod')
+                    ->on('comisarias')
+                    ->onDelete('restrict')
+                    ->onUpdate('restrict');
         });
     }
 

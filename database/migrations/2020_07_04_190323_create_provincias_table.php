@@ -14,8 +14,17 @@ class CreateProvinciasTable extends Migration
     public function up()
     {
         Schema::create('provincias', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            //Definiendo columnas / atributos
+            $table->string('ProCod', 4);
+            $table->string('ProCod', 30);
+            $table->string('DepCod', 2);
+            //Definiendo indices
+            $table->primary('ProCod');
+            $table->foreign('DepCod')
+                    ->references('DepCod')
+                    ->on('departamentos')
+                    ->onDelete('restrict')
+                    ->onUpdate('restrict');
         });
     }
 
