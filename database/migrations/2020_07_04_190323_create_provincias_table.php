@@ -16,7 +16,7 @@ class CreateProvinciasTable extends Migration
         Schema::create('provincias', function (Blueprint $table) {
             //Definiendo columnas / atributos
             $table->string('ProCod', 4);
-            $table->string('ProCod', 30);
+            $table->string('ProNom', 30);
             $table->string('DepCod', 2);
             //Definiendo indices
             $table->primary('ProCod');
