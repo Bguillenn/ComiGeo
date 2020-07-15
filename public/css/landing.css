@@ -51,8 +51,12 @@ body {
     justify-content: space-between;
 }
 
-#header-button {
+.header-button-hide {
     display: none;
+}
+
+.header-scroll {
+    background-color: #E4EAF0;
 }
 
 #content {
@@ -90,5 +94,119 @@ body {
     width: 10px;
     height: 150px;
     margin-right: 20px;
+    font-weight: normal;
+}
+
+#page-2 {
+    margin-top: 70px;
+}
+
+#page-2>h1 {
+    font-weight: normal;
+    font-size: 36px;
+    color: #262626;
+    text-align: center;
+}
+
+#page-2>p {
+    font-size: 18px;
+    color: #484848;
+    text-align: center;
+}
+
+#page-2>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#char {
+    width: 750px;
+    height: 350px;
+    /*border: 1px solid black;*/
+    background-image: url('https://lh3.googleusercontent.com/proxy/r6tngpspyif8sAp57A_AhRxKQO-r2D877LKhRbEgA8uG3tBcip3fzwcDJvvRx7N3Vpk6snD8rgwosw0V_GYsODCC5sZrOTFpzR-iqKZU-xbj19WNlpnZScAImGMAuJRVEygfIFYeDw');
+    background-repeat: false;
+}
+
+#data {
+    width: 277px;
+    height: 330px;
+    border-radius: 30px;
+    border: 1px solid #CCCCCC;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#data>h2 {
+    font-size: 24px;
+    color: #262626;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#data>h6 {
+    font-size: 14px;
+    color: #262626;
+    font-weight: normal;
+}
+
+#data>h1 {
+    font-size: 36px;
+    color: #1C4D79;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+#page-3 {
+    margin-top: 90px;
+    margin-bottom: 30px;
+}
+
+#page-3>h1 {
+    font-size: 36px;
+    color: 262626;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.team {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 20px 0 20px 0;
+}
+
+.miembro-card {
+    display: inline-block;
+    text-align: center;
+}
+
+.miembro-photo {
+    display: block;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    border: 1px solid black;
+}
+
+.miembro-card>h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.miembro-card>p {
+    font-size: 14px;
+    color: #484848;
+}
+
+.miembro-rol {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #484848;
     font-weight: normal;
 }
