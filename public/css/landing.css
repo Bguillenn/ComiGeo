@@ -41,8 +41,8 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 98px;
+    padding-right: 98px;
     height: 70px;
     /*background-color: rgba(0, 0, 0, .05);*/
     display: flex;
@@ -56,7 +56,7 @@ body {
 }
 
 #content {
-    margin: 0 100px 0 100px;
+    margin: 0 98px 0 98px;
     height: 100vh;
 }
 
