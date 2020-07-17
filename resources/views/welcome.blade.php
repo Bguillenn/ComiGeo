@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ComiGeo: Sistema de geolocalización de comisarias</title>
+    <link rel="shortcut icon" href="/icon.png" type="image/x-icon">
+    <link rel="icon" href="/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/landing.css') }}"/>
 </head>
 <body>
-    <div id="header" class="">
+    <div id="header">
         <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1594699993/comigeo/ugvpuhf3xu8o3rvgaeii.svg" alt="logo-comigeo" width="210px" heigth="45px">
-        <button class="button-landing header-button-hide">IR AL MAPA</button>
+        <button id="button-header" class="button-landing header-button-hide">IR AL MAPA</button>
     </div>
     <div id="content">
         <div id="page-1">
@@ -46,7 +48,7 @@
             <h1>&lt;Equipo de Desarrollo&gt;</h1>
             <div class="team">
                 <div class="miembro-card">
-                    <img src="" alt="" class="miembro-photo">
+                    <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1586577289/hp8mig8x7rgfpafczh8d.jpg" alt="Brayan-photo" class="miembro-photo">
                     <p class="miembro-rol">Lider</p>
                     <h2>BRAYAN F. GUILLEN</h2>
                     <p>bguillenn@unsa.edu.pe</p>
@@ -58,34 +60,35 @@
                     <p>jacuñah@unsa.edu.pe</p>
                 </div>
                 <div class="miembro-card">
-                    <img src="" alt="" class="miembro-photo">
-                    <p class="miembro-rol">Lider</p>
+                    <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1594949619/rwdp0fgvp3rt8nftusct.jpg" alt="Denis-Photo" class="miembro-photo">
+                    <p class="miembro-rol">Analista</p>
                     <h2>DENIS A. LLAMOCA</h2>
                     <p>dllamocac@unsa.edu.pe</p>
                 </div>
             </div>
             <div class="team">
                 <div class="miembro-card">
-                    <img src="" alt="" class="miembro-photo">
-                    <p class="miembro-rol">Lider</p>
-                    <h2>BRAYAN F. GUILLEN</h2>
-                    <p>bguillenn@unsa.edu.pe</p>
+                    <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1594949315/otez3hglpsv7fgxsahct.jpg" alt="Lizette-photo" class="miembro-photo">
+                    <p class="miembro-rol">Diseñadora</p>
+                    <h2>LIZETTE Q. FLORES</h2>
+                    <p>lquispeflore@unsa.edu.pe</p>
                 </div>
                 <div class="miembro-card">
                     <img src="" alt="" class="miembro-photo">
-                    <p class="miembro-rol">Lider</p>
-                    <h2>BRAYAN F. GUILLEN</h2>
-                    <p>bguillenn@unsa.edu.pe</p>
+                    <p class="miembro-rol">Desarrollador</p>
+                    <h2>ARNOLD D. MOLLO</h2>
+                    <p>amolloa@unsa.edu.pe</p>
                 </div>
                 <div class="miembro-card">
                     <img src="" alt="" class="miembro-photo">
-                    <p class="miembro-rol">Lider</p>
-                    <h2>BRAYAN F. GUILLEN</h2>
-                    <p>bguillenn@unsa.edu.pe</p>
+                    <p class="miembro-rol">Despliegue</p>
+                    <h2>JOSE C. MEJIA</h2>
+                    <p>jmejia@unsa.edu.pe</p>
                 </div>
             </div>
             <h1>&lt;/Equipo de Desarrollo&gt;</h1>
         </div>
     </div>
+    <script src="{{ asset('js/landing.js') }}"></script>
 </body>
 </html>
