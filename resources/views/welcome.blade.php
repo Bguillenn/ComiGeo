@@ -54,7 +54,7 @@
                     <p>bguillenn@unsa.edu.pe</p>
                 </div>
                 <div class="miembro-card">
-                    <img src="" alt="" class="miembro-photo">
+                    <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1594952354/roo5mkscrvp5kezwbkqb.jpg" alt="Jhonatan-Photo" class="miembro-photo">
                     <p class="miembro-rol">Pruebas</p>
                     <h2>JHONATAN J. ACUÑA</h2>
                     <p>jacuñah@unsa.edu.pe</p>
@@ -80,7 +80,7 @@
                     <p>amolloa@unsa.edu.pe</p>
                 </div>
                 <div class="miembro-card">
-                    <img src="" alt="" class="miembro-photo">
+                    <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1594952400/ghiuhovldwqonng4utio.jpg" alt="Jose-Photo" class="miembro-photo">
                     <p class="miembro-rol">Despliegue</p>
                     <h2>JOSE C. MEJIA</h2>
                     <p>jmejia@unsa.edu.pe</p>
