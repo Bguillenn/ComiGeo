@@ -74,7 +74,7 @@
                     <p>lquispeflore@unsa.edu.pe</p>
                 </div>
                 <div class="miembro-card">
-                    <img src="" alt="" class="miembro-photo">
+                    <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1594950725/mougr9cuew2f7ujmkhjb.jpg" alt="Arnold-Photo" class="miembro-photo">
                     <p class="miembro-rol">Desarrollador</p>
                     <h2>ARNOLD D. MOLLO</h2>
                     <p>amolloa@unsa.edu.pe</p>
