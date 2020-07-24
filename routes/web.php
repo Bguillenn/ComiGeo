@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/import', function () {
+    return view('import');
+});
+
+Route::post('import-list-excel-ubigeo', 'UbigeoController@importExcel')->name('ubigeo.import.excel');
+
+Route::post('import-list-excel-comisaria', 'ComisariaController@importExcel')->name('comisarias.import.excel');

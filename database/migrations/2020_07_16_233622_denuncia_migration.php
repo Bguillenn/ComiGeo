@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDenunciasTable extends Migration
+class DenunciaMigration extends Migration
 {
     /**
      * Run the migrations.
@@ -14,13 +14,11 @@ class CreateDenunciasTable extends Migration
     public function up()
     {
         Schema::create('denuncias', function (Blueprint $table) {
-            //Definiendo columnas / atributos
-            $table->integer('DenCod');
-            $table->enum('DenGen', ['F', 'M']);
+            $table->integer('DenCod')->primary();
+            $table->enum('DenGen',['F','M']);
             $table->integer('DenEda');
             $table->string('DenMes');
-            //Estableciendo indices
-            $table->primary('DenCod');
+            $table->timestamps();
         });
     }
 
