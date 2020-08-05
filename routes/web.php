@@ -24,3 +24,5 @@ Route::get('/import', function () {
 Route::post('import-list-excel-ubigeo', 'UbigeoController@importExcel')->name('ubigeo.import.excel');
 
 Route::post('import-list-excel-comisaria', 'ComisariaController@importExcel')->name('comisarias.import.excel');
+
+Route::post('import-list-excel-denuncia', 'DenunciaController@importExcel')->name('denuncias.import.excel');
