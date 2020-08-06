@@ -7,6 +7,8 @@ class Comisaria extends Model{
 	protected $primaryKey="ComCod";
 	protected $fillable=array('ComCod', 'ComCodInei', 'ComDepCod', 'ComProCod', 'ComDisCod', 'ComLat', 'ComLon', 'ComMacRegPol', 'ComRegPol', 'ComDivPol', 'ComNom');
 
+	protected $hidden=['created_at','updated_at'];
+
 	public function departamentos(){
 		$this->belongsTo('Departamento');
 	}

@@ -32,7 +32,8 @@ Route::resource('departamentos.provincias','ProvinciaController',['only'=>['inde
 //Route::resource('provincias','ProvinciaController');
 Route::resource('provincias.distritos','DistritoController',['only'=>['index']]);
 //Route::resource('distritos','DistritoController');
-Route::resource('comisarias','ComisariaController',['only'=>['index','show']]);
+Route::resource('comisarias','ComisariaController',['only'=>['index']]);
 Route::get('/comisarias/{lat}/{lon}','ComisariaController@cercano')->name('comisarias.cercano');
 Route::get('/comisarias/{id}/{lat}/{lon}','ComisariaController@distancia')->name('comisarias.distancia');
-Route::get('/buscar/{query}','ComisariaController@buscar')->name('comisarias.buscar');
+Route::get('/comisarias/{id}','ComisariaController@show')->where('id','[0-9]+')->name('comisarias.show');
+Route::get('/comisarias/{query}','ComisariaController@buscar')->name('comisarias.buscar');
