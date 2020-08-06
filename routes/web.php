@@ -27,12 +27,12 @@ Route::post('import-list-excel-comisaria', 'ComisariaController@importExcel')->n
 
 Route::post('import-list-excel-denuncia', 'DenunciaController@importExcel')->name('denuncias.import.excel');
 
-Route::resource('departamentos','DepartamentoController');
-Route::resource('departamentos.provincias','ProvinciaController');
-Route::resource('provincias','ProvinciaController');
-Route::resource('provincias.distritos','DistritoController');
-Route::resource('distritos','DistritoController');
-Route::resource('comisarias','ComisariaController');
+Route::resource('departamentos','DepartamentoController',['only'=>['index']]);
+Route::resource('departamentos.provincias','ProvinciaController',['only'=>['index']]);
+//Route::resource('provincias','ProvinciaController');
+Route::resource('provincias.distritos','DistritoController',['only'=>['index']]);
+//Route::resource('distritos','DistritoController');
+Route::resource('comisarias','ComisariaController',['only'=>['index','show']]);
 Route::get('/comisarias/{lat}/{lon}','ComisariaController@cercano')->name('comisarias.cercano');
 Route::get('/comisarias/{id}/{lat}/{lon}','ComisariaController@distancia')->name('comisarias.distancia');
-Route::get('/comisarias/{query}/search','ComisariaController@buscar')->name('comisarias.buscar');
+Route::get('/buscar/{query}','ComisariaController@buscar')->name('comisarias.buscar');
