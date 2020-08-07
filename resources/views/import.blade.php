@@ -27,5 +27,16 @@
 
             <button>Importar Comisarias</button>
     </form>
+    <form action="{{ route('denuncias.import.excel') }}" method="post" enctype="multipart/form-data">
+            @csrf
+            
+            @if(Session::has('message'))
+            <p>{{ Session::get('message') }}</p>
+            @endif
+
+            <input type="file" name="file">
+
+            <button>Importar Denuncias</button>
+    </form>
 </body>
 </html>

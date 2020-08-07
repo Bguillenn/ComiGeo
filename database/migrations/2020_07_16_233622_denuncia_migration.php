@@ -15,9 +15,9 @@ class DenunciaMigration extends Migration
     {
         Schema::create('denuncias', function (Blueprint $table) {
             $table->integer('DenCod')->primary();
-            $table->enum('DenGen',['F','M']);
-            $table->integer('DenEda');
-            $table->string('DenMes');
+            $table->enum('DenGen',['F','M'])->nullable();
+            $table->integer('DenEda')->nullable();
+            $table->string('DenMes')->nullable();
             $table->timestamps();
         });
     }
