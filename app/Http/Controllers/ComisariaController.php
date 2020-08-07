@@ -14,13 +14,11 @@ class ComisariaController extends Controller{
 	{
 		$comisarias=Comisaria::all();
 		$result = [];
-		foreach ($comisarias as $comisaria) {
+		foreach ($comisarias as $comisaria) 
+		{
 			$codigo=$comisaria->ComCod;
 			$datos=$this->datos($comisaria);
 			$result[$codigo]=$datos;
-			//array_push($result, $codigo, $datos);
-			//array_push($result, $datos);
-
 		}
 		return response()->json(['comisarias'=>$result],200);
 	}
@@ -37,20 +35,6 @@ class ComisariaController extends Controller{
 		{
 			return response()->json(['mensaje'=>'No se encuentra la comisaría','codigo'=>404],404);
 		}
-		/*$departamento=Departamento::find($comisaria->ComDepCod);
-		$provincia=Provincia::find($comisaria->ComProCod);
-		$distrito=Distrito::find($comisaria->ComDisCod);
-		
-		$result = ['CodInei'=>$comisaria->ComCodInei,
-					'DepNom'=>$departamento->DepNom,
-					'ProNom'=>$provincia->ProNom,
-					'DisNom'=>$distrito->DisNom,
-					'ComLat'=>$comisaria->ComLat,
-					'ComLgn'=>$comisaria->ComLon,
-					'ComMacRegPol'=>$comisaria->ComMacRegPol,
-					'ComDivPol'=>$comisaria->ComDivPol,
-					'ComNom'=>$comisaria->ComNom
-				];*/
 		$result = $this->datos($comisaria);
 
 		return response()->json([$id=>$result],200);
