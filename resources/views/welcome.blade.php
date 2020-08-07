@@ -11,7 +11,7 @@
 <body>
     <div id="header">
         <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1594699993/comigeo/ugvpuhf3xu8o3rvgaeii.svg" alt="logo-comigeo" width="210px" heigth="45px">
-        <button id="button-header" class="button-landing header-button-hide">IR AL MAPA</button>
+        <button id="button-header" class="button-landing header-button-hide" onclick="window.location='{{ url("/app") }}'">IR AL MAPA</button>
     </div>
     <div id="content">
         <div id="page-1">
@@ -22,7 +22,7 @@
                         Ubica geograficamente comisarias a nivel nacional y encuentra la mas cercana a tu ubicación. 
                     </p>
                 </div>
-                <button class="button-landing">
+                <button class="button-landing" onclick="window.location='{{ url("/app") }}'">
                     IR AL MAPA
                 </button>
             </div>

@@ -17,9 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/app', function(){
+    return view('app');
+});
+
 Route::get('/import', function () {
     return view('import');
 });
+
+
 
 Route::post('import-list-excel-ubigeo', 'UbigeoController@importExcel')->name('ubigeo.import.excel');
 
