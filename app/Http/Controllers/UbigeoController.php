@@ -15,9 +15,6 @@ class UbigeoController extends Controller{
 	}
 
 	public function importExcel(Request $request){
-		Distrito::get()->each->delete();
-		Provincia::get()->each->delete();
-		Departamento::get()->each->delete();
 		$file = $request->file('file');
 		Excel::import(new UbigeoImport, $file);
 		return back()->with('message', 'Importacion de ubigeo completada');

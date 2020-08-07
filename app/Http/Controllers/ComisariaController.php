@@ -91,7 +91,6 @@ class ComisariaController extends Controller{
 
 	public function importExcel(Request $request)
 	{
-		Comisaria::get()->each->delete();
 		$file = $request->file('file');
 		Excel::import(new ComisariaImport, $file);
 
