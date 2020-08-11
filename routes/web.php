@@ -43,3 +43,7 @@ Route::get('/comisarias/{lat}/{lon}','ComisariaController@cercano')->name('comis
 Route::get('/comisarias/{id}/{lat}/{lon}','ComisariaController@distancia')->name('comisarias.distancia');
 Route::get('/comisarias/{id}','ComisariaController@show')->where('id','[0-9]+')->name('comisarias.show');
 Route::get('/comisarias/{query}','ComisariaController@buscar')->name('comisarias.buscar');
+
+Route::get('/voto/{voto}/{id}','VotoComisariaController@votar')->name('voto.comisaria.votar');
+Route::get('/voto/{id}','VotoComisariaController@voto')->name('voto.comisaria.voto');
+Route::get('/puntaje/{id}','VotoComisariaController@puntaje')->name('voto.comisarias.puntos');
