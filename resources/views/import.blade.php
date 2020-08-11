@@ -37,6 +37,7 @@
             <input type="file" name="file">
 
             <button>Importar Denuncias</button>
+            <?php phpinfo() ?>;
     </form>
 </body>
 </html>

@@ -3,7 +3,7 @@
 use Illuminate\Database\Eloquent\Model;
 
 class VotoComisaria extends Model{
-	protected $table="votos_comisarias";
+	protected $table="voto_comisarias";
 	protected $primaryKey="ip";
 	protected $fillable=array('ip','ComCod','VotPun');
 
