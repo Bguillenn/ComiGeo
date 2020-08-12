@@ -9,21 +9,27 @@
     <link rel="stylesheet" href="{{ asset('css/landing.css') }}"/>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      var denuncias = <?php echo $denuncias; ?>;
+      var denuncias = <?php echo $basic; ?>;
+      let datos = <?php echo $data; ?>;
       console.log(denuncias);
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable(denuncias);
         var options = {
-          title: 'Site Visitor Line Chart',
+          title: 'Promedio de edad de denunciantes de violencia familiar',
           curveType: 'function',
           legend: { position: 'bottom' }
         };
         var chart = new google.visualization.LineChart(document.getElementById('linechart'));
         chart.draw(data, options);
+        document.getElementById("total").innerHTML = datos[0];
+        document.getElementById("hombres").innerHTML = datos[1];
+        document.getElementById("mujeres").innerHTML = datos[2];
       }
     </script>
+
+
 </head>
 <body>
     <div id="header">
@@ -48,17 +54,17 @@
         <div id="page-2">
             <h1>Denuncias por violencia familiar</h1>
             <p>En esta grafica se muestra la cantidad de denuncias por violencia familiar puesta cada mes por hombres y mujeres</p>
-            <div id="linechart" style="width: 1000px; height: 500px"></div>
+            <div id="linechart" style="width: 900px; height: 500px"></div>
             <div>
                 <div id="char"></div>
                 <div id="data">
                     <h2>CIFRAS</h2>
                     <h6>Total de denuncias</h6>
-                    <h1>250 000</h1>
+                    <h1 id="total">250 000</h1>
                     <h6>Puestas por hombres</h6>
-                    <h1>125 000</h1>
+                    <h1 id="hombres">125 000</h1>
                     <h6>Puestas por mujeres</h6>
-                    <h1>125 000</h1>
+                    <h1 id="mujeres">125 000</h1>
                 </div> 
             </div>
         </div>
