@@ -3158,8 +3158,8 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
-    alertaMapa: function alertaMapa(nombre) {
-      alert(nombre);
+    cargarComisaria: function cargarComisaria() {
+      alert("Probando");
     }
   }
 });
@@ -40330,11 +40330,7 @@ var render = function() {
                   clickable: true,
                   draggable: true
                 },
-                on: {
-                  click: function($event) {
-                    return _vm.console.log(c.ComNom)
-                  }
-                }
+                on: { click: _vm.cargarComisaria }
               })
             })
           ],

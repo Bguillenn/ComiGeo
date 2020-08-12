@@ -19,7 +19,7 @@
                     :position="{lat: c.ComLat, lng: c.ComLgn}"
                     :clickable="true"
                     :draggable="true"
-                    @click="console.log(c.ComNom)"
+                    @click="cargarComisaria"
                 /> 
             </GmapMap>
         </div>
@@ -117,8 +117,8 @@
             
         },
         methods: {
-            alertaMapa(nombre){
-                alert(nombre)
+            cargarComisaria(){
+                alert("Probando");
             }
         }
     }
