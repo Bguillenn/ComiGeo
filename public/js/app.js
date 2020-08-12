@@ -7946,7 +7946,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#results-box{\n    position: absolute;\n    top: 38px;\n    left: 20px;\n    width: 560px;\n    min-height: 60px;\n    max-height: 360px;\n    background-color: #fff;\n    border: 1px solid #EAEAEA;\n    display:flex;\n    flex-direction: column;\n    box-shadow: 0 4px 4px rgba(143,143,143,.25);\n    z-index: 10;\n    overflow: scroll;\n}\n", ""]);
+exports.push([module.i, "\n#results-box{\n    position: absolute;\n    top: 38px;\n    left: 20px;\n    width: 560px;\n    min-height: 60px;\n    max-height: 360px;\n    background-color: #fff;\n    border: 1px solid #EAEAEA;\n    display:flex;\n    flex-direction: column;\n    box-shadow: 0 4px 4px rgba(143,143,143,.25);\n    z-index: 10;\n    overflow: auto;\n}\n", ""]);
 
 // exports
 
