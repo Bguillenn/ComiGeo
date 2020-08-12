@@ -10,6 +10,9 @@
             :zoom="15"
             style="width: 100%; height: 100%"
             >
+              <GMapCircle
+                    :position="coordinates"
+                />
               <GmapMarker
                     :key="index"
                     v-for="(c, index) in comisarias"

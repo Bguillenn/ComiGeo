@@ -3120,6 +3120,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -40311,22 +40314,26 @@ var render = function() {
             staticStyle: { width: "100%", height: "100%" },
             attrs: { center: _vm.coordinates, zoom: 15 }
           },
-          _vm._l(_vm.comisarias, function(c, index) {
-            return _c("GmapMarker", {
-              key: index,
-              attrs: {
-                position: { lat: c.ComLat, lng: c.ComLgn },
-                clickable: true,
-                draggable: true
-              },
-              on: {
-                click: function($event) {
-                  return _vm.alert(c.ComNom)
+          [
+            _c("GMapCircle", { attrs: { position: _vm.coordinates } }),
+            _vm._v(" "),
+            _vm._l(_vm.comisarias, function(c, index) {
+              return _c("GmapMarker", {
+                key: index,
+                attrs: {
+                  position: { lat: c.ComLat, lng: c.ComLgn },
+                  clickable: true,
+                  draggable: true
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.alert(c.ComNom)
+                  }
                 }
-              }
+              })
             })
-          }),
-          1
+          ],
+          2
         )
       ],
       1
