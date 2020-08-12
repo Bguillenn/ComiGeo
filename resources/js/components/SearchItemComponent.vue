@@ -47,7 +47,11 @@
                         key: 'AIzaSyDnr-MHYWQ2v9MVJNok3vaEfr0-JB-Z1Bs'
                     }
                 }*/).then( response => {
-                    console.log(response);
+                    if(response.status == 200){
+                        this.img = response.data.results[0].photos[0].photo_reference;
+                    }else{
+                        this.img = "https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png"
+                    }
                 }).catch( error => console.log(error));
         }
     }
