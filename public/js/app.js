@@ -40332,7 +40332,7 @@ var render = function() {
                 },
                 on: {
                   click: function($event) {
-                    return this.alertaMapa(c.ComNom)
+                    return _vm.console.log(c.ComNom)
                   }
                 }
               })

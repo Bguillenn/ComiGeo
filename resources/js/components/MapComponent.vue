@@ -19,7 +19,7 @@
                     :position="{lat: c.ComLat, lng: c.ComLgn}"
                     :clickable="true"
                     :draggable="true"
-                    @click="this.alertaMapa(c.ComNom)"
+                    @click="console.log(c.ComNom)"
                 /> 
             </GmapMap>
         </div>
