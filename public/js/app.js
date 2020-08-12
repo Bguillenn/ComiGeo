@@ -40324,7 +40324,13 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
+    _c("div", { attrs: { id: "title-map" } }, [
+      _c("span", [_vm._v("Navega por el mapa para encontrar las comisarias")]),
+      _vm._v(" "),
+      _c("button", { on: { click: _vm.searchNearby } }, [
+        _vm._v("Ubicar la mas cercana")
+      ])
+    ]),
     _vm._v(" "),
     _c(
       "div",
@@ -40359,18 +40365,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "title-map" } }, [
-      _c("span", [_vm._v("Navega por el mapa para encontrar las comisarias")]),
-      _vm._v(" "),
-      _c("button", [_vm._v("Ubicar la mas cercana")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

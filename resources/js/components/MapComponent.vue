@@ -2,7 +2,7 @@
     <div>
         <div id="title-map">
             <span>Navega por el mapa para encontrar las comisarias</span>
-            <button>Ubicar la mas cercana</button>
+            <button @click="searchNearby">Ubicar la mas cercana</button>
         </div>
         <div id="map">
             <GmapMap
