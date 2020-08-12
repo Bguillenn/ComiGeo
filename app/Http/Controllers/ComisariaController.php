@@ -41,7 +41,7 @@ class ComisariaController extends Controller{
 			}
 		}
 		$result = $this->datos(Comisaria::find($id));
-		return response()->json([$id=>$result],200);
+		return response()->json([$result],200);
 
 	}
 
@@ -54,7 +54,7 @@ class ComisariaController extends Controller{
 		}
 		$result = $this->datos($comisaria);
 
-		return response()->json([$id=>$result],200);
+		return response()->json([$result],200);
 	}
 
 	public function distancia($id, $lat, $lon)
@@ -103,7 +103,8 @@ class ComisariaController extends Controller{
 		$provincia=Provincia::find($comisaria->ComProCod);
 		$distrito=Distrito::find($comisaria->ComDisCod);
 		
-		$result = ['CodInei'=>$comisaria->ComCodInei,
+		$result = [	'ComId' => $comisaria->ComCod,
+					'CodInei'=>$comisaria->ComCodInei,
 					'DepNom'=>$departamento->DepNom,
 					'ProNom'=>$provincia->ProNom,
 					'DisNom'=>$distrito->DisNom,
