@@ -3323,6 +3323,8 @@ __webpack_require__.r(__webpack_exports__);
     }*/
     ).then(function (response) {
       console.log(response);
+    })["catch"](function (error) {
+      return console.log(error);
     });
   }
 });
