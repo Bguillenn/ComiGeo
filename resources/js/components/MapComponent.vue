@@ -93,13 +93,10 @@
         },
         mounted() {
             console.log('Component mounted.');
-            axios.
-            get('https://35.203.21.243/comisarias/zama').
-            then(
-                response => console.log(response)
-            ).catch(
-                error => console.log(error)
-            );
+            let url = "https://35.203.21.243/comisarias";
+            axios.get(url)
+            .then( response => alert(response))
+            .catch( error => alert(error))
         },
         created(){
             this.$getLocation({})
