@@ -96,7 +96,7 @@
             let url = "https://35.203.21.243/comisarias";
             axios.get(url)
             .then( response => {
-                this.comisarias = response.data
+                this.comisarias = response.data.comisarias;
             })
             .catch( error => alert(error))
         },

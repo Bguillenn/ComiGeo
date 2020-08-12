@@ -3136,7 +3136,7 @@ __webpack_require__.r(__webpack_exports__);
     console.log('Component mounted.');
     var url = "https://35.203.21.243/comisarias";
     axios.get(url).then(function (response) {
-      _this.comisarias = response.data;
+      _this.comisarias = response.data.comisarias;
     })["catch"](function (error) {
       return alert(error);
     });
