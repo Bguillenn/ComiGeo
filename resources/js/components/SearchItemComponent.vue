@@ -2,7 +2,8 @@
     <div>
         <button class="btn-result">
             <div class="item-info">
-                <img class="item-img" src="https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png" alt="ComImg">
+                <!--<img class="item-img" src="https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png" alt="ComImg">-->
+                <img class="item-img" src="https://lh3.googleusercontent.com/p/AF1QipNzzYn10BicCTfW8wNwBJ5xMkoFPDFGq0eYfsOE=s1600-w80" alt="ComImg">
                 <div class="item-data">
                     <h5 class="item-data-title">{{ this.nombre }}</h5>
                     <p class="item-data-dir">{{this.dep}}, {{this.pro}}, {{this.dis}}</p>
@@ -16,7 +17,7 @@
 <script>
     export default {
         props: {
-            img: String,
+            id: String,
             nombre: String,
             dep: String,
             pro: String,
@@ -26,6 +27,40 @@
         },
         mounted(){
             console.log('componente montado');
+        },
+        methods: {
+            obtenerImagen(){
+                let coords = {
+                    lat: this.lat,
+                    lng: this.lng,
+                }
+
+                let nomCom = substr(this.nombre, 1)
+
+                axios.
+                get('https://maps.googleapis.com/maps/api/place/nearbysearch/json'.{
+                    params: {
+                        location: coords,
+                        radius: 100,
+                        keyword: nomCom,
+                        key: 'AIzaSyDnr-MHYWQ2v9MVJNok3vaEfr0-JB-Z1Bs'
+                    }
+                }).then( response => {
+                    let results = response.data.results;
+                    if(results.length != 0){
+                        let photos = results[0].photos;
+                        if(photos.length > 0){
+                            
+                        }else{
+                            //NO IMAGE
+                        }
+                    }else{
+                        //NO IMAGE
+                    }
+                }).catch( error => console.log(error));
+
+
+            }
         }
     }   
 </script>
