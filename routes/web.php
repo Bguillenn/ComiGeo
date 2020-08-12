@@ -38,8 +38,7 @@ Route::middleware(['cors'])->group(function(){
     //Route::resource('provincias','ProvinciaController');
     Route::resource('provincias.distritos','DistritoController',['only'=>['index']]);
     //Route::resource('distritos','DistritoController');
-    //Route::resource('comisarias','ComisariaController',['only'=>['index']]);
-    Route::api('comisarias', 'ComisariasController', ['only'=> ['index']]);
+    Route::resource('comisarias','ComisariaController',['only'=>['index']]);
     Route::get('/comisarias/{lat}/{lon}','ComisariaController@cercano')->name('comisarias.cercano');
     Route::get('/comisarias/{id}/{lat}/{lon}','ComisariaController@distancia')->name('comisarias.distancia');
     Route::get('/comisarias/{id}','ComisariaController@show')->where('id','[0-9]+')->name('comisarias.show');

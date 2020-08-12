@@ -94,7 +94,13 @@
         mounted() {
             console.log('Component mounted.');
             let url = "https://35.203.21.243/comisarias";
-            axios.get(url)
+            axios.get(url,{
+                headers: {
+                        "Access-Control-Allow-Origin": "*",
+                        "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
+                        "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token"
+                        }
+                     })
             .then( response => alert(response))
             .catch( error => alert(error))
         },
