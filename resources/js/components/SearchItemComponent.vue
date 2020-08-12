@@ -32,6 +32,7 @@
         },
         mounted(){
             console.log('componente montado');
+            obtenerImagen();
         },
         methods: {
             obtenerImagen(){
