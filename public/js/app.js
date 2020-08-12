@@ -3133,15 +3133,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     console.log('Component mounted.');
     var url = "https://35.203.21.243/comisarias";
-    axios.get(url, {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
-        "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token"
-      }
-    }).then(function (response) {
-      return alert(response);
-    })["catch"](function (error) {
+    axios.get(url).then(function (response) {})["catch"](function (error) {
       return alert(error);
     });
   },
