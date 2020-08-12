@@ -3121,6 +3121,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3128,18 +3129,27 @@ __webpack_require__.r(__webpack_exports__);
         lat: 0,
         lng: 0
       },
-      comisarias: []
+      comisarias: [],
+      positionNear: {
+        lat: 0,
+        lng: 0
+      }
     };
   },
   mounted: function mounted() {
     var _this = this;
 
-    console.log('Component mounted.');
     var url = "https://35.203.21.243/comisarias";
     axios.get(url).then(function (response) {
       _this.comisarias = response.data.comisarias;
     })["catch"](function (error) {
       return alert(error);
+    });
+    this.$refs.mapRef.$mapPromise.then(function (map) {
+      map.panTo({
+        lat: 1.38,
+        lng: 103.80
+      });
     });
   },
   created: function created() {
@@ -40314,6 +40324,7 @@ var render = function() {
         _c(
           "GmapMap",
           {
+            ref: "mapRef",
             staticStyle: { width: "100%", height: "100%" },
             attrs: { center: _vm.coordinates, zoom: 15 }
           },

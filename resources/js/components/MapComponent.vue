@@ -9,6 +9,7 @@
             :center="coordinates"
             :zoom="15"
             style="width: 100%; height: 100%"
+            ref="mapRef"
             >
       
               <GmapMarker
@@ -89,17 +90,25 @@
                     lat: 0,
                     lng: 0
                 },
-                comisarias: []
+                comisarias: [],
+                positionNear: {
+                    lat: 0,
+                    lng: 0,
+                }
             }
         },
         mounted() {
-            console.log('Component mounted.');
+            
             let url = "https://35.203.21.243/comisarias";
             axios.get(url)
             .then( response => {
                 this.comisarias = response.data.comisarias;
             })
-            .catch( error => alert(error))
+            .catch( error => alert(error));
+
+            this.$refs.mapRef.$mapPromise.then((map) => {
+                map.panTo({lat: 1.38, lng: 103.80})
+            })
         },
         created(){
             this.$getLocation({})
