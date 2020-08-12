@@ -10,14 +10,14 @@
             :zoom="15"
             style="width: 100%; height: 100%"
             >
-              <!--  <GmapMarker
+              <GmapMarker
                     :key="index"
-                    v-for="(m, index) in markers"
-                    :position="m.position"
+                    v-for="(c, index) in comisarias"
+                    :position="{lat: c.ComLat, lng: c.ComLgn}"
                     :clickable="true"
                     :draggable="true"
-                    @click="center=m.position"
-                /> -->
+                    @click="alert(c.ComNom)"
+                /> 
             </GmapMap>
         </div>
     </div>
@@ -96,7 +96,7 @@
             let url = "https://35.203.21.243/comisarias";
             axios.get(url)
             .then( response => {
-
+                this.comisarias = response.data
             })
             .catch( error => alert(error))
         },

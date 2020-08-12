@@ -3131,20 +3131,24 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
+    var _this = this;
+
     console.log('Component mounted.');
     var url = "https://35.203.21.243/comisarias";
-    axios.get(url).then(function (response) {})["catch"](function (error) {
+    axios.get(url).then(function (response) {
+      _this.comisarias = response.data;
+    })["catch"](function (error) {
       return alert(error);
     });
   },
   created: function created() {
-    var _this = this;
+    var _this2 = this;
 
     this.$getLocation({}).then(function (coordinates) {
-      _this.coordinates = coordinates;
+      _this2.coordinates = coordinates;
     })["catch"](function (error) {
       alert("No se puede acceder a tu ubicacion");
-      _this.coordinates = {
+      _this2.coordinates = {
         lat: 16.3989,
         lng: 71.535
       };
@@ -40301,10 +40305,29 @@ var render = function() {
       "div",
       { attrs: { id: "map" } },
       [
-        _c("GmapMap", {
-          staticStyle: { width: "100%", height: "100%" },
-          attrs: { center: _vm.coordinates, zoom: 15 }
-        })
+        _c(
+          "GmapMap",
+          {
+            staticStyle: { width: "100%", height: "100%" },
+            attrs: { center: _vm.coordinates, zoom: 15 }
+          },
+          _vm._l(_vm.comisarias, function(c, index) {
+            return _c("GmapMarker", {
+              key: index,
+              attrs: {
+                position: { lat: c.ComLat, lng: c.ComLgn },
+                clickable: true,
+                draggable: true
+              },
+              on: {
+                click: function($event) {
+                  return _vm.alert(c.ComNom)
+                }
+              }
+            })
+          }),
+          1
+        )
       ],
       1
     )
