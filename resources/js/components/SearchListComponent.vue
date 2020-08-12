@@ -9,7 +9,7 @@
         v-bind:dis="r.DisNom"
         v-bind:lat="r.ComLat"
         v-bind:lng="r.ComLgn"
-        v-big:img="obtenerImgReferencia(r.ComId)"/>
+        v-bind:img="obtenerImgReferencia(r.ComId)"/>
     </div>
 </template>
 
@@ -42,6 +42,9 @@
                 then(response => {
                     this.results = response.data.comisarias;
                 }).catch(error => console.log(error));
+            },
+            obtenerImgReferencia: function(id){
+                return "adasd";
             }
         }
     }
