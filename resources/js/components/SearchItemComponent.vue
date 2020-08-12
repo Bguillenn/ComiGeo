@@ -37,16 +37,16 @@
                     lng: this.lng,
             }
 
-            let url = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json" ;
+          //  let url = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json" ;
                 axios.
-                get(url,{
+                get("https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+coords.lat+","+coords.lng+"&radius=100&keyword="+this.nombre+"&key=AIzaSyDnr-MHYWQ2v9MVJNok3vaEfr0-JB-Z1Bs" /*,{
                     params: {
                         location: coords,
                         radius: 100,
                         keyword: this.nombre,
                         key: 'AIzaSyDnr-MHYWQ2v9MVJNok3vaEfr0-JB-Z1Bs'
                     }
-                }).then( response => {
+                }*/).then( response => {
                     console.log(response);
                 });
         }
