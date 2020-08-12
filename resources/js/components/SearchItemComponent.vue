@@ -37,7 +37,7 @@
                     lng: this.lng,
             }
 
-            let url = "https://cors-anywhere.herokuapp.com/'https://maps.googleapis.com/maps/api/place/nearbysearch/json" ;
+            let url = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json" ;
                 axios.
                 get(url,{
                     params: {
@@ -47,8 +47,9 @@
                         key: 'AIzaSyDnr-MHYWQ2v9MVJNok3vaEfr0-JB-Z1Bs'
                     }
                 }).then( response => {
+                    alert(response);
                     let results = response.data.results;
-                    alert(response.data.results[0].name);
+                    alert(response.data.results);
                     if(results.length > 0){
                         alert(results[0].name)
                         let photos = results[0].photos;
