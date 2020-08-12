@@ -40730,7 +40730,7 @@ var render = function() {
       _c("div", { staticClass: "item-info" }, [
         _c("img", {
           staticClass: "item-img",
-          attrs: { src: "this.img", alt: "ComImg" }
+          attrs: { src: this.img, alt: "ComImg" }
         }),
         _vm._v(" "),
         _c("div", { staticClass: "item-data" }, [
