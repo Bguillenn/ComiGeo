@@ -19,7 +19,7 @@
                     :position="{lat: c.ComLat, lng: c.ComLgn}"
                     :clickable="true"
                     :draggable="true"
-                    @click="alert(c.ComNom)"
+                    @click="this.alertaMapa(c.ComNom)"
                 /> 
             </GmapMap>
         </div>
@@ -115,6 +115,11 @@
                 }
             });
             
+        },
+        methods: {
+            alertaMapa(nombre){
+                alert(nombre)
+            }
         }
     }
 </script>

@@ -3156,6 +3156,11 @@ __webpack_require__.r(__webpack_exports__);
         lng: 71.535
       };
     });
+  },
+  methods: {
+    alertaMapa: function alertaMapa(nombre) {
+      alert(nombre);
+    }
   }
 });
 
@@ -40327,7 +40332,7 @@ var render = function() {
                 },
                 on: {
                   click: function($event) {
-                    return _vm.alert(c.ComNom)
+                    return this.alertaMapa(c.ComNom)
                   }
                 }
               })
