@@ -4,7 +4,8 @@
             type="text" 
             placeholder="Busca una comisaria por su nombre" 
             id="input-box" maxlength="70" 
-            v-on:keyup="buscar"
+            v-on:keyup.enter="buscar"
+            v-on:keyup="detectar"
             v-model="query"/>
         <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1597091198/comigeo/v9wdfud5nmko2b1az1ak.svg" alt="search-icon" id="icon-search"/>
         <transition name="fade">
@@ -64,6 +65,10 @@
                 if(this.query.length > 0)
                     this.show = true;
                 else
+                    this.show = false;
+            },
+            detectar: function(event){
+                if(this.query.length == 0)
                     this.show = false;
             }
         }
