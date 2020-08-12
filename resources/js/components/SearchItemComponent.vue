@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button class="btn-result">
+        <button class="btn-result" v-on:click="itemSelect(this.lat, this.lng)">
             <div class="item-info">
                 <!--<img class="item-img" src="https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png" alt="ComImg">-->
                 <img class="item-img" :src="this.img" alt="ComImg">
@@ -38,15 +38,16 @@
             }
 
           //  let url = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json" ;
+          // ?location="+coords.lat+","+coords.lng+"&radius=100&keyword="+encodeURIComponent(this.nombre)+"&key=AIzaSyDnr-MHYWQ2v9MVJNok3vaEfr0-JB-Z1Bs"
                 axios.
-                get("https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+coords.lat+","+coords.lng+"&radius=100&keyword="+encodeURIComponent(this.nombre)+"&key=AIzaSyDnr-MHYWQ2v9MVJNok3vaEfr0-JB-Z1Bs" /*,{
+                get("https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json" ,{
                     params: {
-                        location: coords,
+                        location: coords.lat+","+coords.lng,
                         radius: 100,
                         keyword: this.nombre,
-                        key: 'AIzaSyDnr-MHYWQ2v9MVJNok3vaEfr0-JB-Z1Bs'
+                        key: 'AIzaSyD-cej55YJwDg749MFqK6LTKjKk7k65fDE'
                     }
-                }*/).then( response => {
+                }).then( response => {
                     if(response.status == 200){
                         this.img = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=80&photoreference="
                                     +response.data.results[0].photos[0].photo_reference;
@@ -54,6 +55,11 @@
                         this.img = "https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png"
                     }
                 }).catch( error => console.log(error));
+        },
+        methods: {
+            itemSelect: function(lat, lng){
+                this.$emit('itemSelect', {lat: lat, lng: lng});
+            }
         }
     }
 </script>

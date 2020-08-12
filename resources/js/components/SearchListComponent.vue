@@ -28,13 +28,13 @@
             this.loadResults();
         },
         watch: {
-            query: {
+            /*query: {
                 // the callback will be called immediately after the start of the observation
                 immediate: true, 
                 handler (val, oldVal) {
                     this.loadResults();
                 }
-            }
+            }*/
         },
         methods: {
             loadResults: function(){
@@ -43,6 +43,9 @@
                     this.results = response.data.comisarias;
                 }).catch(error => console.log(error));
             },
+            goToMap: function(lat, lng){
+                
+            }
         }
     }
 </script>

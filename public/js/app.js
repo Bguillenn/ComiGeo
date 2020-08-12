@@ -3313,17 +3313,16 @@ __webpack_require__.r(__webpack_exports__);
       lat: this.lat,
       lng: this.lng
     }; //  let url = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json" ;
+    // ?location="+coords.lat+","+coords.lng+"&radius=100&keyword="+encodeURIComponent(this.nombre)+"&key=AIzaSyDnr-MHYWQ2v9MVJNok3vaEfr0-JB-Z1Bs"
 
-    axios.get("https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + coords.lat + "," + coords.lng + "&radius=100&keyword=" + encodeURIComponent(this.nombre) + "&key=AIzaSyDnr-MHYWQ2v9MVJNok3vaEfr0-JB-Z1Bs"
-    /*,{
-    params: {
-    location: coords,
-    radius: 100,
-    keyword: this.nombre,
-    key: 'AIzaSyDnr-MHYWQ2v9MVJNok3vaEfr0-JB-Z1Bs'
-    }
-    }*/
-    ).then(function (response) {
+    axios.get("https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json", {
+      params: {
+        location: coords.lat + "," + coords.lng,
+        radius: 100,
+        keyword: this.nombre,
+        key: 'AIzaSyD-cej55YJwDg749MFqK6LTKjKk7k65fDE'
+      }
+    }).then(function (response) {
       if (response.status == 200) {
         _this.img = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=80&photoreference=" + response.data.results[0].photos[0].photo_reference;
       } else {
@@ -3332,6 +3331,14 @@ __webpack_require__.r(__webpack_exports__);
     })["catch"](function (error) {
       return console.log(error);
     });
+  },
+  methods: {
+    itemSelect: function itemSelect(lat, lng) {
+      this.$emit('itemSelect', {
+        lat: lat,
+        lng: lng
+      });
+    }
   }
 });
 
@@ -3375,13 +3382,13 @@ __webpack_require__.r(__webpack_exports__);
     this.loadResults();
   },
   watch: {
-    query: {
-      // the callback will be called immediately after the start of the observation
-      immediate: true,
-      handler: function handler(val, oldVal) {
-        this.loadResults();
-      }
-    }
+    /*query: {
+        // the callback will be called immediately after the start of the observation
+        immediate: true, 
+        handler (val, oldVal) {
+            this.loadResults();
+        }
+    }*/
   },
   methods: {
     loadResults: function loadResults() {
@@ -3392,7 +3399,8 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         return console.log(error);
       });
-    }
+    },
+    goToMap: function goToMap(lat, lng) {}
   }
 });
 
@@ -40737,38 +40745,49 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("button", { staticClass: "btn-result" }, [
-      _c("div", { staticClass: "item-info" }, [
-        _c("img", {
-          staticClass: "item-img",
-          attrs: { src: this.img, alt: "ComImg" }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "item-data" }, [
-          _c("h5", { staticClass: "item-data-title" }, [
-            _vm._v(_vm._s(this.nombre))
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "item-data-dir" }, [
-            _vm._v(
-              _vm._s(this.dep) +
-                ", " +
-                _vm._s(this.pro) +
-                ", " +
-                _vm._s(this.dis)
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("img", {
-        attrs: {
-          src:
-            "https://res.cloudinary.com/dtg90uzhc/image/upload/v1597250449/comigeo/lvibbqvhgyeseziiugyu.png",
-          alt: "icon-go"
+    _c(
+      "button",
+      {
+        staticClass: "btn-result",
+        on: {
+          click: function($event) {
+            return _vm.itemSelect(this.lat, this.lng)
+          }
         }
-      })
-    ])
+      },
+      [
+        _c("div", { staticClass: "item-info" }, [
+          _c("img", {
+            staticClass: "item-img",
+            attrs: { src: this.img, alt: "ComImg" }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "item-data" }, [
+            _c("h5", { staticClass: "item-data-title" }, [
+              _vm._v(_vm._s(this.nombre))
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "item-data-dir" }, [
+              _vm._v(
+                _vm._s(this.dep) +
+                  ", " +
+                  _vm._s(this.pro) +
+                  ", " +
+                  _vm._s(this.dis)
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("img", {
+          attrs: {
+            src:
+              "https://res.cloudinary.com/dtg90uzhc/image/upload/v1597250449/comigeo/lvibbqvhgyeseziiugyu.png",
+            alt: "icon-go"
+          }
+        })
+      ]
+    )
   ])
 }
 var staticRenderFns = []
