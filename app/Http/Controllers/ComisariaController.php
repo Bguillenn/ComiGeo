@@ -79,7 +79,8 @@ class ComisariaController extends Controller{
 			{
 				$codigo=$comisaria->ComCod;
 				$datos=$this->datos($comisaria);
-				$result[$codigo]=$datos;
+				array_push($result, $datos);
+				//$result=$datos;
 			}
 		}
 		if(!count($result))

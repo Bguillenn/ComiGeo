@@ -1,0 +1,79 @@
+<template>
+    <div>
+        <button class="btn-result">
+            <div class="item-info">
+                <img class="item-img" src="https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png" alt="ComImg">
+                <div class="item-data">
+                    <h5 class="item-data-title">{{ this.nombre }}</h5>
+                    <p class="item-data-dir">{{this.dep}}, {{this.pro}}, {{this.dis}}</p>
+                </div>
+            </div>
+            <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1597250449/comigeo/lvibbqvhgyeseziiugyu.png" alt="icon-go">
+        </button>
+    </div>
+</template>
+
+<script>
+    export default {
+        props: {
+            img: String,
+            nombre: String,
+            dep: String,
+            pro: String,
+            dis: String,
+            lat: 0,
+            lng: 0 
+        },
+        mounted(){
+            console.log('componente montado');
+        }
+    }   
+</script>
+
+<style scoped>
+    .btn-result{
+        width: 100%;
+        padding :10px;
+        border: none;
+        border-bottom: 1px solid #EAEAEA;
+        background-color: #FFF;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .btn-result:hover{
+        background-color: #FAFAFA;
+    }
+
+    .item-info{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .item-img{
+        width: 80px;
+        height: 40px;
+        object-fit: cover;
+    }
+
+    .item-data{
+        margin-left:10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .item-data-title{
+        color: #484848;
+        font-size: 14px;
+    }
+    .item-data-dir{
+        color: #484848;
+        font-size: 12px;
+    }
+</style>
