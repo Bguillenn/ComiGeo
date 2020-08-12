@@ -47,3 +47,8 @@ Route::middleware(['cors'])->group(function(){
     Route::get('/voto/{id}','VotoComisariaController@voto')->name('voto.comisaria.voto');
     Route::get('/puntaje/{id}','VotoComisariaController@puntaje')->name('voto.comisarias.puntos');
 });
+
+
+//Route::get('/denuncias','DenunciaController@data')->name('tabla.denuncias');
+
+Route::get('/', 'DenunciaController@googleLineChart')->name('denuncias.graficas');

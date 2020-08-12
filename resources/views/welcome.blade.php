@@ -7,6 +7,23 @@
     <link rel="shortcut icon" href="/icon.png" type="image/x-icon">
     <link rel="icon" href="/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/landing.css') }}"/>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      var denuncias = <?php echo $denuncias; ?>;
+      console.log(denuncias);
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable(denuncias);
+        var options = {
+          title: 'Site Visitor Line Chart',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+        var chart = new google.visualization.LineChart(document.getElementById('linechart'));
+        chart.draw(data, options);
+      }
+    </script>
 </head>
 <body>
     <div id="header">
@@ -31,6 +48,7 @@
         <div id="page-2">
             <h1>Denuncias por violencia familiar</h1>
             <p>En esta grafica se muestra la cantidad de denuncias por violencia familiar puesta cada mes por hombres y mujeres</p>
+            <div id="linechart" style="width: 1000px; height: 500px"></div>
             <div>
                 <div id="char"></div>
                 <div id="data">
