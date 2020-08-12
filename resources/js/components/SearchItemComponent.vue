@@ -47,23 +47,8 @@
                         key: 'AIzaSyDnr-MHYWQ2v9MVJNok3vaEfr0-JB-Z1Bs'
                     }
                 }).then( response => {
-                    alert(response);
-                    let results = response.data.results;
-                    alert(response.data.results);
-                    if(results.length > 0){
-                        alert(results[0].name)
-                        let photos = results[0].photos;
-                        if(photos.length > 0){
-                            alert(photos[0].photo_reference);
-                            this.img = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=80&photoreference="+photos[0].photo_reference;
-                        }else{
-                            this.img = "https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png";
-                        }
-                    }else{
-                        this.img = "https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png";
-                    }
-                }).catch( error => console.log(error));
-        },
+                    console.log(response);
+                });
     }
 </script>
 
