@@ -40721,47 +40721,8 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("button", { staticClass: "btn-result" }, [
-      _c("div", { staticClass: "item-info" }, [
-        _c("img", {
-          staticClass: "item-img",
-          attrs: { src: "{{", "this.img": "", "}}": "", alt: "ComImg" }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "item-data" }, [
-          _c("h5", { staticClass: "item-data-title" }, [
-            _vm._v(_vm._s(this.nombre))
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "item-data-dir" }, [
-            _vm._v(
-              _vm._s(this.dep) +
-                ", " +
-                _vm._s(this.pro) +
-                ", " +
-                _vm._s(this.dis)
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("img", {
-        attrs: {
-          src:
-            "https://res.cloudinary.com/dtg90uzhc/image/upload/v1597250449/comigeo/lvibbqvhgyeseziiugyu.png",
-          alt: "icon-go"
-        }
-      })
-    ])
-  ])
-}
+var render = function () {}
 var staticRenderFns = []
-render._withStripped = true
 
 
 

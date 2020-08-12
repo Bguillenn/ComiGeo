@@ -3,7 +3,7 @@
         <button class="btn-result">
             <div class="item-info">
                 <!--<img class="item-img" src="https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png" alt="ComImg">-->
-                <img class="item-img" src={{ this.img }} alt="ComImg">
+                <img class="item-img" src="{{ this.img }}" alt="ComImg">
                 <div class="item-data">
                     <h5 class="item-data-title">{{ this.nombre }}</h5>
                     <p class="item-data-dir">{{this.dep}}, {{this.pro}}, {{this.dis}}</p>
