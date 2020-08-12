@@ -3322,8 +3322,9 @@ __webpack_require__.r(__webpack_exports__);
         }
       }).then(function (response) {
         var results = response.data.results;
+        alert(response.data.results[0].name);
 
-        if (results.length != 0) {
+        if (results.length > 0) {
           alert(results[0].name);
           var photos = results[0].photos;
 

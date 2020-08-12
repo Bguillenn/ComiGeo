@@ -52,7 +52,8 @@
                     }
                 }).then( response => {
                     let results = response.data.results;
-                    if(results.length != 0){
+                    alert(response.data.results[0].name);
+                    if(results.length > 0){
                         alert(results[0].name)
                         let photos = results[0].photos;
                         if(photos.length > 0){
