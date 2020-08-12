@@ -3126,11 +3126,21 @@ __webpack_require__.r(__webpack_exports__);
       coordinates: {
         lat: 0,
         lng: 0
-      }
+      },
+      comisarias: []
     };
   },
   mounted: function mounted() {
     console.log('Component mounted.');
+    axios.get('https://35.203.21.243/comisarias/zama', {
+      headers: {
+        "Access-Control-Allow-Origin": "*"
+      }
+    }).then(function (response) {
+      return console.log(response);
+    })["catch"](function (error) {
+      return console.log(error);
+    });
   },
   created: function created() {
     var _this = this;

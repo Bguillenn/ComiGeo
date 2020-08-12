@@ -87,11 +87,21 @@
                 coordinates: {
                     lat: 0,
                     lng: 0
-                }
+                },
+                comisarias: []
             }
         },
         mounted() {
-            console.log('Component mounted.')
+            console.log('Component mounted.');
+            axios.
+            get('https://35.203.21.243/comisarias/zama', {
+                headers: {"Access-Control-Allow-Origin": "*"}
+            }).
+            then(
+                response => console.log(response)
+            ).catch(
+                error => console.log(error)
+            );
         },
         created(){
             this.$getLocation({})
@@ -104,6 +114,7 @@
                     lng: 71.535
                 }
             });
+            
         }
     }
 </script>
