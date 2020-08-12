@@ -35,16 +35,13 @@
             let coords = {
                     lat: this.lat,
                     lng: this.lng,
-                }
-
-                let nomCom = substr(this.nombre, 1)
-
+            }
                 axios.
                 get('https://maps.googleapis.com/maps/api/place/nearbysearch/json',{
                     params: {
                         location: coords,
                         radius: 100,
-                        keyword: nomCom,
+                        keyword: this.nombre,
                         key: 'AIzaSyDnr-MHYWQ2v9MVJNok3vaEfr0-JB-Z1Bs'
                     }
                 }).then( response => {
