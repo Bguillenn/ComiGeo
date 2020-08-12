@@ -17,7 +17,7 @@
 <script>
     export default {
         props: {
-            id: String,
+            id: Number,
             nombre: String,
             dep: String,
             pro: String,
