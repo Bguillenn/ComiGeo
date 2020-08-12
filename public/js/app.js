@@ -3266,9 +3266,60 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SearchItemComponent.vue?vue&type=script&lang=js& ***!
   \******************************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\resources\\js\\components\\SearchItemComponent.vue: Unexpected token, expected \",\" (53:0)\n\n  51 |             });\n  52 | }\n> 53 | \n     | ^\n    at Parser._raise (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:763:17)\n    at Parser.raiseWithData (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:756:17)\n    at Parser.raise (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:750:17)\n    at Parser.unexpected (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:8930:16)\n    at Parser.expect (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:8916:28)\n    at Parser.parseObjectLike (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:10603:14)\n    at Parser.parseExprAtom (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:10146:23)\n    at Parser.parseExprSubscripts (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9792:23)\n    at Parser.parseUpdate (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9772:21)\n    at Parser.parseMaybeUnary (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9761:17)\n    at Parser.parseExprOps (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9631:23)\n    at Parser.parseMaybeConditional (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9605:23)\n    at Parser.parseMaybeAssign (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9568:21)\n    at Parser.parseExportDefaultExpression (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:12553:24)\n    at Parser.parseExport (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:12455:31)\n    at Parser.parseStatementContent (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:11454:27)\n    at Parser.parseStatement (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:11348:17)\n    at Parser.parseBlockOrModuleBlockBody (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:11930:25)\n    at Parser.parseBlockBody (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:11916:10)\n    at Parser.parseTopLevel (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:11279:10)\n    at Parser.parse (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:12984:10)\n    at parse (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:13037:38)\n    at parser (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\core\\lib\\parser\\index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:99:38)\n    at normalizeFile.next (<anonymous>)\n    at run (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\core\\lib\\transformation\\index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\core\\lib\\transform.js:27:41)\n    at transform.next (<anonymous>)\n    at step (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\gensync\\index.js:254:32)\n    at D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\gensync\\index.js:266:13\n    at async.call.result.err.err (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\gensync\\index.js:216:11)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    id: Number,
+    nombre: String,
+    dep: String,
+    pro: String,
+    dis: String,
+    lat: 0,
+    lng: 0
+  },
+  data: function data() {
+    return {
+      img: "https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png"
+    };
+  },
+  mounted: function mounted() {
+    console.log('componente montado');
+    var coords = {
+      lat: this.lat,
+      lng: this.lng
+    };
+    var url = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json";
+    axios.get(url, {
+      params: {
+        location: coords,
+        radius: 100,
+        keyword: this.nombre,
+        key: 'AIzaSyDnr-MHYWQ2v9MVJNok3vaEfr0-JB-Z1Bs'
+      }
+    }).then(function (response) {
+      console.log(response);
+    });
+  }
+});
 
 /***/ }),
 
@@ -56160,14 +56211,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************************!*\
   !*** ./resources/js/components/SearchListComponent.vue ***!
   \*********************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SearchListComponent_vue_vue_type_template_id_5f6ef8c8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SearchListComponent.vue?vue&type=template&id=5f6ef8c8& */ "./resources/js/components/SearchListComponent.vue?vue&type=template&id=5f6ef8c8&");
 /* harmony import */ var _SearchListComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SearchListComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/SearchListComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _SearchListComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SearchListComponent.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/SearchListComponent.vue?vue&type=style&index=0&lang=css&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _SearchListComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _SearchListComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _SearchListComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SearchListComponent.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/SearchListComponent.vue?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -56199,7 +56251,7 @@ component.options.__file = "resources/js/components/SearchListComponent.vue"
 /*!**********************************************************************************!*\
   !*** ./resources/js/components/SearchListComponent.vue?vue&type=script&lang=js& ***!
   \**********************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
