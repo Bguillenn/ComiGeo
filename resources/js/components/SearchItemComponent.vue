@@ -3,7 +3,7 @@
         <button class="btn-result">
             <div class="item-info">
                 <!--<img class="item-img" src="https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png" alt="ComImg">-->
-                <img class="item-img" src="https://lh3.googleusercontent.com/p/AF1QipNzzYn10BicCTfW8wNwBJ5xMkoFPDFGq0eYfsOE=s1600-w80" alt="ComImg">
+                <img class="item-img" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=80&photoreference=CmRaAAAAx2IcK0tAHm97JpZm6BB5_VV5j0KunCheNjMN_IUwwKTSJ9jzONVqsudtex580IsyTjG1ngMCFyzeQrys7T4RRYr28C6URLQNtw9gnt3KvIPwXBIBrhWdnKzl2rrzBn2sEhBeJhAb1uoOOgIWBMz2PHwOGhRTUDWMpCmln5BPvc_qw7e1x9ZVJQ&key=AIzaSyDnr-MHYWQ2v9MVJNok3vaEfr0-JB-Z1Bs" alt="ComImg">
                 <div class="item-data">
                     <h5 class="item-data-title">{{ this.nombre }}</h5>
                     <p class="item-data-dir">{{this.dep}}, {{this.pro}}, {{this.dis}}</p>
@@ -24,6 +24,11 @@
             dis: String,
             lat: 0,
             lng: 0 
+        },
+        data(){
+            return {
+                img: "https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png"
+            }
         },
         mounted(){
             console.log('componente montado');
