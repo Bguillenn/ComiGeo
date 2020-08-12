@@ -3156,8 +3156,8 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
-    cargarComisaria: function cargarComisaria(lat) {
-      alert("Probando " + lat);
+    cargarComisaria: function cargarComisaria(nom) {
+      alert("Comisaria nom " + nom);
     }
   }
 });
@@ -40327,7 +40327,7 @@ var render = function() {
               },
               on: {
                 click: function($event) {
-                  return _vm.cargarComisaria(c.ComLat)
+                  return _vm.cargarComisaria(c.ComNom)
                 }
               }
             })
