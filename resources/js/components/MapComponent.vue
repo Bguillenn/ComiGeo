@@ -106,9 +106,8 @@
             })
             .catch( error => alert(error));
 
-            this.$refs.mapRef.$mapPromise.then((map) => {
-                map.panTo({lat: 1.38, lng: 103.80})
-            })
+            
+
         },
         created(){
             this.$getLocation({})
@@ -126,6 +125,22 @@
         methods: {
             cargarComisaria(nom){
                 alert("Comisaria nom "+nom);
+            },
+
+            searchNearby(){
+
+                axios.get('https://35.203.21.243/comisarias/'+this.coordinates.lat+'/'+this.coordinates.lng)
+                .then( response => {
+                    this.$refs.mapRef.$mapPromise.then((map) => {
+                        let location = {
+                            lat: response.data[0].ComLat,
+                            lng: responde.data[0].ComLgn
+                        };
+                        map.panTo(location);
+                    })
+                }).catch( error => console.log(error))
+
+                
             }
         }
     }
