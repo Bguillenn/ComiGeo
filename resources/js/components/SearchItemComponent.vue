@@ -32,11 +32,7 @@
         },
         mounted(){
             console.log('componente montado');
-            obtenerImagen();
-        },
-        methods: {
-            obtenerImagen(){
-                let coords = {
+            let coords = {
                     lat: this.lat,
                     lng: this.lng,
                 }
@@ -67,9 +63,7 @@
                         this.img = "https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png";
                     }
                 }).catch( error => console.log(error));
-
-
-            }
+        },
         }
     }   
 </script>

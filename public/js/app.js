@@ -3266,84 +3266,9 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SearchItemComponent.vue?vue&type=script&lang=js& ***!
   \******************************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    id: Number,
-    nombre: String,
-    dep: String,
-    pro: String,
-    dis: String,
-    lat: 0,
-    lng: 0
-  },
-  data: function data() {
-    return {
-      img: "https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png"
-    };
-  },
-  mounted: function mounted() {
-    console.log('componente montado');
-    obtenerImagen();
-  },
-  methods: {
-    obtenerImagen: function obtenerImagen() {
-      var _this = this;
-
-      var coords = {
-        lat: this.lat,
-        lng: this.lng
-      };
-      var nomCom = substr(this.nombre, 1);
-      axios.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {
-        params: {
-          location: coords,
-          radius: 100,
-          keyword: nomCom,
-          key: 'AIzaSyDnr-MHYWQ2v9MVJNok3vaEfr0-JB-Z1Bs'
-        }
-      }).then(function (response) {
-        var results = response.data.results;
-        alert(response.data.results[0].name);
-
-        if (results.length > 0) {
-          alert(results[0].name);
-          var photos = results[0].photos;
-
-          if (photos.length > 0) {
-            alert(photos[0].photo_reference);
-            _this.img = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=80&photoreference=" + photos[0].photo_reference;
-          } else {
-            _this.img = "https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png";
-          }
-        } else {
-          _this.img = "https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png";
-        }
-      })["catch"](function (error) {
-        return console.log(error);
-      });
-    }
-  }
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\resources\\js\\components\\SearchItemComponent.vue: Unexpected token (68:0)\n\n  66 |     },\n  67 |     }\n> 68 | }   \n     | ^\n  69 | \n    at Parser._raise (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:763:17)\n    at Parser.raiseWithData (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:756:17)\n    at Parser.raise (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:750:17)\n    at Parser.unexpected (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:8930:16)\n    at Parser.parseExprAtom (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:10230:20)\n    at Parser.parseExprSubscripts (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9792:23)\n    at Parser.parseUpdate (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9772:21)\n    at Parser.parseMaybeUnary (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9761:17)\n    at Parser.parseExprOps (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9631:23)\n    at Parser.parseMaybeConditional (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9605:23)\n    at Parser.parseMaybeAssign (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9568:21)\n    at Parser.parseExpression (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9520:23)\n    at Parser.parseStatementContent (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:11479:23)\n    at Parser.parseStatement (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:11348:17)\n    at Parser.parseBlockOrModuleBlockBody (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:11930:25)\n    at Parser.parseBlockBody (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:11916:10)\n    at Parser.parseTopLevel (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:11279:10)\n    at Parser.parse (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:12984:10)\n    at parse (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:13037:38)\n    at parser (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\core\\lib\\parser\\index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:99:38)\n    at normalizeFile.next (<anonymous>)\n    at run (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\core\\lib\\transformation\\index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\core\\lib\\transform.js:27:41)\n    at transform.next (<anonymous>)\n    at step (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\gensync\\index.js:254:32)\n    at D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\gensync\\index.js:266:13\n    at async.call.result.err.err (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\gensync\\index.js:216:11)");
 
 /***/ }),
 
