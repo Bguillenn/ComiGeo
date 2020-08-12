@@ -60,5 +60,6 @@
         flex-direction: column;
         box-shadow: 0 4px 4px rgba(143,143,143,.25);
         z-index: 10;
+        overflow: scroll;
     }
 </style>
