@@ -38,7 +38,7 @@
                 let nomCom = substr(this.nombre, 1)
 
                 axios.
-                get('https://maps.googleapis.com/maps/api/place/nearbysearch/json'.{
+                get('https://maps.googleapis.com/maps/api/place/nearbysearch/json',{
                     params: {
                         location: coords,
                         radius: 100,

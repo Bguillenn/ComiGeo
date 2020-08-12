@@ -3266,9 +3266,69 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SearchItemComponent.vue?vue&type=script&lang=js& ***!
   \******************************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\resources\\js\\components\\SearchItemComponent.vue: Unexpected token (41:79)\n\n  39 | \n  40 |             axios.\n> 41 |             get('https://maps.googleapis.com/maps/api/place/nearbysearch/json'.{\n     |                                                                                ^\n  42 |                 params: {\n  43 |                     location: coords,\n  44 |                     radius: 100,\n    at Parser._raise (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:763:17)\n    at Parser.raiseWithData (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:756:17)\n    at Parser.raise (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:750:17)\n    at Parser.unexpected (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:8930:16)\n    at Parser.parseIdentifierName (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:11015:18)\n    at Parser.parseIdentifier (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:10992:23)\n    at Parser.parseMaybePrivateName (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:10311:19)\n    at Parser.parseMember (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9858:63)\n    at Parser.parseSubscript (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9846:19)\n    at Parser.parseSubscripts (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9815:19)\n    at Parser.parseExprSubscripts (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9798:17)\n    at Parser.parseUpdate (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9772:21)\n    at Parser.parseMaybeUnary (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9761:17)\n    at Parser.parseExprOps (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9631:23)\n    at Parser.parseMaybeConditional (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9605:23)\n    at Parser.parseMaybeAssign (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9568:21)\n    at Parser.parseExprListItem (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:10984:18)\n    at Parser.parseCallExpressionArguments (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:10001:22)\n    at Parser.parseCoverCallAndAsyncArrowHead (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9908:29)\n    at Parser.parseSubscript (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9844:19)\n    at Parser.parseSubscripts (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9815:19)\n    at Parser.parseExprSubscripts (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9798:17)\n    at Parser.parseUpdate (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9772:21)\n    at Parser.parseMaybeUnary (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9761:17)\n    at Parser.parseExprOps (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9631:23)\n    at Parser.parseMaybeConditional (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9605:23)\n    at Parser.parseMaybeAssign (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9568:21)\n    at Parser.parseExpression (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:9520:23)\n    at Parser.parseStatementContent (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:11479:23)\n    at Parser.parseStatement (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:11348:17)\n    at Parser.parseBlockOrModuleBlockBody (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:11930:25)\n    at Parser.parseBlockBody (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:11916:10)\n    at Parser.parseBlock (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:11900:10)\n    at Parser.parseFunctionBody (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:10896:24)\n    at Parser.parseFunctionBodyAndFinish (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:10879:10)\n    at Parser.parseMethod (D:\\Universidad [2020-A]\\Cursos\\Ingenieria de Procesos y Software\\ComiGeo\\node_modules\\@babel\\parser\\lib\\index.js:10822:10)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    id: String,
+    nombre: String,
+    dep: String,
+    pro: String,
+    dis: String,
+    lat: 0,
+    lng: 0
+  },
+  mounted: function mounted() {
+    console.log('componente montado');
+  },
+  methods: {
+    obtenerImagen: function obtenerImagen() {
+      var coords = {
+        lat: this.lat,
+        lng: this.lng
+      };
+      var nomCom = substr(this.nombre, 1);
+      axios.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {
+        params: {
+          location: coords,
+          radius: 100,
+          keyword: nomCom,
+          key: 'AIzaSyDnr-MHYWQ2v9MVJNok3vaEfr0-JB-Z1Bs'
+        }
+      }).then(function (response) {
+        var results = response.data.results;
+
+        if (results.length != 0) {
+          var photos = results[0].photos;
+
+          if (photos.length > 0) {} else {//NO IMAGE
+          }
+        } else {//NO IMAGE
+          }
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    }
+  }
+});
 
 /***/ }),
 
