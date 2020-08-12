@@ -55,12 +55,12 @@
                     if(results.length != 0){
                         let photos = results[0].photos;
                         if(photos.length > 0){
-                            
+                            this.img = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=80&photoreference="+photos[0].photo_reference;
                         }else{
-                            //NO IMAGE
+                            this.img = "https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png";
                         }
                     }else{
-                        //NO IMAGE
+                        this.img = "https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png";
                     }
                 }).catch( error => console.log(error));
 

@@ -3306,6 +3306,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     obtenerImagen: function obtenerImagen() {
+      var _this = this;
+
       var coords = {
         lat: this.lat,
         lng: this.lng
@@ -3324,10 +3326,14 @@ __webpack_require__.r(__webpack_exports__);
         if (results.length != 0) {
           var photos = results[0].photos;
 
-          if (photos.length > 0) {} else {//NO IMAGE
+          if (photos.length > 0) {
+            _this.img = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=80&photoreference=" + photos[0].photo_reference;
+          } else {
+            _this.img = "https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png";
           }
-        } else {//NO IMAGE
-          }
+        } else {
+          _this.img = "https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png";
+        }
       })["catch"](function (error) {
         return console.log(error);
       });
