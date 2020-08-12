@@ -69,8 +69,22 @@ class DenunciaController extends Controller{
 
 		$result[12] = ['DICIEMBRE', $promF, $promM];
 
+		$datos = DB::table('denuncias')
+						->select(
+							DB::raw("COUNT(CASE WHEN DenGen = 'F' THEN DenEda END) as genF"),
+							DB::raw("COUNT(CASE WHEN DenGen = 'M' THEN DenEda END) as genM"))
+						->get();
+
+		$contF = (int)$datos[0]->genF;
+		$contM = (int)$datos[0]->genM;
+		$total = $contF + $contM;
+		$data[0] = $total;
+		$data[1] = $contM;
+		$data[2] = $contF;
+
 		return view('welcome')
-                ->with('denuncias',json_encode($result));
+                ->with('basic',json_encode($result))
+                ->with('data', json_encode($data));
 	}
 	
 }
