@@ -1,6 +1,14 @@
 <template>
     <div id="results-box">
-        <search-item-component v-bind:nombre="'CPNP ZAMACOLA'" v-bind:dep="'Arequipa'" v-bind:pro="'Arequipa'" v-bind:dis="'Cerro Colorado'"/>
+        <search-item-component 
+        :key="index"
+        v-for="(r,index) in results"
+        v-bind:nombre="r.ComNom"
+        v-bind:dep="r.DepNom" 
+        v-bind:pro="r.ProNom" 
+        v-bind:dis="r.DisNom"
+        v-bind:lat="r.ComLat"
+        v-bind:lng="r.ComLgn"/>
     </div>
 </template>
 
@@ -16,14 +24,14 @@
         },
         mounted() {
             //console.log('Mounted List');
-
+            this.loadResults();
         },
         watch: {
             query: {
                 // the callback will be called immediately after the start of the observation
                 immediate: true, 
                 handler (val, oldVal) {
-                    console.log('nuevo cambio query'+val);
+                    this.loadResults();
                 }
             }
         },
@@ -31,7 +39,7 @@
             loadResults: function(){
                 axios.get('https://35.203.21.243/comisarias/'+this.query).
                 then(response => {
-
+                    this.results = response.data.comisarias;
                 }).catch(error => console.log(error));
             }
         }

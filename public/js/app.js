@@ -3317,6 +3317,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     query: String
@@ -3326,20 +3334,26 @@ __webpack_require__.r(__webpack_exports__);
       results: []
     };
   },
-  mounted: function mounted() {//console.log('Mounted List');
+  mounted: function mounted() {
+    //console.log('Mounted List');
+    this.loadResults();
   },
   watch: {
     query: {
       // the callback will be called immediately after the start of the observation
       immediate: true,
       handler: function handler(val, oldVal) {
-        console.log('nuevo cambio query' + val);
+        this.loadResults();
       }
     }
   },
   methods: {
     loadResults: function loadResults() {
-      axios.get('https://35.203.21.243/comisarias/' + this.query).then(function (response) {})["catch"](function (error) {
+      var _this = this;
+
+      axios.get('https://35.203.21.243/comisarias/' + this.query).then(function (response) {
+        _this.results = response.data.comisarias;
+      })["catch"](function (error) {
         return console.log(error);
       });
     }
@@ -40739,16 +40753,19 @@ var render = function() {
   return _c(
     "div",
     { attrs: { id: "results-box" } },
-    [
-      _c("search-item-component", {
+    _vm._l(_vm.results, function(r, index) {
+      return _c("search-item-component", {
+        key: index,
         attrs: {
-          nombre: "CPNP ZAMACOLA",
-          dep: "Arequipa",
-          pro: "Arequipa",
-          dis: "Cerro Colorado"
+          nombre: r.ComNom,
+          dep: r.DepNom,
+          pro: r.ProNom,
+          dis: r.DisNom,
+          lat: r.ComLat,
+          lng: r.ComLgn
         }
       })
-    ],
+    }),
     1
   )
 }
