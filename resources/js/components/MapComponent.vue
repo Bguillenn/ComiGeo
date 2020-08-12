@@ -133,8 +133,8 @@
                 .then( response => {
                     this.$refs.mapRef.$mapPromise.then((map) => {
                         let location = {
-                            lat: response.data,
-                            lng: responde.data,
+                            lat: response.data[0].ComLat,
+                            lng: responde.data[0].ComLgn,
                         };
                         map.panTo(location);
                     })

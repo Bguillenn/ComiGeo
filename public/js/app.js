@@ -3169,8 +3169,8 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('https://35.203.21.243/comisarias/' + this.coordinates.lat + '/' + this.coordinates.lng).then(function (response) {
         _this3.$refs.mapRef.$mapPromise.then(function (map) {
           var location = {
-            lat: response.data,
-            lng: responde.data
+            lat: response.data[0].ComLat,
+            lng: responde.data[0].ComLgn
           };
           map.panTo(location);
         });
