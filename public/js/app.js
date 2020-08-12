@@ -40730,11 +40730,7 @@ var render = function() {
       _c("div", { staticClass: "item-info" }, [
         _c("img", {
           staticClass: "item-img",
-          attrs: {
-            src:
-              "https://maps.googleapis.com/maps/api/place/photo?maxwidth=80&photoreference=CmRaAAAAx2IcK0tAHm97JpZm6BB5_VV5j0KunCheNjMN_IUwwKTSJ9jzONVqsudtex580IsyTjG1ngMCFyzeQrys7T4RRYr28C6URLQNtw9gnt3KvIPwXBIBrhWdnKzl2rrzBn2sEhBeJhAb1uoOOgIWBMz2PHwOGhRTUDWMpCmln5BPvc_qw7e1x9ZVJQ&key=AIzaSyDnr-MHYWQ2v9MVJNok3vaEfr0-JB-Z1Bs",
-            alt: "ComImg"
-          }
+          attrs: { src: "{{", "this.img": "", "}}": "", alt: "ComImg" }
         }),
         _vm._v(" "),
         _c("div", { staticClass: "item-data" }, [
