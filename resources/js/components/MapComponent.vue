@@ -94,9 +94,7 @@
         mounted() {
             console.log('Component mounted.');
             axios.
-            get('https://35.203.21.243/comisarias/zama', {
-                headers: {"Access-Control-Allow-Origin": "*"}
-            }).
+            get('https://35.203.21.243/comisarias/zama').
             then(
                 response => console.log(response)
             ).catch(
