@@ -3309,7 +3309,8 @@ __webpack_require__.r(__webpack_exports__);
       lat: this.lat,
       lng: this.lng
     };
-    axios.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {
+    var url = "https://cors-anywhere.herokuapp.com/'https://maps.googleapis.com/maps/api/place/nearbysearch/json";
+    axios.get(url, {
       params: {
         location: coords,
         radius: 100,

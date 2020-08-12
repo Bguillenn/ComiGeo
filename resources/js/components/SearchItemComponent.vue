@@ -36,8 +36,10 @@
                     lat: this.lat,
                     lng: this.lng,
             }
+
+            let url = "https://cors-anywhere.herokuapp.com/'https://maps.googleapis.com/maps/api/place/nearbysearch/json" ;
                 axios.
-                get('https://maps.googleapis.com/maps/api/place/nearbysearch/json',{
+                get(url,{
                     params: {
                         location: coords,
                         radius: 100,
