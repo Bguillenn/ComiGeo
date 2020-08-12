@@ -8,7 +8,8 @@
         v-bind:pro="r.ProNom" 
         v-bind:dis="r.DisNom"
         v-bind:lat="r.ComLat"
-        v-bind:lng="r.ComLgn"/>
+        v-bind:lng="r.ComLgn"
+        v-big:img="obtenerImgReferencia(r.ComId)"/>
     </div>
 </template>
 

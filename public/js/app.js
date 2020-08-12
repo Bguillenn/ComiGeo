@@ -3325,6 +3325,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     query: String
@@ -7927,7 +7928,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.btn-result[data-v-787f1f47]{\n    width: 100%;\n    padding :10px;\n    border: none;\n    border-bottom: 1px solid #EAEAEA;\n    background-color: #FFF;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    cursor: pointer;\n}\n.btn-result[data-v-787f1f47]:hover{\n    background-color: #FAFAFA;\n}\n.item-info[data-v-787f1f47]{\n    display:flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: flex-start;\n}\n.item-img[data-v-787f1f47]{\n    width: 80px;\n    height: 40px;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.item-data[data-v-787f1f47]{\n    margin-left:10px;\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n    justify-content: center;\n}\n.item-data-title[data-v-787f1f47]{\n    color: #484848;\n    font-size: 14px;\n}\n.item-data-dir[data-v-787f1f47]{\n    color: #484848;\n    font-size: 12px;\n}\n", ""]);
+exports.push([module.i, "\n.btn-result[data-v-787f1f47]{\n    width: 100%;\n    padding :10px;\n    border: none;\n    border-bottom: 1px solid #EAEAEA;\n    background-color: #FFF;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    cursor: pointer;\n}\n.btn-result[data-v-787f1f47]:hover{\n    background-color: #FAFAFA;\n}\n.btn-result[data-v-787f1f47]:focus{\n    outline: none;\n}\n.item-info[data-v-787f1f47]{\n    display:flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: flex-start;\n}\n.item-img[data-v-787f1f47]{\n    width: 80px;\n    height: 40px;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.item-data[data-v-787f1f47]{\n    margin-left:10px;\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n    justify-content: center;\n}\n.item-data-title[data-v-787f1f47]{\n    color: #484848;\n    font-size: 14px;\n}\n.item-data-dir[data-v-787f1f47]{\n    color: #484848;\n    font-size: 12px;\n}\n", ""]);
 
 // exports
 
@@ -40755,6 +40756,15 @@ var render = function() {
     { attrs: { id: "results-box" } },
     _vm._l(_vm.results, function(r, index) {
       return _c("search-item-component", {
+        directives: [
+          {
+            name: "big",
+            rawName: "v-big:img",
+            value: _vm.obtenerImgReferencia(r.ComId),
+            expression: "obtenerImgReferencia(r.ComId)",
+            arg: "img"
+          }
+        ],
         key: index,
         attrs: {
           nombre: r.ComNom,

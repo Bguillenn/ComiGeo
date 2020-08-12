@@ -48,6 +48,10 @@
         background-color: #FAFAFA;
     }
 
+    .btn-result:focus{
+        outline: none;
+    }
+
     .item-info{
         display:flex;
         flex-direction: row;
