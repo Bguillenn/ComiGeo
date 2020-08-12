@@ -10,16 +10,14 @@
             :zoom="15"
             style="width: 100%; height: 100%"
             >
-              <GMapCircle
-                    :position="coordinates"
-                />
+      
               <GmapMarker
                     :key="index"
                     v-for="(c, index) in comisarias"
                     :position="{lat: c.ComLat, lng: c.ComLgn}"
                     :clickable="true"
                     :draggable="true"
-                    @click="cargarComisaria"
+                    @click="cargarComisaria(c.ComLat)"
                 /> 
             </GmapMap>
         </div>
@@ -117,8 +115,8 @@
             
         },
         methods: {
-            cargarComisaria(){
-                alert("Probando");
+            cargarComisaria(lat){
+                alert("Probando "+lat);
             }
         }
     }

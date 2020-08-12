@@ -3121,8 +3121,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3158,8 +3156,8 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
-    cargarComisaria: function cargarComisaria() {
-      alert("Probando");
+    cargarComisaria: function cargarComisaria(lat) {
+      alert("Probando " + lat);
     }
   }
 });
@@ -40319,22 +40317,22 @@ var render = function() {
             staticStyle: { width: "100%", height: "100%" },
             attrs: { center: _vm.coordinates, zoom: 15 }
           },
-          [
-            _c("GMapCircle", { attrs: { position: _vm.coordinates } }),
-            _vm._v(" "),
-            _vm._l(_vm.comisarias, function(c, index) {
-              return _c("GmapMarker", {
-                key: index,
-                attrs: {
-                  position: { lat: c.ComLat, lng: c.ComLgn },
-                  clickable: true,
-                  draggable: true
-                },
-                on: { click: _vm.cargarComisaria }
-              })
+          _vm._l(_vm.comisarias, function(c, index) {
+            return _c("GmapMarker", {
+              key: index,
+              attrs: {
+                position: { lat: c.ComLat, lng: c.ComLgn },
+                clickable: true,
+                draggable: true
+              },
+              on: {
+                click: function($event) {
+                  return _vm.cargarComisaria(c.ComLat)
+                }
+              }
             })
-          ],
-          2
+          }),
+          1
         )
       ],
       1
