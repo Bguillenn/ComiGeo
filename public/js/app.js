@@ -3170,7 +3170,7 @@ __webpack_require__.r(__webpack_exports__);
         _this3.$refs.mapRef.$mapPromise.then(function (map) {
           var location = {
             lat: response.data[0].ComLat,
-            lng: responde.data[0].ComLgn
+            lng: response.data[0].ComLgn
           };
           map.panTo(location);
         });
