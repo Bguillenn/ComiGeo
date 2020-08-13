@@ -3165,7 +3165,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      departamentos: [],
+      provincias: [],
+      distritos: []
+    };
+  },
   mounted: function mounted() {
     console.log('Component mounted.');
   }
@@ -3207,6 +3248,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     goToMap: function goToMap(value) {
       console.log("Manejando desde el main " + value.lat + " " + value.lng + " " + value.id);
+      if (this.vista != 'map') this.vista = 'list';
       this.searchData = value; //this.key = -this.key;
     },
     //gottomap
@@ -40895,22 +40937,171 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { attrs: { id: "title-list" } }, [
-        _c("span", [_vm._v("Navega por el mapa para encontrar las comisarias")])
+  return _c("div", [
+    _c("div", { attrs: { id: "title-list" } }, [
+      _c("div", [
+        _c("span", { staticClass: "cbx-label" }, [_vm._v("Departamento: ")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "custom-select" }, [
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.cbxDepartamento,
+                  expression: "cbxDepartamento"
+                }
+              ],
+              attrs: { name: "departamentos", id: "dep" },
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.cbxDepartamento = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                }
+              }
+            },
+            _vm._l(this.departamentos, function(d, index) {
+              return _c(
+                "option",
+                { key: index, domProps: { value: d.DepCod } },
+                [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(d.DepNom) +
+                      "\n                    "
+                  )
+                ]
+              )
+            }),
+            0
+          )
+        ])
       ]),
       _vm._v(" "),
-      _c("div", { attrs: { id: "list" } })
-    ])
-  }
-]
+      _c("div", [
+        _c("span", { staticClass: "cbx-label" }, [_vm._v("Provincia: ")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "custom-select" }, [
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.cbxProvincia,
+                  expression: "cbxProvincia"
+                }
+              ],
+              attrs: { name: "provincias", id: "pro" },
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.cbxProvincia = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                }
+              }
+            },
+            [
+              _c("option", { attrs: { value: "" } }, [_vm._v("Cualquiera")]),
+              _vm._v(" "),
+              _vm._l(this.provincias, function(p, index) {
+                return _c(
+                  "option",
+                  { key: index, domProps: { value: p.ProCod } },
+                  [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(p.ProNom) +
+                        "\n                    "
+                    )
+                  ]
+                )
+              })
+            ],
+            2
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", [
+        _c("span", { staticClass: "cbx-label" }, [_vm._v("Departamento: ")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "custom-select" }, [
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.cbxDepartamento,
+                  expression: "cbxDepartamento"
+                }
+              ],
+              attrs: { name: "departamentos", id: "dep" },
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.cbxDepartamento = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                }
+              }
+            },
+            [
+              _c("option", { attrs: { value: "" } }, [_vm._v("Cualquiera")]),
+              _vm._v(" "),
+              _vm._l(this.departamentos, function(d, index) {
+                return _c(
+                  "option",
+                  { key: index, domProps: { value: d.DepCod } },
+                  [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(d.DepNom) +
+                        "\n                    "
+                    )
+                  ]
+                )
+              })
+            ],
+            2
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { attrs: { id: "list" } })
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 

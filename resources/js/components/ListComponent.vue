@@ -1,7 +1,41 @@
 <template>
     <div>
         <div id="title-list">
-            <span>Navega por el mapa para encontrar las comisarias</span>
+            <!-- Primer combobox departamentos-->
+            <div>
+                <span class="cbx-label">Departamento: </span>
+                <div class="custom-select">
+                    <select name="departamentos" id="dep" v-model="cbxDepartamento">
+                        <option :key="index" v-for="(d,index) in this.departamentos" :value="d.DepCod">
+                            {{d.DepNom}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <!-- Segundo combobox provincias -->
+            <div>
+                <span class="cbx-label">Provincia: </span>
+                <div class="custom-select">
+                    <select name="provincias" id="pro" v-model="cbxProvincia">
+                        <option value="">Cualquiera</option>
+                        <option :key="index" v-for="(p,index) in this.provincias" :value="p.ProCod">
+                            {{p.ProNom}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <!-- Tercer combobox distritos -->
+            <div>
+                <span class="cbx-label">Departamento: </span>
+                <div class="custom-select">
+                    <select name="departamentos" id="dep" v-model="cbxDepartamento">
+                        <option value="">Cualquiera</option>
+                        <option :key="index" v-for="(d,index) in this.departamentos" :value="d.DepCod">
+                            {{d.DepNom}}
+                        </option>
+                    </select>
+                </div>
+            </div>
         </div>
         <div id="list">
 
@@ -11,6 +45,13 @@
 
 <script>
     export default {
+        data(){
+            return {
+                departamentos: [],
+                provincias: [],
+                distritos: []
+            }
+        },
         mounted() {
             console.log('Component mounted.')
         }
