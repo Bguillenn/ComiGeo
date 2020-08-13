@@ -5,7 +5,7 @@
             <div>
                 <span class="cbx-label">Departamento: </span>
                 <div class="custom-select">
-                    <select name="departamentos" id="dep" v-model="cbxDepartamento">
+                    <select name="departamentos" id="dep" v-model="cbxDepartamento" class="combobox">
                         <option :key="index" v-for="(d,index) in this.departamentos" :value="d.DepCod">
                             {{d.DepNom}}
                         </option>
@@ -16,7 +16,7 @@
             <div>
                 <span class="cbx-label">Provincia: </span>
                 <div class="custom-select">
-                    <select name="provincias" id="pro" v-model="cbxProvincia">
+                    <select name="provincias" id="pro" v-model="cbxProvincia" class="combobox">
                         <option value="">Cualquiera</option>
                         <option :key="index" v-for="(p,index) in this.provincias" :value="p.ProCod">
                             {{p.ProNom}}
@@ -28,8 +28,8 @@
             <div>
                 <span class="cbx-label">Departamento: </span>
                 <div class="custom-select">
-                    <select name="departamentos" id="dep" v-model="cbxDepartamento">
-                        <option value="">Cualquiera</option>
+                    <select name="departamentos" id="dep" v-model="cbxDepartamento" class="combobox">
+                        <option value="" selected>Cualquiera</option>
                         <option :key="index" v-for="(d,index) in this.departamentos" :value="d.DepCod">
                             {{d.DepNom}}
                         </option>
@@ -38,6 +38,17 @@
             </div>
         </div>
         <div id="list">
+            <list-item-component />
+            <list-item-component />
+            <list-item-component />
+            <list-item-component />
+            <list-item-component />
+            <list-item-component />
+            <list-item-component />
+            <list-item-component />
+            <list-item-component />
+            <list-item-component />
+            <list-item-component />
             <list-item-component />
         </div>
     </div>
@@ -49,7 +60,10 @@
             return {
                 departamentos: [],
                 provincias: [],
-                distritos: []
+                distritos: [],
+                cbxDepartamento: "",
+                cbxProvincia: "",
+                cbxDistrito: ""
             }
         },
         mounted() {
@@ -74,9 +88,39 @@
         margin-bottom: 10px;
     }
     #title-list span{
-        font-size: 16x;
-        color: #484848;
+        font-size: 14px;
+        color: #8F8F8F;
+        margin-right: 10px;
+    }
+
+    #title-list div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .combobox{
+        width: 150px;
+        height: 30px;
+        max-width: 150px;
+        border-radius: 10px !important;
+        background-color: #2E6FAB !important;
+        color: #fff !important;
+        font-size: 14px;
+        border: none;
+        padding: 0 10px;
         font-weight: bold;
+    }
+
+    .combobox option{
+        color : #8f8f8f;
+        background-color: #fff;
+        font-size: 14px;
+        height: 30px;
+        border-bottom: 1px solid #EAEAEA;
+        width: 130px;
+        text-overflow: ellipsis;
     }
 
     #list{
@@ -85,6 +129,10 @@
         width: 800px;
         height: 450px;
         box-shadow: 0 4px 4px rgba(143,143,143,.25);
-        padding: 10px 20px;
+        padding: 20px;
+        overflow: auto;
     }
+
+
+
 </style>

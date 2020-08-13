@@ -4,7 +4,7 @@
             <img class="list-item-img" src="https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png" alt="comi-image">
             <div class="list-item-data">
                 <h3 class="list-item-name">CPNP ZAMACOLA</h3>
-                <span class="list-item-des">Arequia, Arequipa, Cerro Colorado</span>
+                <span class="list-item-dir">Arequia, Arequipa, Cerro Colorado</span>
             </div>
         </div>
         <div class="list-item-options">
@@ -45,3 +45,77 @@
         }
     }
 </script>
+
+<style>
+    .list-item{
+        border: 1px solid #EAEAEA;
+        width: 100%;
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .list-item-info{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .list-item-img{
+        width: 200px;
+        height: 100px;
+        object-fit: cover;
+        margin-right: 10px;
+    }
+
+    .list-item-name{
+        font-size: 18px;
+        font-weight: 18px;
+        text-transform: uppercase;
+        color: #484848;
+    }
+
+    .list-item-dir{
+        font-size: 14px;
+        color: #484848;
+    }
+
+    .list-item-options{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .list-item-options button{
+        color: #fff;
+        background-color: #2E6FAB;
+        font-weight: bold;
+        width: 120px;
+        height: 30px;
+        margin: 5px;
+        border: none;
+        cursor: pointer;
+        border-radius: 20px;
+        transition: .3s ease;
+    }
+
+    .list-item-options button:hover{
+        background-color: #1C4D79;
+    }
+
+    .list-item-options button:active{
+        box-shadow: 0px 2px 5px rgba(0,0,0,.5);
+        scale: 1.01;
+    }
+
+    .list-item-options button:focus{
+        outline: none;
+    }
+
+</style>
