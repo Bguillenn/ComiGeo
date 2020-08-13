@@ -1,7 +1,7 @@
 <template>
     <div>
         <header-component v-on:itemSelect="goToMap"></header-component>
-        <content-component v-bind:searchData="this.searchData"></content-component>
+        <content-component :key="this.key" v-bind:searchData="this.searchData"></content-component>
     </div>
 </template>
 
@@ -13,7 +13,8 @@
                     lat: -1,
                     lng: -1,
                     id: 0,
-                }
+                },
+                key: 1,
             }
         },
         mounted(){
@@ -23,6 +24,7 @@
             goToMap: function(value){
                 console.log("Manejando desde el main "+value.lat+" "+value.lng+" "+value.id);
                 this.searchData = value;
+                this.key = -this.key;
             }
         }
     }

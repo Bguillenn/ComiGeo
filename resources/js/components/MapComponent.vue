@@ -86,8 +86,8 @@
     export default {
         props: {
             coordinates: {
-                lat: -1,
-                lng: -1,
+                lat: Number -1,
+                lng: Number -1,
             }
         },
         data(){

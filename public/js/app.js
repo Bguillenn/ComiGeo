@@ -3018,7 +3018,8 @@ __webpack_require__.r(__webpack_exports__);
         lat: -1,
         lng: -1,
         id: 0
-      }
+      },
+      key: 1
     };
   },
   mounted: function mounted() {
@@ -3028,6 +3029,7 @@ __webpack_require__.r(__webpack_exports__);
     goToMap: function goToMap(value) {
       console.log("Manejando desde el main " + value.lat + " " + value.lng + " " + value.id);
       this.searchData = value;
+      this.key = -this.key;
     }
   }
 });
@@ -3130,8 +3132,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     coordinates: {
-      lat: -1,
-      lng: -1
+      lat: Number - 1,
+      lng: Number - 1
     }
   },
   data: function data() {
@@ -40634,7 +40636,10 @@ var render = function() {
     [
       _c("header-component", { on: { itemSelect: _vm.goToMap } }),
       _vm._v(" "),
-      _c("content-component", { attrs: { searchData: this.searchData } })
+      _c("content-component", {
+        key: this.key,
+        attrs: { searchData: this.searchData }
+      })
     ],
     1
   )
