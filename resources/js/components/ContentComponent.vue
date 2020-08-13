@@ -20,6 +20,12 @@
 
 <script>
     export default {
+        props: {
+            coordsProp: {
+                lat: 0,
+                lng: 0
+            }
+        },
         data(){
             return{
                 coords: {
