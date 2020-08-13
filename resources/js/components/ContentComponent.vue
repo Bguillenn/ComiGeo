@@ -1,7 +1,7 @@
 <template>
     <div id="content">
         <div id="r-side">
-            <map-component ref="MapComponent" v-bind:coordinates="this.coords"></map-component>
+            <map-component ref="MapComponent" v-bind:coordinates="this.coords" v-on:cargarComisaria="cargarComisaria"></map-component>
             <list-component></list-component>
         </div>
         <information-component v-bind:cominfo="this.comdata" v-on:centrarMapa="goToMap"></information-component>
@@ -78,6 +78,20 @@
                     lat: value.lat,
                     lng: value.lng
                 }
+            },
+            cargarComisaria: function(value){
+                this.comdata = {
+                        id: value.ComId,
+                        nombre: value.ComNom,
+                        dep: value.DepNom,
+                        pro: value.ProNom,
+                        dis: value.DisNom,
+                        mp: "MCRP "+value.ComMacRegPol,
+                        rp: "RP "+value.ComMacRegPol,
+                        dp: value.ComDivPol,
+                        lat: value.ComLat,
+                        lng: value.ComLgn
+                    }
             }
         }
     }

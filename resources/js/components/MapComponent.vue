@@ -18,7 +18,7 @@
                     :position="{lat: c.ComLat, lng: c.ComLgn}"
                     :clickable="true"
                     :draggable="true"
-                    @click="cargarComisaria(c.ComNom)"
+                    @click="cargarComisaria(c)"
                 /> 
             </GmapMap>
         </div>
@@ -137,8 +137,8 @@
         
         },
         methods: {
-            cargarComisaria(nom){
-                alert("Comisaria nom "+nom);
+            cargarComisaria(comi){
+                this.$emit('cargarComisaria', comi);
             },
 
             searchNearby(){

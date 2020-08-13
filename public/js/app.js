@@ -2878,6 +2878,20 @@ __webpack_require__.r(__webpack_exports__);
         lat: value.lat,
         lng: value.lng
       };
+    },
+    cargarComisaria: function cargarComisaria(value) {
+      this.comdata = {
+        id: value.ComId,
+        nombre: value.ComNom,
+        dep: value.DepNom,
+        pro: value.ProNom,
+        dis: value.DisNom,
+        mp: "MCRP " + value.ComMacRegPol,
+        rp: "RP " + value.ComMacRegPol,
+        dp: value.ComDivPol,
+        lat: value.ComLat,
+        lng: value.ComLgn
+      };
     }
   }
 });
@@ -3301,8 +3315,8 @@ __webpack_require__.r(__webpack_exports__);
     console.log("Coordenadas " + this.coordinates.lat + " " + this.coordinates.lng);
   },
   methods: {
-    cargarComisaria: function cargarComisaria(nom) {
-      alert("Comisaria nom " + nom);
+    cargarComisaria: function cargarComisaria(comi) {
+      this.$emit('cargarComisaria', comi);
     },
     searchNearby: function searchNearby() {
       var _this4 = this;
@@ -40464,7 +40478,8 @@ var render = function() {
         [
           _c("map-component", {
             ref: "MapComponent",
-            attrs: { coordinates: this.coords }
+            attrs: { coordinates: this.coords },
+            on: { cargarComisaria: _vm.cargarComisaria }
           }),
           _vm._v(" "),
           _c("list-component")
@@ -40830,7 +40845,7 @@ var render = function() {
               },
               on: {
                 click: function($event) {
-                  return _vm.cargarComisaria(c.ComNom)
+                  return _vm.cargarComisaria(c)
                 }
               }
             })
