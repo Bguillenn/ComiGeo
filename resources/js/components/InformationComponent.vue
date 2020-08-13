@@ -69,11 +69,11 @@
 <style scoped>
 
     .slide-image{
-        width: 100%;
+        width: 400px;
         height: 200px;
         object-fit: cover;
     }
-    
+
     #images > div{
         height: 100%;
     }
