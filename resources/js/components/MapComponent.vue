@@ -102,7 +102,7 @@
         watch:{
             coordinates: function(newVal, oldVal){
                 this.$refs.mapRef.$mapPromise.then((map) => {
-                        map.panTo(coordinates);
+                        map.panTo(this.coordinates);
                 })
             }
         },

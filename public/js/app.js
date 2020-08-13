@@ -3146,41 +3146,33 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   watch: {
-    coordinates: function (_coordinates) {
-      function coordinates(_x, _x2) {
-        return _coordinates.apply(this, arguments);
-      }
+    coordinates: function coordinates(newVal, oldVal) {
+      var _this = this;
 
-      coordinates.toString = function () {
-        return _coordinates.toString();
-      };
-
-      return coordinates;
-    }(function (newVal, oldVal) {
       this.$refs.mapRef.$mapPromise.then(function (map) {
-        map.panTo(coordinates);
+        map.panTo(_this.coordinates);
       });
-    })
+    }
   },
   mounted: function mounted() {
-    var _this = this;
+    var _this2 = this;
 
     var url = "https://35.203.21.243/comisarias";
     axios.get(url).then(function (response) {
-      _this.comisarias = response.data.comisarias;
+      _this2.comisarias = response.data.comisarias;
     })["catch"](function (error) {
       return alert(error);
     });
   },
   created: function created() {
-    var _this2 = this;
+    var _this3 = this;
 
     if (this.coordinates.lat == -1 && this.coordinates.lng == -1) {
       this.$getLocation({}).then(function (coordinates) {
-        _this2.coordinates = coordinates;
+        _this3.coordinates = coordinates;
       })["catch"](function (error) {
         alert("No se puede acceder a tu ubicacion");
-        _this2.coordinates = {
+        _this3.coordinates = {
           lat: 16.3989,
           lng: 71.535
         };
@@ -3194,10 +3186,10 @@ __webpack_require__.r(__webpack_exports__);
       alert("Comisaria nom " + nom);
     },
     searchNearby: function searchNearby() {
-      var _this3 = this;
+      var _this4 = this;
 
       axios.get('https://35.203.21.243/comisarias/' + this.coordinates.lat + '/' + this.coordinates.lng).then(function (response) {
-        _this3.$refs.mapRef.$mapPromise.then(function (map) {
+        _this4.$refs.mapRef.$mapPromise.then(function (map) {
           var location = {
             lat: response.data[0].ComLat,
             lng: response.data[0].ComLgn
