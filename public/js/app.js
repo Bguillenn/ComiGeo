@@ -2965,7 +2965,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      data: ['<div class="example-slide">Slide 1</div>', '<div class="example-slide">Slide 2</div>', '<div class="example-slide">Slide 3</div>']
+      comdata: {},
+      data: ['<img src="https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png" alt="no-image" class="slide-image"/>']
     };
   },
   mounted: function mounted() {
@@ -7955,7 +7956,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#images > div[data-v-b8a36cc8]{\n    height: 100%;\n}\n#title-info[data-v-b8a36cc8]{\n    width: 400px;\n    height: 50px;\n    background-color: #fff;\n    border-radius: 10px;\n    border: 1px solid #EAEAEA;\n    padding-left: 20px;\n    padding-right: 20px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    margin-bottom: 10px;\n}\n#title-info span[data-v-b8a36cc8]{\n    font-size: 16x;\n    color: #484848;\n    font-weight: bold;\n}\n#info[data-v-b8a36cc8]{\n    width: 400px;\n    height: 450px;\n    background-color: #fff;\n    border: 1px solid #EAEAEA;\n    box-shadow: 0 4px 4px rgba(143,143,143,.25);\n}\n#images[data-v-b8a36cc8]{\n    width: 100%;\n    height: 200px;\n    background-color: #c0c0c0;\n}\n.data-content[data-v-b8a36cc8]{\n    padding: 10px;\n}\n#title-data[data-v-b8a36cc8]{\n    height: 50px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    border-bottom: 1px solid #EAEAEA;\n}\n#vote-info[data-v-b8a36cc8]{\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    display: none;\n}\n#title-data #nombre-comisaria[data-v-b8a36cc8]{\n    font-size: 18px;\n    font-weight: bold;\n    color: #484848;\n    text-overflow: \"\";\n    text-transform: uppercase;\n}\n#title-data span[data-v-b8a36cc8]{\n    font-size:  12px;\n    color: #484848;\n    text-overflow: ellipsis;\n}\n#average-votes[data-v-b8a36cc8]{\n    font-size: 16px !important;\n    font-weight: bold;\n    color: #535353;\n    margin-right: 5px;\n}\n#body-data[data-v-b8a36cc8]{\n    height: 80px;\n    border-bottom: 1px solid #EAEAEA;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n.body-info[data-v-b8a36cc8]{\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n}\n.body-info-title[data-v-b8a36cc8]{\n    font-size: 12px;\n    font-weight: bold;\n    color: #8f8f8f;\n}\n.body-info-data[data-v-b8a36cc8]{\n    font-size: 14px;\n    color: #484848;\n    font-weight: bold;\n}\n#distance-data[data-v-b8a36cc8]{\n    height: 65px;\n    border-bottom: 1px solid #EAEAEA;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n    align-items: center;\n}\n#options[data-v-b8a36cc8]{\n   height: 53px;\n   padding: 5px 10px;\n   display: flex;\n   justify-content: flex-end; \n   align-items: center;\n}\n#options button[data-v-b8a36cc8]{\n    color: #fff;\n    font-size: 12px;\n    font-weight: bold;\n    background-color: #2E6FAB;\n    height: 35px;\n    width: 150px;\n    border: none;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-evenly;\n    align-items: center;\n    border-radius: 30px;\n    cursor: pointer;\n    transition: .2s ease-in-out;\n}\n#options button[data-v-b8a36cc8]:hover{\n    background-color: #1C4D79;\n}\n#options button[data-v-b8a36cc8]:active{\n    box-shadow: 1px 1px 5px rgba(0,0,0,.3);\n    background-color: #2E6FAB;\n}\n#options button[data-v-b8a36cc8]:focus{\n    outline: none;\n}\n", ""]);
+exports.push([module.i, "\n.slide-image[data-v-b8a36cc8]{\n    width: 100%;\n    height: 200px;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n#images > div[data-v-b8a36cc8]{\n    height: 100%;\n}\n#title-info[data-v-b8a36cc8]{\n    width: 400px;\n    height: 50px;\n    background-color: #fff;\n    border-radius: 10px;\n    border: 1px solid #EAEAEA;\n    padding-left: 20px;\n    padding-right: 20px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    margin-bottom: 10px;\n}\n#title-info span[data-v-b8a36cc8]{\n    font-size: 16x;\n    color: #484848;\n    font-weight: bold;\n}\n#info[data-v-b8a36cc8]{\n    width: 400px;\n    height: 450px;\n    background-color: #fff;\n    border: 1px solid #EAEAEA;\n    box-shadow: 0 4px 4px rgba(143,143,143,.25);\n}\n#images[data-v-b8a36cc8]{\n    width: 100%;\n    height: 200px;\n    background-color: #c0c0c0;\n}\n.data-content[data-v-b8a36cc8]{\n    padding: 10px;\n}\n#title-data[data-v-b8a36cc8]{\n    height: 50px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    border-bottom: 1px solid #EAEAEA;\n}\n#vote-info[data-v-b8a36cc8]{\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    display: none;\n}\n#title-data #nombre-comisaria[data-v-b8a36cc8]{\n    font-size: 18px;\n    font-weight: bold;\n    color: #484848;\n    text-overflow: \"\";\n    text-transform: uppercase;\n}\n#title-data span[data-v-b8a36cc8]{\n    font-size:  12px;\n    color: #484848;\n    text-overflow: ellipsis;\n}\n#average-votes[data-v-b8a36cc8]{\n    font-size: 16px !important;\n    font-weight: bold;\n    color: #535353;\n    margin-right: 5px;\n}\n#body-data[data-v-b8a36cc8]{\n    height: 80px;\n    border-bottom: 1px solid #EAEAEA;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n.body-info[data-v-b8a36cc8]{\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n}\n.body-info-title[data-v-b8a36cc8]{\n    font-size: 12px;\n    font-weight: bold;\n    color: #8f8f8f;\n}\n.body-info-data[data-v-b8a36cc8]{\n    font-size: 14px;\n    color: #484848;\n    font-weight: bold;\n}\n#distance-data[data-v-b8a36cc8]{\n    height: 65px;\n    border-bottom: 1px solid #EAEAEA;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n    align-items: center;\n}\n#options[data-v-b8a36cc8]{\n   height: 53px;\n   padding: 5px 10px;\n   display: flex;\n   justify-content: flex-end; \n   align-items: center;\n}\n#options button[data-v-b8a36cc8]{\n    color: #fff;\n    font-size: 12px;\n    font-weight: bold;\n    background-color: #2E6FAB;\n    height: 35px;\n    width: 150px;\n    border: none;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-evenly;\n    align-items: center;\n    border-radius: 30px;\n    cursor: pointer;\n    transition: .2s ease-in-out;\n}\n#options button[data-v-b8a36cc8]:hover{\n    background-color: #1C4D79;\n}\n#options button[data-v-b8a36cc8]:active{\n    box-shadow: 1px 1px 5px rgba(0,0,0,.3);\n    background-color: #2E6FAB;\n}\n#options button[data-v-b8a36cc8]:focus{\n    outline: none;\n}\n", ""]);
 
 // exports
 
@@ -40508,10 +40509,10 @@ var staticRenderFns = [
       [
         _c("div", [
           _c("p", { attrs: { id: "nombre-comisaria" } }, [
-            _vm._v("NOMBRE DE LA COMISARIA")
+            _vm._v("NINGUNA COMISARIA SELECCIONADA")
           ]),
           _vm._v(" "),
-          _c("span", [_vm._v("Arequipa, Arequipa, Cerro Colorado")])
+          _c("span", [_vm._v("No Select, No Select, No Select")])
         ]),
         _vm._v(" "),
         _c("div", { attrs: { id: "vote-info" } }, [
@@ -40541,7 +40542,7 @@ var staticRenderFns = [
             _vm._v("MACRO REGION POLICIAL")
           ]),
           _vm._v(" "),
-          _c("span", { staticClass: "body-info-data" }, [_vm._v("INFO")])
+          _c("span", { staticClass: "body-info-data" }, [_vm._v("---")])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "body-info" }, [
@@ -40549,7 +40550,7 @@ var staticRenderFns = [
             _vm._v("REGION POLICIAL")
           ]),
           _vm._v(" "),
-          _c("span", { staticClass: "body-info-data" }, [_vm._v("INFO")])
+          _c("span", { staticClass: "body-info-data" }, [_vm._v("---")])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "body-info" }, [
@@ -40557,7 +40558,7 @@ var staticRenderFns = [
             _vm._v("DIVISION POLICIAL")
           ]),
           _vm._v(" "),
-          _c("span", { staticClass: "body-info-data" }, [_vm._v("INFO")])
+          _c("span", { staticClass: "body-info-data" }, [_vm._v("---")])
         ])
       ]
     )

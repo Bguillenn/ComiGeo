@@ -9,8 +9,8 @@
             </div>
             <div id="title-data" class="data-content">
                 <div>
-                    <p id="nombre-comisaria">NOMBRE DE LA COMISARIA</p>
-                    <span>Arequipa, Arequipa, Cerro Colorado</span>
+                    <p id="nombre-comisaria">NINGUNA COMISARIA SELECCIONADA</p>
+                    <span>No Select, No Select, No Select</span>
                 </div>
                 <div id="vote-info">
                     <span id="average-votes">5</span>
@@ -21,15 +21,15 @@
 
                 <div class="body-info">
                     <span class="body-info-title">MACRO REGION POLICIAL</span>
-                    <span class="body-info-data">INFO</span>
+                    <span class="body-info-data">---</span>
                 </div>
                 <div class="body-info">
                     <span class="body-info-title">REGION POLICIAL</span>
-                    <span class="body-info-data">INFO</span>
+                    <span class="body-info-data">---</span>
                 </div>
                 <div class="body-info">
                     <span class="body-info-title">DIVISION POLICIAL</span>
-                    <span class="body-info-data">INFO</span>
+                    <span class="body-info-data">---</span>
                 </div>
 
             </div>
@@ -52,10 +52,11 @@
     export default {
         data() {
             return {
+                comdata: {
+
+                },
                 data: [
-                '<div class="example-slide">Slide 1</div>',
-                '<div class="example-slide">Slide 2</div>',
-                '<div class="example-slide">Slide 3</div>',
+                '<img src="https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png" alt="no-image" class="slide-image"/>',
                 ],
             };
         },
@@ -67,6 +68,12 @@
 
 <style scoped>
 
+    .slide-image{
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    
     #images > div{
         height: 100%;
     }
