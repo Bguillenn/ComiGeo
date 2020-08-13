@@ -2841,6 +2841,21 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     console.log('Component mounted.');
   },
+  created: function created() {
+    var _this = this;
+
+    if (this.coords.lat == -1 && this.coords.lng == -1) {
+      this.$getLocation({}).then(function (coordinates) {
+        _this.coords = coordinates;
+      })["catch"](function (error) {
+        alert("No se puede acceder a tu ubicacion");
+        _this.coords = {
+          lat: 16.3989,
+          lng: 71.535
+        };
+      });
+    }
+  },
   watch: {
     searchData: function searchData(newVal, oldVal) {
       this.coords = {
@@ -2853,11 +2868,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     obtenerComisaria: function obtenerComisaria() {
-      var _this = this;
+      var _this2 = this;
 
       var url = "https://35.203.21.243/comisarias/" + this.searchData.id;
       axios.get(url).then(function (response) {
-        _this.comdata = {
+        _this2.comdata = {
           id: response.data[0].ComId,
           nombre: response.data[0].ComNom,
           dep: response.data[0].DepNom,
@@ -40841,7 +40856,7 @@ var render = function() {
               attrs: {
                 position: { lat: c.ComLat, lng: c.ComLgn },
                 clickable: true,
-                draggable: true
+                draggable: false
               },
               on: {
                 click: function($event) {

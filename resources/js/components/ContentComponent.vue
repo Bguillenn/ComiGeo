@@ -42,6 +42,20 @@
         mounted() {
             console.log('Component mounted.')
         },
+        created(){
+            if(this.coords.lat == -1 && this.coords.lng == -1){
+                    this.$getLocation({})
+                .then(coordinates => {
+                    this.coords = coordinates;
+                }).catch(error => {
+                    alert("No se puede acceder a tu ubicacion");
+                    this.coords = {
+                        lat: 16.3989,
+                        lng: 71.535
+                    }
+                });
+            }
+        },
         watch: {
             searchData: function(newVal, oldVal){
                 this.coords = {

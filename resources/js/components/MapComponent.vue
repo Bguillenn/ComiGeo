@@ -17,7 +17,7 @@
                     v-for="(c, index) in comisarias"
                     :position="{lat: c.ComLat, lng: c.ComLgn}"
                     :clickable="true"
-                    :draggable="true"
+                    :draggable="false"
                     @click="cargarComisaria(c)"
                 /> 
             </GmapMap>
