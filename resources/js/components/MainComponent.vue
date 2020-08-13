@@ -15,7 +15,7 @@
                     id: 0,
                 },
                 key: 1,
-                viewValue: Object('map'),
+                viewValue: 'map',
             }
         },
         mounted(){
