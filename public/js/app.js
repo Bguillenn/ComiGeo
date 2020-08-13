@@ -2959,6 +2959,14 @@ __webpack_require__.r(__webpack_exports__);
     itemSelect: function itemSelect(value) {
       console.log("Manejando desde HC " + value.lat + " " + value.lng + " " + value.id);
       this.$emit('itemSelect', value);
+    },
+    //itemSelect
+    changeView: function changeView(map) {
+      if (map) {
+        alert("mapa");
+      } else {
+        alert("lista");
+      }
     }
   }
 });
@@ -40552,7 +40560,7 @@ var render = function() {
               attrs: { type: "radio", id: "radioList", name: "radioView" },
               on: {
                 change: function($event) {
-                  return _vm.alert("lista")
+                  return this.changeView(false)
                 }
               }
             }),
@@ -40568,7 +40576,7 @@ var render = function() {
               },
               on: {
                 change: function($event) {
-                  return _vm.alert("mapa")
+                  return this.changeView(true)
                 }
               }
             }),
