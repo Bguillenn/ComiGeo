@@ -3264,7 +3264,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3277,13 +3276,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     buscar: function buscar(event) {
-      if (this.query.length > 0) {
-        this.show = false;
-        this.show = true;
-      } else this.show = false;
-    },
-    detectar: function detectar(event) {
-      if (this.query.length == 0) this.show = false;
+      if (this.query.length > 0) this.show = true;else this.show = false;
     },
     itemSelect: function itemSelect(value) {
       console.log("Manejando desde SC " + value.lat + " " + value.lng + " " + value.id);
@@ -3405,7 +3398,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      results: []
+      results: [],
+      timeoutController: ""
     };
   },
   mounted: function mounted() {
@@ -3413,13 +3407,12 @@ __webpack_require__.r(__webpack_exports__);
     this.loadResults();
   },
   watch: {
-    /*query: {
-        // the callback will be called immediately after the start of the observation
-        immediate: true, 
-        handler (val, oldVal) {
-            this.loadResults();
-        }
-    }*/
+    query: {
+      handler: function handler(val, oldVal) {
+        clearTimeout(timeoutController);
+        this.timeoutController = setTimeout(this.loadResults(), 1000);
+      }
+    }
   },
   methods: {
     loadResults: function loadResults() {
@@ -40758,18 +40751,7 @@ var render = function() {
         },
         domProps: { value: _vm.query },
         on: {
-          keyup: [
-            function($event) {
-              if (
-                !$event.type.indexOf("key") &&
-                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-              ) {
-                return null
-              }
-              return _vm.buscar($event)
-            },
-            _vm.detectar
-          ],
+          keyup: _vm.buscar,
           input: function($event) {
             if ($event.target.composing) {
               return
@@ -56409,14 +56391,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************************!*\
   !*** ./resources/js/components/SearchListComponent.vue ***!
   \*********************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SearchListComponent_vue_vue_type_template_id_5f6ef8c8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SearchListComponent.vue?vue&type=template&id=5f6ef8c8& */ "./resources/js/components/SearchListComponent.vue?vue&type=template&id=5f6ef8c8&");
 /* harmony import */ var _SearchListComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SearchListComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/SearchListComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _SearchListComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SearchListComponent.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/SearchListComponent.vue?vue&type=style&index=0&lang=css&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _SearchListComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _SearchListComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _SearchListComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SearchListComponent.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/SearchListComponent.vue?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -56448,7 +56431,7 @@ component.options.__file = "resources/js/components/SearchListComponent.vue"
 /*!**********************************************************************************!*\
   !*** ./resources/js/components/SearchListComponent.vue?vue&type=script&lang=js& ***!
   \**********************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

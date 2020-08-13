@@ -21,7 +21,8 @@
         },
         data(){
             return{
-                results: []
+                results: [],
+                timeoutController: ""
             }
         },
         mounted() {
@@ -29,13 +30,12 @@
             this.loadResults();
         },
         watch: {
-            /*query: {
-                // the callback will be called immediately after the start of the observation
-                immediate: true, 
+            query: {
                 handler (val, oldVal) {
-                    this.loadResults();
+                    clearTimeout(timeoutController);
+                    this.timeoutController = setTimeout(this.loadResults(), 1000);
                 }
-            }*/
+            }
         },
         methods: {
             loadResults: function(){
