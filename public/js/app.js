@@ -3279,7 +3279,7 @@ __webpack_require__.r(__webpack_exports__);
     buscar: function buscar(event) {
       var _this = this;
 
-      if (this.query.length > 0) {
+      if (this.queryData.length > 0) {
         clearTimeout(timeout);
         this.timeout = setTimeout(function () {
           alert("Termino de escribir");

@@ -62,7 +62,7 @@
         },
         methods: {
             buscar: function(event){
-                if(this.query.length > 0){
+                if(this.queryData.length > 0){
                     clearTimeout(timeout);
                     this.timeout = setTimeout(() => {
                         alert("Termino de escribir");
