@@ -9,7 +9,7 @@
             v-model="query"/>
         <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1597091198/comigeo/v9wdfud5nmko2b1az1ak.svg" alt="search-icon" id="icon-search"/>
         <transition name="fade">
-            <search-list-component v-if="show" v-bind:query="query" v-on:itemSelect="goToMap"/>
+            <search-list-component v-if="show" v-bind:query="query" v-on:itemSelect="itemSelect"/>
         </transition>
     </div>
 </template>
@@ -73,8 +73,9 @@
                 if(this.query.length == 0)
                     this.show = false;
             },
-            goToMap: function(value){
-                this.$emit('goToMap', value);
+            itemSelect: function(value){
+                console.log("Manejando desde SC "+value.lat+" "+value.lg+" "+value.id);
+                this.$emit('itemSelect', value);
             }
         }
     }
