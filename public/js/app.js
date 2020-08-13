@@ -3417,8 +3417,9 @@ __webpack_require__.r(__webpack_exports__);
       results: []
     };
   },
-  mounted: function mounted() {//console.log('Mounted List');
-    //this.loadResults();        
+  mounted: function mounted() {
+    //console.log('Mounted List');
+    this.loadResults();
   },
   watch: {
     query: {

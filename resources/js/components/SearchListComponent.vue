@@ -26,7 +26,7 @@
         },
         mounted() {
             //console.log('Mounted List');
-            //this.loadResults();        
+            this.loadResults();        
         },
         watch: {
             query: {
