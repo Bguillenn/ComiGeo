@@ -3268,7 +3268,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       show: false,
-      query: ""
+      query: "",
+      timeout: ""
     };
   },
   mounted: function mounted() {
@@ -3276,7 +3277,16 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     buscar: function buscar(event) {
-      if (this.query.length > 0) this.show = true;else this.show = false;
+      var _this = this;
+
+      if (this.query.length > 0) {
+        clearTimeout(timeout);
+        this.timeout = setTimeout(function () {
+          _this.show = true;
+          _this.query = _this.queryData;
+          clearTimeout(_this.timeout);
+        }, 250);
+      } else this.show = false;
     },
     itemSelect: function itemSelect(value) {
       console.log("Manejando desde SC " + value.lat + " " + value.lng + " " + value.id);
@@ -3398,8 +3408,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      results: [],
-      timeoutController: ""
+      results: []
     };
   },
   mounted: function mounted() {
@@ -3409,8 +3418,7 @@ __webpack_require__.r(__webpack_exports__);
   watch: {
     query: {
       handler: function handler(val, oldVal) {
-        clearTimeout(timeoutController);
-        this.timeoutController = setTimeout(this.loadResults(), 250);
+        this.loadResults();
       }
     }
   },
@@ -3421,7 +3429,6 @@ __webpack_require__.r(__webpack_exports__);
       alert("el usuario termino de escribir");
       axios.get('https://35.203.21.243/comisarias/' + this.query).then(function (response) {
         _this.results = response.data.comisarias;
-        clearTimeout(_this.timeoutController);
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -40741,8 +40748,8 @@ var render = function() {
           {
             name: "model",
             rawName: "v-model",
-            value: _vm.query,
-            expression: "query"
+            value: _vm.queryData,
+            expression: "queryData"
           }
         ],
         attrs: {
@@ -40751,14 +40758,14 @@ var render = function() {
           id: "input-box",
           maxlength: "70"
         },
-        domProps: { value: _vm.query },
+        domProps: { value: _vm.queryData },
         on: {
           keyup: _vm.buscar,
           input: function($event) {
             if ($event.target.composing) {
               return
             }
-            _vm.query = $event.target.value
+            _vm.queryData = $event.target.value
           }
         }
       }),

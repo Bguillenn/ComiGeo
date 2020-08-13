@@ -21,8 +21,7 @@
         },
         data(){
             return{
-                results: [],
-                timeoutController: ""
+                results: []
             }
         },
         mounted() {
@@ -32,8 +31,7 @@
         watch: {
             query: {
                 handler (val, oldVal) {
-                    clearTimeout(timeoutController);
-                    this.timeoutController = setTimeout(this.loadResults(), 250);
+                    this.loadResults();
                 }
             }
         },
@@ -43,7 +41,6 @@
                 axios.get('https://35.203.21.243/comisarias/'+this.query).
                 then(response => {
                     this.results = response.data.comisarias;
-                    clearTimeout(this.timeoutController);
                 }).catch(error => console.log(error));
             },
             itemSelect: function(value){

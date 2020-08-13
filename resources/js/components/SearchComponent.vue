@@ -5,7 +5,7 @@
             placeholder="Busca una comisaria por su nombre" 
             id="input-box" maxlength="70" 
             v-on:keyup="buscar"
-            v-model="query"/>
+            v-model="queryData"/>
         <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1597091198/comigeo/v9wdfud5nmko2b1az1ak.svg" alt="search-icon" id="icon-search"/>
         <transition name="fade">
             <search-list-component v-if="show" v-bind:query="query" v-on:itemSelect="itemSelect"/>
@@ -53,7 +53,8 @@
         data(){
             return {
                 show: false,
-                query: ""
+                query: "",
+                timeout: ""
             }
         },
         mounted() {
@@ -61,9 +62,14 @@
         },
         methods: {
             buscar: function(event){
-                if(this.query.length > 0)
-                    this.show = true;
-                else
+                if(this.query.length > 0){
+                    clearTimeout(timeout);
+                    this.timeout = setTimeout(() => {
+                        this.show = true;
+                        this.query = this.queryData;
+                        clearTimeout(this.timeout);
+                    }, 250);
+                }else
                     this.show = false;
             },
             itemSelect: function(value){
