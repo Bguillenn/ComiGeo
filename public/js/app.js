@@ -3199,6 +3199,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
+    alert(ma);
     console.log("main montado");
   },
   methods: {
@@ -40878,7 +40879,7 @@ var render = function() {
       _vm._v(" "),
       _c("content-component", {
         key: this.key,
-        attrs: { searchData: this.searchData, view: this.viewValue }
+        attrs: { viewProp: this.viewValue, searchData: this.searchData }
       })
     ],
     1
