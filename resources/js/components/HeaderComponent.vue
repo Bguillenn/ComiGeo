@@ -8,12 +8,12 @@
             <div id="view-toggler">
                 <span>Cambiar de vista</span>
                 <div id="radios-button">
-                    <input type="radio" id="radioList" name="radioView" v-model="viewPicked">
+                    <input type="radio" id="radioList" name="radioView" value="list" v-model="view">
                     <label for="radioList" id="labelRadioList">
                         <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1597093411/comigeo/s0oqdiisndnltyprsasw.png" alt="list-icon">
                     </label>
 
-                    <input type="radio" id="radioMap" name="radioView" v-model="viewPicked">
+                    <input type="radio" id="radioMap" name="radioView" value="map" v-model="view">
                     <label for="radioMap" id="labelRadioMap">
                         <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1597093411/comigeo/cqk8tktojg9jqrmjetw9.png" alt="map-icon">
                     </label>
@@ -26,10 +26,10 @@
 
 <script>
     export default {
+        props: {
+            view: "map",
+        },
         data(){
-            return{
-                viewPicked: "radioView"
-            }
         },
         mounted() {
             console.log('Component mounted.')

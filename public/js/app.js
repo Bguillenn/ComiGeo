@@ -2952,11 +2952,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      viewPicked: "radioView"
-    };
+  props: {
+    view: "map"
   },
+  data: function data() {},
   mounted: function mounted() {
     console.log('Component mounted.');
   },
@@ -40566,15 +40565,20 @@ var render = function() {
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.viewPicked,
-                  expression: "viewPicked"
+                  value: _vm.view,
+                  expression: "view"
                 }
               ],
-              attrs: { type: "radio", id: "radioList", name: "radioView" },
-              domProps: { checked: _vm._q(_vm.viewPicked, null) },
+              attrs: {
+                type: "radio",
+                id: "radioList",
+                name: "radioView",
+                value: "list"
+              },
+              domProps: { checked: _vm._q(_vm.view, "list") },
               on: {
                 change: function($event) {
-                  _vm.viewPicked = null
+                  _vm.view = "list"
                 }
               }
             }),
@@ -40586,15 +40590,20 @@ var render = function() {
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.viewPicked,
-                  expression: "viewPicked"
+                  value: _vm.view,
+                  expression: "view"
                 }
               ],
-              attrs: { type: "radio", id: "radioMap", name: "radioView" },
-              domProps: { checked: _vm._q(_vm.viewPicked, null) },
+              attrs: {
+                type: "radio",
+                id: "radioMap",
+                name: "radioView",
+                value: "map"
+              },
+              domProps: { checked: _vm._q(_vm.view, "map") },
               on: {
                 change: function($event) {
-                  _vm.viewPicked = null
+                  _vm.view = "map"
                 }
               }
             }),
