@@ -37,6 +37,7 @@
         },
         methods: {
             loadResults: function(){
+                alert("haciendo peticion");
                 axios.get('https://35.203.21.243/comisarias/'+this.query).
                 then(response => {
                     this.results = response.data.comisarias;

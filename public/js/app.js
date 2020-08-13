@@ -3429,6 +3429,7 @@ __webpack_require__.r(__webpack_exports__);
     loadResults: function loadResults() {
       var _this = this;
 
+      alert("haciendo peticion");
       axios.get('https://35.203.21.243/comisarias/' + this.query).then(function (response) {
         _this.results = response.data.comisarias;
       })["catch"](function (error) {
