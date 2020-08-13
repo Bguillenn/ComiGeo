@@ -143,16 +143,29 @@
 
             searchNearby(){
 
-                axios.get('https://35.203.21.243/comisarias/'+this.coordinates.lat+'/'+this.coordinates.lng)
-                .then( response => {
-                    this.$refs.mapRef.$mapPromise.then((map) => {
-                        let location = {
-                            lat: response.data[0].ComLat,
-                            lng: response.data[0].ComLgn,
-                        };
-                        map.panTo(location);
-                    })
-                }).catch( error => console.log(error))
+                this.$getLocation({})
+                .then(coordinates => {
+                    
+                     axios.get('https://35.203.21.243/comisarias/'+coordinates.lat+'/'+coordinates.lng)
+                        .then( response => {
+                            this.$refs.mapRef.$mapPromise.then((map) => {
+                                let location = {
+                                    lat: response.data[0].ComLat,
+                                    lng: response.data[0].ComLgn,
+                                };
+                                map.panTo(location);
+                            })
+                        }).catch( error => console.log(error))
+
+                }).catch(error => {
+                    alert("No se puede acceder a tu ubicacion");
+                    this.coordinates = {
+                        lat: 16.3989,
+                        lng: 71.535
+                    }
+                });
+
+               
 
                 
             },
