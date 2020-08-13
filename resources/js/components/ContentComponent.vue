@@ -21,11 +21,7 @@
 <script>
     export default {
         props: {
-            viewProp: {
-                type: String,
-                default: 'map',
-                required: true,
-            },
+            vista: String,
             searchData: {
                 lat: -1,
                 lng: -1,

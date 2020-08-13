@@ -2822,11 +2822,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    viewProp: {
-      type: String,
-      "default": 'map',
-      required: true
-    },
+    vista: String,
     searchData: {
       lat: -1,
       lng: -1,
@@ -3195,11 +3191,10 @@ __webpack_require__.r(__webpack_exports__);
         id: 0
       },
       key: 1,
-      viewValue: "map"
+      viewValue: 'map'
     };
   },
   mounted: function mounted() {
-    alert(ma);
     console.log("main montado");
   },
   methods: {
@@ -40879,7 +40874,7 @@ var render = function() {
       _vm._v(" "),
       _c("content-component", {
         key: this.key,
-        attrs: { viewProp: this.viewValue, searchData: this.searchData }
+        attrs: { vista: this.viewValue, searchData: this.searchData }
       })
     ],
     1
