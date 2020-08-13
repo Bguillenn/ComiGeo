@@ -15,7 +15,7 @@
                     id: 0,
                 },
                 key: 1,
-                vista: 'list',
+                vista: 'map',
             }
         },
         mounted(){

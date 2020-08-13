@@ -3198,7 +3198,7 @@ __webpack_require__.r(__webpack_exports__);
         id: 0
       },
       key: 1,
-      vista: 'list'
+      vista: 'map'
     };
   },
   mounted: function mounted() {
