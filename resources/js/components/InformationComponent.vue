@@ -64,13 +64,6 @@
                 lng: Number
             }
         },
-        watch:{
-            cominfo: function(newValue, oldValue){
-                this.comdata = this.cominfo;
-                this.obtenerImagenes();
-                this.obtenerDistancia();
-            }
-        },
         data() {
             return {
                 comdata: {
@@ -90,6 +83,13 @@
                 '<img src="https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png" alt="no-image" style="width: 400px;height: 200px !important;object-fit: cover;"/>',
                 ],
             };
+        },
+        watch:{
+            cominfo: function(newValue, oldValue){
+                this.comdata = this.cominfo;
+                this.obtenerImagenes();
+                this.obtenerDistancia();
+            }
         },
         mounted() {
             console.log('Component mounted.')
@@ -122,8 +122,9 @@
                     }
                 }).catch( error => console.log(error));
             }, //obtenerImagenes
+
             obtenerDistancia: function(){
-                let url = "https://35.203.21.243/comisarias/"+this.comidata.id+"/"+this.comidata.lat+"/"+this.comidata.lng;
+                let url = "https://35.203.21.243/comisarias/"+this.comdata.id+"/"+this.comdata.lat+"/"+this.comdata.lng;
                 axios.get(url)
                 .then( response => {
                     this.distancia = response.data.distancia.kms;
