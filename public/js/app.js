@@ -3410,7 +3410,7 @@ __webpack_require__.r(__webpack_exports__);
     query: {
       handler: function handler(val, oldVal) {
         clearTimeout(timeoutController);
-        this.timeoutController = setTimeout(this.loadResults(), 1000);
+        this.timeoutController = setTimeout(this.loadResults(), 250);
       }
     }
   },
@@ -3418,6 +3418,7 @@ __webpack_require__.r(__webpack_exports__);
     loadResults: function loadResults() {
       var _this = this;
 
+      alert("el usuario termino de escribir");
       axios.get('https://35.203.21.243/comisarias/' + this.query).then(function (response) {
         _this.results = response.data.comisarias;
       })["catch"](function (error) {
