@@ -2954,7 +2954,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    viewProp: "map"
+    viewProp: String
   },
   data: function data() {
     return {

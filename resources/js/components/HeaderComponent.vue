@@ -27,7 +27,7 @@
 <script>
     export default {
         props: {
-            viewProp: "map",
+            viewProp: String,
         },
         data(){
             return{
