@@ -2822,16 +2822,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    coordsProp: {
-      lat: 0,
-      lng: 0
+    searchData: {
+      lat: -1,
+      lng: -1,
+      id: 0
     }
   },
   data: function data() {
     return {
       coords: {
-        lat: 0,
-        lng: 0
+        lat: -1,
+        lng: -1
       },
       id: 0
     };
@@ -3014,8 +3015,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       searchData: {
-        lat: 0,
-        lng: 0,
+        lat: -1,
+        lng: -1,
         id: 0
       }
     };
@@ -3026,6 +3027,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     goToMap: function goToMap(value) {
       console.log("Manejando desde el main " + value.lat + " " + value.lng + " " + value.id);
+      this.searchData = value;
     }
   }
 });
@@ -3127,17 +3129,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    coordsProp: {
-      lat: Number,
-      lng: Number
+    coordinates: {
+      lat: -1,
+      lng: -1
     }
   },
   data: function data() {
     return {
-      coordinates: {
-        lat: 0,
-        lng: 0
-      },
       comisarias: [],
       positionNear: {
         lat: 0,
@@ -3158,20 +3156,16 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this2 = this;
 
-    this.$getLocation({}).then(function (coordinates) {
-      _this2.coordinates = coordinates;
-    })["catch"](function (error) {
-      alert("No se puede acceder a tu ubicacion");
-      _this2.coordinates = {
-        lat: 16.3989,
-        lng: 71.535
-      };
-    });
-  },
-  watch: {
-    coordsProp: function coordsProp(newVal, oldVal) {
-      // watch it
-      gotoxyMapByProps();
+    if (this.coordinates.lat == -1 && this.coordinates.lng == -1) {
+      this.$getLocation({}).then(function (coordinates) {
+        _this2.coordinates = coordinates;
+      })["catch"](function (error) {
+        alert("No se puede acceder a tu ubicacion");
+        _this2.coordinates = {
+          lat: 16.3989,
+          lng: 71.535
+        };
+      });
     }
   },
   methods: {
@@ -3191,17 +3185,6 @@ __webpack_require__.r(__webpack_exports__);
         });
       })["catch"](function (error) {
         return console.log(error);
-      });
-    },
-    gotoxyMapByProps: function gotoxyMapByProps() {
-      var _this4 = this;
-
-      this.$refs.mapRef.$mapPromise.then(function (map) {
-        var location = {
-          lat: _this4.coordsProp.lat,
-          lng: _this4.coordsProp.lng
-        };
-        map.panTo(location);
       });
     }
   }
@@ -40336,7 +40319,7 @@ var render = function() {
         [
           _c("map-component", {
             ref: "MapComponent",
-            attrs: { coords: this.coords }
+            attrs: { coordinates: this.coords }
           }),
           _vm._v(" "),
           _c("list-component")
@@ -40647,12 +40630,9 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("header-component", {
-        attrs: { searchData: this.searchData },
-        on: { itemSelect: _vm.goToMap }
-      }),
+      _c("header-component", { on: { itemSelect: _vm.goToMap } }),
       _vm._v(" "),
-      _c("content-component")
+      _c("content-component", { attrs: { searchData: this.searchData } })
     ],
     1
   )
@@ -56415,15 +56395,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************************!*\
   !*** ./resources/js/components/SearchListComponent.vue ***!
   \*********************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SearchListComponent_vue_vue_type_template_id_5f6ef8c8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SearchListComponent.vue?vue&type=template&id=5f6ef8c8& */ "./resources/js/components/SearchListComponent.vue?vue&type=template&id=5f6ef8c8&");
 /* harmony import */ var _SearchListComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SearchListComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/SearchListComponent.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _SearchListComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _SearchListComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _SearchListComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SearchListComponent.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/SearchListComponent.vue?vue&type=style&index=0&lang=css&");
+/* empty/unused harmony star reexport *//* harmony import */ var _SearchListComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SearchListComponent.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/SearchListComponent.vue?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -56455,7 +56434,7 @@ component.options.__file = "resources/js/components/SearchListComponent.vue"
 /*!**********************************************************************************!*\
   !*** ./resources/js/components/SearchListComponent.vue?vue&type=script&lang=js& ***!
   \**********************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -85,17 +85,13 @@
 <script>
     export default {
         props: {
-            coordsProp: {
-                lat: Number,
-                lng: Number,
+            coordinates: {
+                lat: -1,
+                lng: -1,
             }
         },
         data(){
             return {
-                coordinates: {
-                    lat: 0,
-                    lng: 0
-                },
                 comisarias: [],
                 positionNear: {
                     lat: 0,
@@ -116,22 +112,20 @@
 
         },
         created(){
-            this.$getLocation({})
-            .then(coordinates => {
-                this.coordinates = coordinates;
-            }).catch(error => {
-                alert("No se puede acceder a tu ubicacion");
-                this.coordinates = {
-                    lat: 16.3989,
-                    lng: 71.535
-                }
-            });
-            
-        },
-        watch:{
-            coordsProp: function(newVal, oldVal) { // watch it
-                gotoxyMapByProps();
+            if(this.coordinates.lat == -1 && this.coordinates.lng == -1){
+                    this.$getLocation({})
+                .then(coordinates => {
+                    this.coordinates = coordinates;
+                }).catch(error => {
+                    alert("No se puede acceder a tu ubicacion");
+                    this.coordinates = {
+                        lat: 16.3989,
+                        lng: 71.535
+                    }
+                });
             }
+            
+        
         },
         methods: {
             cargarComisaria(nom){
@@ -153,16 +147,6 @@
 
                 
             },
-
-            gotoxyMapByProps(){
-                this.$refs.mapRef.$mapPromise.then((map) => {
-                    let location = {
-                        lat: this.coordsProp.lat,
-                        lng: this.coordsProp.lng,
-                    }
-                    map.panTo(location);
-                });
-            }
         }
     }
 </script>

@@ -1,7 +1,7 @@
 <template>
     <div id="content">
         <div id="r-side">
-            <map-component ref="MapComponent" v-bind:coords="this.coords"></map-component>
+            <map-component ref="MapComponent" v-bind:coordinates="this.coords"></map-component>
             <list-component></list-component>
         </div>
         <information-component></information-component>
@@ -21,16 +21,17 @@
 <script>
     export default {
         props: {
-            coordsProp: {
-                lat: 0,
-                lng: 0
+            searchData: {
+                lat: -1,
+                lng: -1,
+                id: 0,
             }
         },
         data(){
             return{
                 coords: {
-                    lat: 0,
-                    lng: 0
+                    lat: -1,
+                    lng: -1
                 },
                 id: 0,
             }

@@ -1,7 +1,7 @@
 <template>
     <div>
-        <header-component v-on:itemSelect="goToMap" :searchData="this.searchData"></header-component>
-        <content-component></content-component>
+        <header-component v-on:itemSelect="goToMap"></header-component>
+        <content-component v-bind:searchData="this.searchData"></content-component>
     </div>
 </template>
 
@@ -10,8 +10,8 @@
         data(){
             return{
                 searchData: {
-                    lat: 0,
-                    lng: 0,
+                    lat: -1,
+                    lng: -1,
                     id: 0,
                 }
             }
@@ -22,6 +22,7 @@
         methods: {
             goToMap: function(value){
                 console.log("Manejando desde el main "+value.lat+" "+value.lng+" "+value.id);
+                this.searchData = value;
             }
         }
     }
