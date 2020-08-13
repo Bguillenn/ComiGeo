@@ -2952,6 +2952,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      viewPicked: "radioView"
+    };
+  },
   mounted: function mounted() {
     console.log('Component mounted.');
   },
@@ -40557,10 +40562,19 @@ var render = function() {
           _vm._v(" "),
           _c("div", { attrs: { id: "radios-button" } }, [
             _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.viewPicked,
+                  expression: "viewPicked"
+                }
+              ],
               attrs: { type: "radio", id: "radioList", name: "radioView" },
+              domProps: { checked: _vm._q(_vm.viewPicked, null) },
               on: {
                 change: function($event) {
-                  return this.changeView(false)
+                  _vm.viewPicked = null
                 }
               }
             }),
@@ -40568,15 +40582,19 @@ var render = function() {
             _vm._m(1),
             _vm._v(" "),
             _c("input", {
-              attrs: {
-                type: "radio",
-                id: "radioMap",
-                name: "radioView",
-                checked: ""
-              },
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.viewPicked,
+                  expression: "viewPicked"
+                }
+              ],
+              attrs: { type: "radio", id: "radioMap", name: "radioView" },
+              domProps: { checked: _vm._q(_vm.viewPicked, null) },
               on: {
                 change: function($event) {
-                  return this.changeView(true)
+                  _vm.viewPicked = null
                 }
               }
             }),
