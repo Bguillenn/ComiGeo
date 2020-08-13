@@ -3194,7 +3194,7 @@ __webpack_require__.r(__webpack_exports__);
         id: 0
       },
       key: 1,
-      viewValue: 'map'
+      viewValue: Object('map')
     };
   },
   mounted: function mounted() {
