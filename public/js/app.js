@@ -2886,8 +2886,9 @@ __webpack_require__.r(__webpack_exports__);
     console.log('Component mounted.');
   },
   methods: {
-    goToMapHeader: function goToMapHeader(value) {
-      this.$emit('goToMap', value);
+    itemSelect: function itemSelect(value) {
+      console.log("Manejando desde HC " + value.lat + " " + value.lng + " " + value.id);
+      this.$emit('itemSelect', value);
     }
   }
 });
@@ -3245,7 +3246,7 @@ __webpack_require__.r(__webpack_exports__);
       if (this.query.length == 0) this.show = false;
     },
     itemSelect: function itemSelect(value) {
-      console.log("Manejando desde SC " + value.lat + " " + value.lg + " " + value.id);
+      console.log("Manejando desde SC " + value.lat + " " + value.lng + " " + value.id);
       this.$emit('itemSelect', value);
     }
   }
@@ -40333,7 +40334,7 @@ var render = function() {
       "div",
       { attrs: { id: "flex-between" } },
       [
-        _c("search-component", { on: { goToMap: _vm.goToMapHeader } }),
+        _c("search-component", { on: { itemSelect: _vm.itemSelect } }),
         _vm._v(" "),
         _vm._m(1)
       ],

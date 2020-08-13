@@ -74,7 +74,7 @@
                     this.show = false;
             },
             itemSelect: function(value){
-                console.log("Manejando desde SC "+value.lat+" "+value.lg+" "+value.id);
+                console.log("Manejando desde SC "+value.lat+" "+value.lng+" "+value.id);
                 this.$emit('itemSelect', value);
             }
         }

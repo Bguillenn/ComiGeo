@@ -4,7 +4,7 @@
             <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/c_scale,w_210/v1594699993/comigeo/ugvpuhf3xu8o3rvgaeii.svg" alt="Comigeo-Logo" width="210px">
         </div>
         <div id="flex-between">
-            <search-component v-on:goToMap="goToMapHeader"> </search-component>
+            <search-component v-on:itemSelect="itemSelect"> </search-component>
             <div id="view-toggler">
                 <span>Cambiar de vista</span>
                 <div id="radios-button">
@@ -30,8 +30,9 @@
             console.log('Component mounted.')
         },
         methods: {
-            goToMapHeader: function(value){
-                this.$emit('goToMap', value);
+            itemSelect: function(value){
+                console.log("Manejando desde HC "+value.lat+" "+value.lng+" "+value.id);
+                this.$emit('itemSelect', value);
             }
         }
     }
