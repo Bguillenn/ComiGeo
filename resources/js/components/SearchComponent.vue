@@ -77,6 +77,8 @@
             itemSelect: function(value){
                 console.log("Manejando desde SC "+value.lat+" "+value.lng+" "+value.id);
                 this.$emit('itemSelect', value);
+                this.show = false;
+                this.queryData = "";
             }
         }
     }

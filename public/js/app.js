@@ -3294,6 +3294,8 @@ __webpack_require__.r(__webpack_exports__);
     itemSelect: function itemSelect(value) {
       console.log("Manejando desde SC " + value.lat + " " + value.lng + " " + value.id);
       this.$emit('itemSelect', value);
+      this.show = false;
+      this.queryData = "";
     }
   }
 });
@@ -3415,9 +3417,8 @@ __webpack_require__.r(__webpack_exports__);
       results: []
     };
   },
-  mounted: function mounted() {
-    //console.log('Mounted List');
-    this.loadResults();
+  mounted: function mounted() {//console.log('Mounted List');
+    //this.loadResults();        
   },
   watch: {
     query: {
@@ -3430,7 +3431,6 @@ __webpack_require__.r(__webpack_exports__);
     loadResults: function loadResults() {
       var _this = this;
 
-      alert("haciendo peticion");
       axios.get('https://35.203.21.243/comisarias/' + this.query).then(function (response) {
         _this.results = response.data.comisarias;
       })["catch"](function (error) {
