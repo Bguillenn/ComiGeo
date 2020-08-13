@@ -47,6 +47,9 @@ Route::middleware(['cors'])->group(function(){
     Route::get('/voto/{voto}/{id}','VotoComisariaController@votar')->name('voto.comisaria.votar');
     Route::get('/voto/{id}','VotoComisariaController@voto')->name('voto.comisaria.voto');
     Route::get('/puntaje/{id}','VotoComisariaController@puntaje')->name('voto.comisarias.puntos');
+    Route::get('/buscar/{depId}','ComisariaController@buscarComDep')->name('buscar.comisarias.departamentos');
+    Route::get('/buscar/{depId}/{proId}','ComisariaController@buscarComPro')->name('buscar.comisarias.provincias');
+    Route::get('/buscar/{depId}/{proId}/{disId}','ComisariaController@buscarComDis')->name('buscar.comisarias.distritos');
 });
 
 

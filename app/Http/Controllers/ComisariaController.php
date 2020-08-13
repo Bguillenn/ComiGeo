@@ -122,6 +122,83 @@ class ComisariaController extends Controller{
 		return $result;
 	}
 
+	function buscarComDep($depId)
+	{
+		if(strlen($depId)==1)
+    	{
+    		$depId='0'.$depId;
+    	}
+
+    	$comisarias=Comisaria::where('ComDepCod','=',$depId)->get();
+    	$result = [];
+    	foreach ($comisarias as $comisaria) 
+		{
+			$codigo=$comisaria->ComCod;
+			$datos=$this->datos($comisaria);
+			$result[$codigo]=$datos;
+		}
+
+		return response()->json(['comisarias'=>$result],200);
+
+	}
+	function buscarComPro($depId, $proId)
+	{
+		if(strlen($depId)==1)
+    	{
+    		$depId='0'.$depId;
+    	}
+
+		if(strlen($proId)==3)
+    	{
+    		$proId='0'.$proId;
+    	}    	
+
+    	$comisarias=Comisaria::where('ComDepCod','=',$depId)->where('ComProCod','=',$proId)->get();
+    	$result = [];
+    	foreach ($comisarias as $comisaria) 
+		{
+			$codigo=$comisaria->ComCod;
+			$datos=$this->datos($comisaria);
+			$result[$codigo]=$datos;
+		}
+
+		return response()->json(['comisarias'=>$result],200);
+
+	}
+
+	function buscarComDis($depId, $proId, $disId)
+	{
+		if(strlen($depId)==1)
+    	{
+    		$depId='0'.$depId;
+    	}
+
+		if(strlen($proId)==3)
+    	{
+    		$proId='0'.$proId;
+    	}  
+
+    	if(strlen($disId)==5)
+    	{
+    		$disId='0'.$disId;
+    	}    	
+
+    	$comisarias=Comisaria::where('ComDepCod','=',$depId)
+    						->where('ComProCod','=',$proId)
+    						->where('ComDisCod','=',$disId)
+    						->get();
+    	$result = [];
+    	foreach ($comisarias as $comisaria) 
+		{
+			$codigo=$comisaria->ComCod;
+			$datos=$this->datos($comisaria);
+			$result[$codigo]=$datos;
+		}
+
+		return response()->json(['comisarias'=>$result],200);
+
+	}
+
 	function distanceCalculation($point1_lat, $point1_long, $comisaria) 
 	{
 		// Cálculo de la distancia en grados
