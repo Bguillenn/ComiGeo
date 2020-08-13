@@ -65,10 +65,11 @@
                 if(this.query.length > 0){
                     clearTimeout(timeout);
                     this.timeout = setTimeout(() => {
-                        this.show = true;
+                        alert("Termino de escribir");
                         this.query = this.queryData;
+                        this.show = true;
                         clearTimeout(this.timeout);
-                    }, 250);
+                    }, 100);
                 }else
                     this.show = false;
             },

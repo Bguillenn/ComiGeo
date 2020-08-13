@@ -3282,10 +3282,11 @@ __webpack_require__.r(__webpack_exports__);
       if (this.query.length > 0) {
         clearTimeout(timeout);
         this.timeout = setTimeout(function () {
-          _this.show = true;
+          alert("Termino de escribir");
           _this.query = _this.queryData;
+          _this.show = true;
           clearTimeout(_this.timeout);
-        }, 250);
+        }, 100);
       } else this.show = false;
     },
     itemSelect: function itemSelect(value) {
