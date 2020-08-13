@@ -40639,7 +40639,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("span", { staticClass: "body-info-data" }, [
-            _vm._v(_vm._s(this.comdata.distancia) + " Km Aprox.")
+            _vm._v(_vm._s(this.distancia) + " Km Aprox.")
           ])
         ]
       ),
