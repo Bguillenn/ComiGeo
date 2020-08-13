@@ -26,8 +26,10 @@
             goToMap: function(value){
                 console.log("Manejando desde el main "+value.lat+" "+value.lng+" "+value.id);
                 
-                if(this.vista != 'map')
-                    this.vista = 'list';
+                if(this.vista == 'list'){
+                    alert('vista');
+                    this.cambiarVista('map');
+                }
                 this.searchData = value;
                 
                 //this.key = -this.key;
