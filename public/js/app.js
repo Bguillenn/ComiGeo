@@ -3010,7 +3010,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      searchData: {
+        lat: 0,
+        lng: 0,
+        id: 0
+      }
+    };
+  },
+  mounted: function mounted() {
+    console.log("main montado");
+  },
+  methods: {
+    goToMap: function goToMap(value) {
+      console.log("Manejando desde el main " + value.lat + " " + value.lng + " " + value.id);
+    }
+  }
+});
 
 /***/ }),
 
@@ -40628,7 +40646,14 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [_c("header-component"), _vm._v(" "), _c("content-component")],
+    [
+      _c("header-component", {
+        attrs: { searchData: this.searchData },
+        on: { itemSelect: _vm.goToMap }
+      }),
+      _vm._v(" "),
+      _c("content-component")
+    ],
     1
   )
 }
