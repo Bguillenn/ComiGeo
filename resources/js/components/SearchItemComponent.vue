@@ -50,9 +50,7 @@
                 }).then( response => {
                     if(response.status == 200){
                         this.img = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=80&photoreference="
-                                    +response.data.results[0].photos[0].photo_reference;
-                    }else{
-                        this.img = "https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png"
+                                    +response.data.results[0].photos[0].photo_reference+"&key=AIzaSyD-cej55YJwDg749MFqK6LTKjKk7k65fDE";
                     }
                 }).catch( error => console.log(error));
         },

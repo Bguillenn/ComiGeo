@@ -3353,9 +3353,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     }).then(function (response) {
       if (response.status == 200) {
-        _this.img = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=80&photoreference=" + response.data.results[0].photos[0].photo_reference;
-      } else {
-        _this.img = "https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png";
+        _this.img = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=80&photoreference=" + response.data.results[0].photos[0].photo_reference + "&key=AIzaSyD-cej55YJwDg749MFqK6LTKjKk7k65fDE";
       }
     })["catch"](function (error) {
       return console.log(error);
