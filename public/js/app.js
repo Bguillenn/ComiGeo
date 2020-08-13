@@ -2822,7 +2822,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    view: '',
+    view: {
+      type: String,
+      required: true
+    },
     searchData: {
       lat: -1,
       lng: -1,

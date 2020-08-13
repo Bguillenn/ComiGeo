@@ -21,7 +21,10 @@
 <script>
     export default {
         props: {
-            view: '',
+            view: {
+                type: String,
+                required: true,
+            },
             searchData: {
                 lat: -1,
                 lng: -1,
