@@ -52,7 +52,9 @@
         width: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        /*justify-content: space-around;*/
+        margin-left: 20px;
+        justify-content: flex-start;
         align-items: center;
         font-size: 14px;
     }
