@@ -2826,7 +2826,8 @@ __webpack_require__.r(__webpack_exports__);
       lat: -1,
       lng: -1,
       id: 0
-    }
+    },
+    view: "map"
   },
   data: function data() {
     return {
@@ -2960,6 +2961,11 @@ __webpack_require__.r(__webpack_exports__);
       view: "map"
     };
   },
+  watch: {
+    viewProp: function viewProp(newVal, oldVal) {
+      if (newVal != oldVal) this.view = this.viewProp;
+    }
+  },
   mounted: function mounted() {
     console.log('Component mounted.');
   },
@@ -2970,8 +2976,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     //itemSelect
     changeView: function changeView() {
-      alert(this.view);
-    }
+      this.$emit('cambiarVista', this.view);
+    } //cambiar vista
+
   }
 });
 
@@ -3183,7 +3190,8 @@ __webpack_require__.r(__webpack_exports__);
         lng: -1,
         id: 0
       },
-      key: 1
+      key: 1,
+      view: "map"
     };
   },
   mounted: function mounted() {
@@ -3193,6 +3201,10 @@ __webpack_require__.r(__webpack_exports__);
     goToMap: function goToMap(value) {
       console.log("Manejando desde el main " + value.lat + " " + value.lng + " " + value.id);
       this.searchData = value; //this.key = -this.key;
+    },
+    //gottomap
+    cambiarVista: function cambiarVista(value) {
+      this.view = value;
     }
   }
 });
@@ -40854,11 +40866,14 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("header-component", { on: { itemSelect: _vm.goToMap } }),
+      _c("header-component", {
+        attrs: { viewProp: this.view },
+        on: { itemSelect: _vm.goToMap, cambiarVista: _vm.cambiarVista }
+      }),
       _vm._v(" "),
       _c("content-component", {
         key: this.key,
-        attrs: { searchData: this.searchData }
+        attrs: { searchData: this.searchData, view: this.view }
       })
     ],
     1

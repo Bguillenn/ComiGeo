@@ -34,6 +34,12 @@
                 view: "map",
             }
         },
+        watch:{
+            viewProp: function(newVal, oldVal){
+                if(newVal != oldVal)
+                    this.view = this.viewProp;
+            }
+        },
         mounted() {
             console.log('Component mounted.')
         },
@@ -43,8 +49,8 @@
                 this.$emit('itemSelect', value);
             }, //itemSelect
             changeView: function(){
-                alert(this.view);
-            }
+                this.$emit('cambiarVista', this.view);
+            }//cambiar vista
         }
     }
 </script>

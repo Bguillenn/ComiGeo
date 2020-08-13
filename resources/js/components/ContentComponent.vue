@@ -25,7 +25,8 @@
                 lat: -1,
                 lng: -1,
                 id: 0,
-            }
+            },
+            view: "map"
         },
         data(){
             return{
