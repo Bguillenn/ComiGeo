@@ -85,14 +85,14 @@
                     }
                 } )
                 .catch( error => console.log(error) );
-            },
+            }, //obtenerComisaria
 
             goToMap: function(value){
                 this.coords = {
                     lat: value.lat,
                     lng: value.lng
                 }
-            },
+            }, //goToMap
             cargarComisaria: function(value){
                 this.comdata = {
                         id: value.ComId,
@@ -106,7 +106,7 @@
                         lat: value.ComLat,
                         lng: value.ComLgn
                     }
-            }
+            } //cargarComisaria
         }
     }
 </script>

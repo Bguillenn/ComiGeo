@@ -2888,12 +2888,14 @@ __webpack_require__.r(__webpack_exports__);
         return console.log(error);
       });
     },
+    //obtenerComisaria
     goToMap: function goToMap(value) {
       this.coords = {
         lat: value.lat,
         lng: value.lng
       };
     },
+    //goToMap
     cargarComisaria: function cargarComisaria(value) {
       this.comdata = {
         id: value.ComId,
@@ -2907,7 +2909,8 @@ __webpack_require__.r(__webpack_exports__);
         lat: value.ComLat,
         lng: value.ComLgn
       };
-    }
+    } //cargarComisaria
+
   }
 });
 
@@ -8092,7 +8095,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#header{\n    width: 100%;\n    height: 80px;\n    padding-left: 60px;\n    padding-right: 60px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n#flex-between{\n    width: 100%;\n    display: flex;\n    flex-direction: row;\n    /*justify-content: space-around;*/\n    margin-left: 20px;\n    justify-content: flex-start;\n    align-items: center;\n    font-size: 14px;\n}\n#view-toggler{\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n}\n#radios-button{\n    margin-left: 10px;\n    display:flex;\n}\n#radios-button input[type=\"radio\"] {\n    opacity: 0;\n    position: fixed;\n    width: 0;\n}\n#radios-button label {\n    background-color: #fff;\n    border: 1px solid #EAEAEA;\n    width: 70px;\n    height: 40px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n    transition: .3s ease-in-out;\n}\n#radios-button input[type=\"radio\"]:checked + label {\n    background-color:#2E6FAB;\n}\n#labelRadioList{\n    border-top-left-radius: 30px;\n    border-bottom-left-radius: 30px;\n    border-right: none;\n}\n#labelRadioMap{\n    border-top-right-radius: 30px;\n    border-bottom-right-radius: 30px;\n    border-left: none;\n}\n", ""]);
+exports.push([module.i, "\n#header{\n    width: 100%;\n    height: 80px;\n    padding-left: 60px;\n    padding-right: 60px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n#flex-between{\n    width: 100%;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n   /* margin-left: 20px;*/\n    /*justify-content: flex-start;*/\n    align-items: center;\n    font-size: 14px;\n}\n#view-toggler{\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n}\n#radios-button{\n    margin-left: 10px;\n    display:flex;\n}\n#radios-button input[type=\"radio\"] {\n    opacity: 0;\n    position: fixed;\n    width: 0;\n}\n#radios-button label {\n    background-color: #fff;\n    border: 1px solid #EAEAEA;\n    width: 70px;\n    height: 40px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n    transition: .3s ease-in-out;\n}\n#radios-button input[type=\"radio\"]:checked + label {\n    background-color:#2E6FAB;\n}\n#labelRadioList{\n    border-top-left-radius: 30px;\n    border-bottom-left-radius: 30px;\n    border-right: none;\n}\n#labelRadioMap{\n    border-top-right-radius: 30px;\n    border-bottom-right-radius: 30px;\n    border-left: none;\n}\n", ""]);
 
 // exports
 
@@ -40541,7 +40544,38 @@ var render = function() {
       [
         _c("search-component", { on: { itemSelect: _vm.itemSelect } }),
         _vm._v(" "),
-        _vm._m(1)
+        _c("div", { attrs: { id: "view-toggler" } }, [
+          _c("span", [_vm._v("Cambiar de vista")]),
+          _vm._v(" "),
+          _c("div", { attrs: { id: "radios-button" } }, [
+            _c("input", {
+              attrs: { type: "radio", id: "radioList", name: "radioView" },
+              on: {
+                change: function($event) {
+                  return _vm.alert("lista")
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _c("input", {
+              attrs: {
+                type: "radio",
+                id: "radioMap",
+                name: "radioView",
+                checked: ""
+              },
+              on: {
+                change: function($event) {
+                  return _vm.alert("mapa")
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm._m(2)
+          ])
+        ])
       ],
       1
     )
@@ -40567,48 +40601,29 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticStyle: { display: "none" }, attrs: { id: "view-toggler" } },
-      [
-        _c("span", [_vm._v("Cambiar de vista")]),
-        _vm._v(" "),
-        _c("div", { attrs: { id: "radios-button" } }, [
-          _c("input", {
-            attrs: { type: "radio", id: "radioList", name: "radioView" }
-          }),
-          _vm._v(" "),
-          _c("label", { attrs: { for: "radioList", id: "labelRadioList" } }, [
-            _c("img", {
-              attrs: {
-                src:
-                  "https://res.cloudinary.com/dtg90uzhc/image/upload/v1597093411/comigeo/s0oqdiisndnltyprsasw.png",
-                alt: "list-icon"
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            attrs: {
-              type: "radio",
-              id: "radioMap",
-              name: "radioView",
-              checked: ""
-            }
-          }),
-          _vm._v(" "),
-          _c("label", { attrs: { for: "radioMap", id: "labelRadioMap" } }, [
-            _c("img", {
-              attrs: {
-                src:
-                  "https://res.cloudinary.com/dtg90uzhc/image/upload/v1597093411/comigeo/cqk8tktojg9jqrmjetw9.png",
-                alt: "map-icon"
-              }
-            })
-          ])
-        ])
-      ]
-    )
+    return _c("label", { attrs: { for: "radioList", id: "labelRadioList" } }, [
+      _c("img", {
+        attrs: {
+          src:
+            "https://res.cloudinary.com/dtg90uzhc/image/upload/v1597093411/comigeo/s0oqdiisndnltyprsasw.png",
+          alt: "list-icon"
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "radioMap", id: "labelRadioMap" } }, [
+      _c("img", {
+        attrs: {
+          src:
+            "https://res.cloudinary.com/dtg90uzhc/image/upload/v1597093411/comigeo/cqk8tktojg9jqrmjetw9.png",
+          alt: "map-icon"
+        }
+      })
+    ])
   }
 ]
 render._withStripped = true

@@ -5,15 +5,15 @@
         </div>
         <div id="flex-between">
             <search-component v-on:itemSelect="itemSelect"> </search-component>
-            <div id="view-toggler" style="display: none;">
+            <div id="view-toggler">
                 <span>Cambiar de vista</span>
                 <div id="radios-button">
-                    <input type="radio" id="radioList" name="radioView">
+                    <input type="radio" id="radioList" name="radioView" v-on:change="alert('lista')">
                     <label for="radioList" id="labelRadioList">
                         <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1597093411/comigeo/s0oqdiisndnltyprsasw.png" alt="list-icon">
                     </label>
 
-                    <input type="radio" id="radioMap" name="radioView" checked>
+                    <input type="radio" id="radioMap" name="radioView" v-on:change="alert('mapa')" checked>
                     <label for="radioMap" id="labelRadioMap">
                         <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1597093411/comigeo/cqk8tktojg9jqrmjetw9.png" alt="map-icon">
                     </label>
@@ -52,9 +52,9 @@
         width: 100%;
         display: flex;
         flex-direction: row;
-        /*justify-content: space-around;*/
-        margin-left: 20px;
-        justify-content: flex-start;
+        justify-content: space-around;
+       /* margin-left: 20px;*/
+        /*justify-content: flex-start;*/
         align-items: center;
         font-size: 14px;
     }
