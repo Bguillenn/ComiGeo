@@ -4,7 +4,7 @@
             <map-component ref="MapComponent" v-bind:coordinates="this.coords"></map-component>
             <list-component></list-component>
         </div>
-        <information-component></information-component>
+        <information-component v-bind:cominfo="this.comdata"></information-component>
     </div>
 </template>
 
@@ -34,6 +34,9 @@
                     lng: -1
                 },
                 id: 0,
+                comdata: {
+
+                }
             }
         },
         mounted() {
@@ -49,6 +52,25 @@
             }
         },
         methods: {
+            obtenerComisaria: function(){
+                let url = "https://35.203.21.243/comisarias/"+this.searchData.id;
+                axios.get(url)
+                .then( response => {
+                    this.comdata = {
+                        id: response.data[0].ComId,
+                        nombre: response.data[0].ComNom,
+                        dep: response.data[0].DepNom,
+                        pro: response.data[0].ProNom,
+                        dis: response.data[0].DisNom,
+                        mp: "MCRP "+response.data[0].ComMacRegPol,
+                        rp: "RP "+response.data[0].ComMacRegPol,
+                        dp: response.data[0].ComDivPol,
+                        lat: response.data[0].ComLat,
+                        lng: response.data[0].ComLng
+                    }
+                } )
+                .catch( error => console.log(error) );
+            }
         }
     }
 </script>

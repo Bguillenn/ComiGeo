@@ -52,6 +52,7 @@
     export default {
         props: {
             cominfo: {
+                id: Number,
                 nombre: String,
                 dep: String,
                 pro: String,
@@ -59,11 +60,21 @@
                 mp: String,
                 rp: String,
                 dp: String,
+                lat: Number,
+                lng: Number
+            }
+        },
+        watch:{
+            cominfo: function(newValue, oldValue){
+                this.comdata = this.cominfo;
+                obtenerImagenes();
+                obtenerDistancia();
             }
         },
         data() {
             return {
                 comdata: {
+                    id: 0,
                     nombre: "NINGUNA COMISARIA SELECCIONADA",
                     dep: "No select",
                     pro: "No select",
@@ -71,6 +82,8 @@
                     mp: "---",
                     rp: "---",
                     dp: "---",
+                    lat: -1,
+                    lng: -1,
                 },
                 distancia: 0,
                 data: [
@@ -80,6 +93,45 @@
         },
         mounted() {
             console.log('Component mounted.')
+        },
+        methods:{
+            obtenerImagenes: function(){
+                axios.
+                get("https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json" ,{
+                    params: {
+                        location: this.comdata.lat+","+this.comdata.lng,
+                        radius: 100,
+                        keyword: this.comdata.nombre,
+                        key: 'AIzaSyCKnBKQiMWepRPmxDEeGKlG_WMhtm3jQ6c'
+                        //key: 'AIzaSyD-cej55YJwDg749MFqK6LTKjKk7k65fDE'
+                    }
+                }).then( response => {
+                    if(response.status == 200){
+                        let photos = response.data.results[0].photos;
+                        let imageData = [];
+                        for(var i = 0; i < photos.length; i++){
+                            var urlImg = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="
+                                            +photos[i].photo_reference
+                                            +"&key=AIzaSyD-cej55YJwDg749MFqK6LTKjKk7k65fDE";
+
+                            imageData.push('<img src="'
+                                            + urlImg
+                                            +'" alt="comi-image" style="width: 400px;height: 200px !important;object-fit: cover;"/>');
+                        }
+                        this.data = imageData;
+                    }
+                }).catch( error => console.log(error));
+            }, //obtenerImagenes
+            obtenerDistancia: function(){
+                let url = "https://35.203.21.243/comisarias/"+this.comidata.id+"/"+this.comidata.lat+"/"+this.comidata.lng;
+                axios.get(url)
+                .then( response => {
+                    this.distancia = response.data.distancia.kms;
+                } )
+                .catch( error => {
+                    console.log(error);
+                } );
+            } //obtenerDistancia
         }
     }
 </script>

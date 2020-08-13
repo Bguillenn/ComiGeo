@@ -2834,7 +2834,8 @@ __webpack_require__.r(__webpack_exports__);
         lat: -1,
         lng: -1
       },
-      id: 0
+      id: 0,
+      comdata: {}
     };
   },
   mounted: function mounted() {
@@ -2849,7 +2850,29 @@ __webpack_require__.r(__webpack_exports__);
       this.id = newVal.id;
     }
   },
-  methods: {}
+  methods: {
+    obtenerComisaria: function obtenerComisaria() {
+      var _this = this;
+
+      var url = "https://35.203.21.243/comisarias/" + this.searchData.id;
+      axios.get(url).then(function (response) {
+        _this.comdata = {
+          id: response.data[0].ComId,
+          nombre: response.data[0].ComNom,
+          dep: response.data[0].DepNom,
+          pro: response.data[0].ProNom,
+          dis: response.data[0].DisNom,
+          mp: "MCRP " + response.data[0].ComMacRegPol,
+          rp: "RP " + response.data[0].ComMacRegPol,
+          dp: response.data[0].ComDivPol,
+          lat: response.data[0].ComLat,
+          lng: response.data[0].ComLng
+        };
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -2965,25 +2988,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     cominfo: {
+      id: Number,
       nombre: String,
       dep: String,
       pro: String,
       dis: String,
       mp: String,
       rp: String,
-      dp: String
+      dp: String,
+      lat: Number,
+      lng: Number
+    }
+  },
+  watch: {
+    cominfo: function cominfo(newValue, oldValue) {
+      this.comdata = this.cominfo;
+      obtenerImagenes();
+      obtenerDistancia();
     }
   },
   data: function data() {
     return {
       comdata: {
+        id: 0,
         nombre: "NINGUNA COMISARIA SELECCIONADA",
         dep: "No select",
         pro: "No select",
         dis: "No select",
         mp: "---",
         rp: "---",
-        dp: "---"
+        dp: "---",
+        lat: -1,
+        lng: -1
       },
       distancia: 0,
       data: ['<img src="https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png" alt="no-image" style="width: 400px;height: 200px !important;object-fit: cover;"/>']
@@ -2991,6 +3027,47 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     console.log('Component mounted.');
+  },
+  methods: {
+    obtenerImagenes: function obtenerImagenes() {
+      var _this = this;
+
+      axios.get("https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json", {
+        params: {
+          location: this.comdata.lat + "," + this.comdata.lng,
+          radius: 100,
+          keyword: this.comdata.nombre,
+          key: 'AIzaSyCKnBKQiMWepRPmxDEeGKlG_WMhtm3jQ6c' //key: 'AIzaSyD-cej55YJwDg749MFqK6LTKjKk7k65fDE'
+
+        }
+      }).then(function (response) {
+        if (response.status == 200) {
+          var photos = response.data.results[0].photos;
+          var imageData = [];
+
+          for (var i = 0; i < photos.length; i++) {
+            var urlImg = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + photos[i].photo_reference + "&key=AIzaSyD-cej55YJwDg749MFqK6LTKjKk7k65fDE";
+            imageData.push('<img src="' + urlImg + '" alt="comi-image" style="width: 400px;height: 200px !important;object-fit: cover;"/>');
+          }
+
+          _this.data = imageData;
+        }
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    },
+    //obtenerImagenes
+    obtenerDistancia: function obtenerDistancia() {
+      var _this2 = this;
+
+      var url = "https://35.203.21.243/comisarias/" + this.comidata.id + "/" + this.comidata.lat + "/" + this.comidata.lng;
+      axios.get(url).then(function (response) {
+        _this2.distancia = response.data.distancia.kms;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    } //obtenerDistancia
+
   }
 });
 
@@ -40366,7 +40443,7 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("information-component")
+      _c("information-component", { attrs: { cominfo: this.comdata } })
     ],
     1
   )
