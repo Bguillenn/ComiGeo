@@ -125,7 +125,7 @@
                 });
             }
 
-            console.log("Coordenadas "+coordinates.lat+" "+coordinats.lng);
+            console.log("Coordenadas "+this.coordinates.lat+" "+this.coordinates.lng);
             
         
         },

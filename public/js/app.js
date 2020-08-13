@@ -3168,7 +3168,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     }
 
-    console.log("Coordenadas " + coordinates.lat + " " + coordinats.lng);
+    console.log("Coordenadas " + this.coordinates.lat + " " + this.coordinates.lng);
   },
   methods: {
     cargarComisaria: function cargarComisaria(nom) {
