@@ -2955,7 +2955,9 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     view: "map"
   },
-  data: function data() {},
+  data: function data() {
+    return {};
+  },
   mounted: function mounted() {
     console.log('Component mounted.');
   },
