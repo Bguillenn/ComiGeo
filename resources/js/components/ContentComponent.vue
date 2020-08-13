@@ -21,7 +21,7 @@
 <script>
     export default {
         props: {
-            view: {
+            viewProp: {
                 type: String,
                 default: 'map',
                 required: true,
