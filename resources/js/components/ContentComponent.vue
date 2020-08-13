@@ -21,7 +21,7 @@
 <script>
     export default {
         props: {
-            view: 'map',
+            view: Object('map'),
             searchData: {
                 lat: -1,
                 lng: -1,
@@ -35,7 +35,6 @@
                     lng: -1
                 },
                 id: 0,
-                view: 'map',
                 comdata: {
 
                 }
