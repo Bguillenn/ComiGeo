@@ -3204,7 +3204,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     //gottomap
     cambiarVista: function cambiarVista(value) {
-      alert(value);
       this.vista = value;
     }
   }
@@ -40874,7 +40873,7 @@ var render = function() {
       _vm._v(" "),
       _c("content-component", {
         key: this.key,
-        attrs: { searchData: this.searchData }
+        attrs: { vista: this.vista, searchData: this.searchData }
       })
     ],
     1

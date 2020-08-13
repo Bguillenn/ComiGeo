@@ -1,7 +1,7 @@
 <template>
     <div>
         <header-component v-on:itemSelect="goToMap" v-on:cambiarVista="cambiarVista" v-bind:viewProp="this.vista"></header-component>
-        <content-component :key="this.key" v-bind:searchData="this.searchData"></content-component>
+        <content-component :key="this.key" v-bind:vista="this.vista" v-bind:searchData="this.searchData"></content-component>
     </div>
 </template>
 
@@ -29,7 +29,6 @@
                 //this.key = -this.key;
             }, //gottomap
             cambiarVista: function(value){
-                alert(value);
                 this.vista = value;
             }
         }
