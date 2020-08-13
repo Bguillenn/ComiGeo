@@ -56,7 +56,7 @@
 
                 },
                 data: [
-                '<img src="https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png" alt="no-image" class="slide-image"/>',
+                '<img src="https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png" alt="no-image" style="width: 400px; heigth: 200px; object-fit: cover;"/>',
                 ],
             };
         },
