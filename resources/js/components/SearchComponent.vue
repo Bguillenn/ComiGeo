@@ -63,7 +63,7 @@
         methods: {
             buscar: function(event){
                 if(this.queryData.length > 0){
-                    clearTimeout(timeout);
+                    clearTimeout(this.timeout);
                     this.timeout = setTimeout(() => {
                         alert("Termino de escribir");
                         this.query = this.queryData;

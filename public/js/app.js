@@ -3280,7 +3280,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       if (this.queryData.length > 0) {
-        clearTimeout(timeout);
+        clearTimeout(this.timeout);
         this.timeout = setTimeout(function () {
           alert("Termino de escribir");
           _this.query = _this.queryData;
