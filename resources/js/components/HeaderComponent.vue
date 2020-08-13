@@ -5,7 +5,7 @@
         </div>
         <div id="flex-between">
             <search-component v-on:itemSelect="itemSelect"> </search-component>
-            <div id="view-toggler">
+            <div id="view-toggler" style="display: none;">
                 <span>Cambiar de vista</span>
                 <div id="radios-button">
                     <input type="radio" id="radioList" name="radioView">

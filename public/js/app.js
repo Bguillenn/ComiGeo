@@ -3076,8 +3076,14 @@ __webpack_require__.r(__webpack_exports__);
           lng: 71.535
         };
       });
-    } //obtenerDistancia
-
+    },
+    //obtenerDistancia
+    centrarMapa: function centrarMapa() {
+      this.emit('centrarMapa', {
+        lat: this.comdata.lat,
+        lng: this.comdata.lng
+      });
+    }
   }
 });
 
@@ -40523,44 +40529,48 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "view-toggler" } }, [
-      _c("span", [_vm._v("Cambiar de vista")]),
-      _vm._v(" "),
-      _c("div", { attrs: { id: "radios-button" } }, [
-        _c("input", {
-          attrs: { type: "radio", id: "radioList", name: "radioView" }
-        }),
+    return _c(
+      "div",
+      { staticStyle: { display: "none" }, attrs: { id: "view-toggler" } },
+      [
+        _c("span", [_vm._v("Cambiar de vista")]),
         _vm._v(" "),
-        _c("label", { attrs: { for: "radioList", id: "labelRadioList" } }, [
-          _c("img", {
+        _c("div", { attrs: { id: "radios-button" } }, [
+          _c("input", {
+            attrs: { type: "radio", id: "radioList", name: "radioView" }
+          }),
+          _vm._v(" "),
+          _c("label", { attrs: { for: "radioList", id: "labelRadioList" } }, [
+            _c("img", {
+              attrs: {
+                src:
+                  "https://res.cloudinary.com/dtg90uzhc/image/upload/v1597093411/comigeo/s0oqdiisndnltyprsasw.png",
+                alt: "list-icon"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("input", {
             attrs: {
-              src:
-                "https://res.cloudinary.com/dtg90uzhc/image/upload/v1597093411/comigeo/s0oqdiisndnltyprsasw.png",
-              alt: "list-icon"
+              type: "radio",
+              id: "radioMap",
+              name: "radioView",
+              checked: ""
             }
-          })
-        ]),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "radio",
-            id: "radioMap",
-            name: "radioView",
-            checked: ""
-          }
-        }),
-        _vm._v(" "),
-        _c("label", { attrs: { for: "radioMap", id: "labelRadioMap" } }, [
-          _c("img", {
-            attrs: {
-              src:
-                "https://res.cloudinary.com/dtg90uzhc/image/upload/v1597093411/comigeo/cqk8tktojg9jqrmjetw9.png",
-              alt: "map-icon"
-            }
-          })
+          }),
+          _vm._v(" "),
+          _c("label", { attrs: { for: "radioMap", id: "labelRadioMap" } }, [
+            _c("img", {
+              attrs: {
+                src:
+                  "https://res.cloudinary.com/dtg90uzhc/image/upload/v1597093411/comigeo/cqk8tktojg9jqrmjetw9.png",
+                alt: "map-icon"
+              }
+            })
+          ])
         ])
-      ])
-    ])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -40656,12 +40666,23 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("span", { staticClass: "body-info-data" }, [
-            _vm._v(_vm._s(this.distancia) + " Km Aprox.")
+            _vm._v(_vm._s(this.distancia.toFixed(2)) + " Km Aprox.")
           ])
         ]
       ),
       _vm._v(" "),
-      _vm._m(2)
+      _c("div", { staticClass: "data-content", attrs: { id: "options" } }, [
+        _c("button", { on: { click: this.centrarMapa } }, [
+          _c("img", {
+            attrs: {
+              src:
+                "https://res.cloudinary.com/dtg90uzhc/image/upload/v1597093411/comigeo/cqk8tktojg9jqrmjetw9.png",
+              alt: "map-icon"
+            }
+          }),
+          _vm._v("\n                 Centrar en el mapa\n             ")
+        ])
+      ])
     ])
   ])
 }
@@ -40689,27 +40710,6 @@ var staticRenderFns = [
         }
       })
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "data-content", attrs: { id: "options" } },
-      [
-        _c("button", [
-          _c("img", {
-            attrs: {
-              src:
-                "https://res.cloudinary.com/dtg90uzhc/image/upload/v1597093411/comigeo/cqk8tktojg9jqrmjetw9.png",
-              alt: "map-icon"
-            }
-          }),
-          _vm._v("\n                 Centrar en el mapa\n             ")
-        ])
-      ]
-    )
   }
 ]
 render._withStripped = true

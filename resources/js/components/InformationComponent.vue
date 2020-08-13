@@ -35,11 +35,11 @@
             </div>
             <div id="distance-data" class="data-content">
                 <span class="body-info-title">DISTANCIA DE LA COMISARIA A TU UBICACION</span>
-                <span class="body-info-data">{{this.distancia}} Km Aprox.</span>
+                <span class="body-info-data">{{this.distancia.toFixed(2)}} Km Aprox.</span>
             </div> 
             <div id="options" class="data-content">
                  <!-- AQUI IRA LO DE LOS VOTOS -->
-                 <button>
+                 <button v-on:click="this.centrarMapa">
                      <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1597093411/comigeo/cqk8tktojg9jqrmjetw9.png" alt="map-icon">
                      Centrar en el mapa
                  </button>
@@ -144,7 +144,10 @@
                     }
                 });
 
-            } //obtenerDistancia
+            }, //obtenerDistancia
+            centrarMapa: function(){
+                this.emit('centrarMapa', {lat: this.comdata.lat, lng: this.comdata.lng});
+            }
         }
     }
 </script>
