@@ -45,6 +45,7 @@
                 }).catch(error => console.log(error));
             },
             itemSelect: function(value){
+                alert("Manejando evento SLC "+value.lat+" "+value.lng+" "+value.id);
                 this.$emit('itemSelect', value);
             }
         }

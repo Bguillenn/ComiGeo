@@ -3392,6 +3392,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     itemSelect: function itemSelect(value) {
+      alert("Manejando evento SLC " + value.lat + " " + value.lng + " " + value.id);
       this.$emit('itemSelect', value);
     }
   }
