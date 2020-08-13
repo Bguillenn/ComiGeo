@@ -2953,10 +2953,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    view: "map"
+    viewProp: "map"
   },
   data: function data() {
-    return {};
+    return {
+      view: "map"
+    };
   },
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -2967,12 +2969,8 @@ __webpack_require__.r(__webpack_exports__);
       this.$emit('itemSelect', value);
     },
     //itemSelect
-    changeView: function changeView(map) {
-      if (map) {
-        alert("mapa");
-      } else {
-        alert("lista");
-      }
+    changeView: function changeView() {
+      alert(this.view);
     }
   }
 });
@@ -40579,9 +40577,12 @@ var render = function() {
               },
               domProps: { checked: _vm._q(_vm.view, "list") },
               on: {
-                change: function($event) {
-                  _vm.view = "list"
-                }
+                change: [
+                  function($event) {
+                    _vm.view = "list"
+                  },
+                  this.changeView
+                ]
               }
             }),
             _vm._v(" "),
@@ -40604,9 +40605,12 @@ var render = function() {
               },
               domProps: { checked: _vm._q(_vm.view, "map") },
               on: {
-                change: function($event) {
-                  _vm.view = "map"
-                }
+                change: [
+                  function($event) {
+                    _vm.view = "map"
+                  },
+                  this.changeView
+                ]
               }
             }),
             _vm._v(" "),

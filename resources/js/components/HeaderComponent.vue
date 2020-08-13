@@ -8,12 +8,12 @@
             <div id="view-toggler">
                 <span>Cambiar de vista</span>
                 <div id="radios-button">
-                    <input type="radio" id="radioList" name="radioView" value="list" v-model="view">
+                    <input type="radio" id="radioList" name="radioView" value="list" v-model="view" v-on:change="this.changeView">
                     <label for="radioList" id="labelRadioList">
                         <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1597093411/comigeo/s0oqdiisndnltyprsasw.png" alt="list-icon">
                     </label>
 
-                    <input type="radio" id="radioMap" name="radioView" value="map" v-model="view">
+                    <input type="radio" id="radioMap" name="radioView" value="map" v-model="view" v-on:change="this.changeView">
                     <label for="radioMap" id="labelRadioMap">
                         <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1597093411/comigeo/cqk8tktojg9jqrmjetw9.png" alt="map-icon">
                     </label>
@@ -27,11 +27,11 @@
 <script>
     export default {
         props: {
-            view: "map",
+            viewProp: "map",
         },
         data(){
             return{
-                
+                view: "map",
             }
         },
         mounted() {
@@ -42,12 +42,8 @@
                 console.log("Manejando desde HC "+value.lat+" "+value.lng+" "+value.id);
                 this.$emit('itemSelect', value);
             }, //itemSelect
-            changeView: function(map){
-                if(map){
-                    alert("mapa");
-                }else{
-                    alert("lista");
-                }
+            changeView: function(){
+                alert(this.view);
             }
         }
     }
