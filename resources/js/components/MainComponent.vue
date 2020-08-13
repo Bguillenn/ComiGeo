@@ -15,7 +15,7 @@
                     id: 0,
                 },
                 key: 1,
-                viewValue: 'map',
+                viewValue: "map",
             }
         },
         mounted(){
@@ -29,6 +29,7 @@
                 //this.key = -this.key;
             }, //gottomap
             cambiarVista: function(value){
+                alert(value);
                 this.viewValue = value;
             }
         }

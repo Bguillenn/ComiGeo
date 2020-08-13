@@ -22,7 +22,9 @@
     export default {
         props: {
             view: {
-                default: 'map'
+                type: String,
+                default: 'map',
+                required: true,
             },
             searchData: {
                 lat: -1,

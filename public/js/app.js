@@ -2823,7 +2823,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     view: {
-      "default": 'map'
+      type: String,
+      "default": 'map',
+      required: true
     },
     searchData: {
       lat: -1,
@@ -3193,7 +3195,7 @@ __webpack_require__.r(__webpack_exports__);
         id: 0
       },
       key: 1,
-      viewValue: 'map'
+      viewValue: "map"
     };
   },
   mounted: function mounted() {
@@ -3206,6 +3208,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     //gottomap
     cambiarVista: function cambiarVista(value) {
+      alert(value);
       this.viewValue = value;
     }
   }
