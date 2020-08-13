@@ -1,8 +1,8 @@
 <template>
     <div id="content">
         <div id="r-side">
-            <map-component ref="MapComponent" v-bind:coordinates="this.coords" v-on:cargarComisaria="cargarComisaria"></map-component>
-            <list-component></list-component>
+            <map-component v-if="this.view == 'map'" ref="MapComponent" v-bind:coordinates="this.coords" v-on:cargarComisaria="cargarComisaria"></map-component>
+            <list-component v-else></list-component>
         </div>
         <information-component v-bind:cominfo="this.comdata" v-on:centrarMapa="goToMap"></information-component>
     </div>
@@ -26,7 +26,7 @@
                 lng: -1,
                 id: 0,
             },
-            view: "map"
+            view: 'map'
         },
         data(){
             return{

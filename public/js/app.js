@@ -2827,7 +2827,7 @@ __webpack_require__.r(__webpack_exports__);
       lng: -1,
       id: 0
     },
-    view: "map"
+    view: 'map'
   },
   data: function data() {
     return {
@@ -40518,13 +40518,13 @@ var render = function() {
         "div",
         { attrs: { id: "r-side" } },
         [
-          _c("map-component", {
-            ref: "MapComponent",
-            attrs: { coordinates: this.coords },
-            on: { cargarComisaria: _vm.cargarComisaria }
-          }),
-          _vm._v(" "),
-          _c("list-component")
+          this.view == "map"
+            ? _c("map-component", {
+                ref: "MapComponent",
+                attrs: { coordinates: this.coords },
+                on: { cargarComisaria: _vm.cargarComisaria }
+              })
+            : _c("list-component")
         ],
         1
       ),
