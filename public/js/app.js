@@ -3320,12 +3320,14 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
-    itemSelect: function itemSelect(lat, lng) {
-      this.$emit('itemSelect', {
-        lat: lat,
-        lng: lng,
+    itemSelect: function itemSelect() {
+      var value = {
+        lat: this.lat,
+        lng: this.lng,
         id: this.id
-      });
+      };
+      console.log("Evento click SIC: " + value);
+      this.$emit('itemSelect', value);
     }
   }
 });
@@ -40756,7 +40758,7 @@ var render = function() {
         staticClass: "btn-result",
         on: {
           click: function($event) {
-            return _vm.itemSelect(this.lat, this.lng)
+            return _vm.itemSelect()
           }
         }
       },

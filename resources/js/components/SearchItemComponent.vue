@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button class="btn-result" v-on:click="itemSelect(this.lat, this.lng)">
+        <button class="btn-result" v-on:click="itemSelect()">
             <div class="item-info">
                 <!--<img class="item-img" src="https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png" alt="ComImg">-->
                 <img class="item-img" :src="this.img" alt="ComImg">
@@ -57,8 +57,15 @@
                 }).catch( error => console.log(error));
         },
         methods: {
-            itemSelect: function(lat, lng){
-                this.$emit('itemSelect', {lat: lat, lng: lng, id:this.id});
+            itemSelect: function(){
+                let value = {
+                    lat : this.lat,
+                    lng : this.lng,
+                    id : this.id
+                }
+
+                console.log("Evento click SIC: "+value);
+                this.$emit('itemSelect', value);
             }
         }
     }
