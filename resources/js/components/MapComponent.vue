@@ -84,6 +84,12 @@
 
 <script>
     export default {
+        props: {
+            coordsProp: {
+                lat: Number,
+                lng: Number,
+            }
+        },
         data(){
             return {
                 coordinates: {
@@ -122,6 +128,11 @@
             });
             
         },
+        watch:{
+            coordsProp: function(newVal, oldVal) { // watch it
+                gotoxyMapByProps();
+            }
+        },
         methods: {
             cargarComisaria(nom){
                 alert("Comisaria nom "+nom);
@@ -141,6 +152,16 @@
                 }).catch( error => console.log(error))
 
                 
+            },
+
+            gotoxyMapByProps(){
+                this.$refs.mapRef.$mapPromise.then((map) => {
+                    let location = {
+                        lat: this.coordsProp.lat,
+                        lng: this.coordsProp.lng,
+                    }
+                    map.panTo(location);
+                });
             }
         }
     }

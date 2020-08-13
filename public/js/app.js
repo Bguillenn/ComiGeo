@@ -2821,8 +2821,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      coords: {
+        lat: 0,
+        lng: 0
+      },
+      id: 0
+    };
+  },
   mounted: function mounted() {
     console.log('Component mounted.');
+  },
+  methods: {
+    gotoxyMap: function gotoxyMap(value) {
+      this.coords = {
+        lat: value.lat,
+        lng: value.lng
+      };
+      this.id = value.id;
+    }
   }
 });
 
@@ -2863,74 +2881,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
+  },
+  methods: {
+    goToMapHeader: function goToMapHeader(value) {
+      this.$emit('goToMap', value);
+    }
   }
 });
 
@@ -3123,6 +3081,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    coordsProp: {
+      lat: Number,
+      lng: Number
+    }
+  },
   data: function data() {
     return {
       coordinates: {
@@ -3159,6 +3123,12 @@ __webpack_require__.r(__webpack_exports__);
       };
     });
   },
+  watch: {
+    coordsProp: function coordsProp(newVal, oldVal) {
+      // watch it
+      gotoxyMapByProps();
+    }
+  },
   methods: {
     cargarComisaria: function cargarComisaria(nom) {
       alert("Comisaria nom " + nom);
@@ -3176,6 +3146,17 @@ __webpack_require__.r(__webpack_exports__);
         });
       })["catch"](function (error) {
         return console.log(error);
+      });
+    },
+    gotoxyMapByProps: function gotoxyMapByProps() {
+      var _this4 = this;
+
+      this.$refs.mapRef.$mapPromise.then(function (map) {
+        var location = {
+          lat: _this4.coordsProp.lat,
+          lng: _this4.coordsProp.lng
+        };
+        map.panTo(location);
       });
     }
   }
@@ -3255,10 +3236,16 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     buscar: function buscar(event) {
-      if (this.query.length > 0) this.show = true;else this.show = false;
+      if (this.query.length > 0) {
+        this.show = false;
+        this.show = true;
+      } else this.show = false;
     },
     detectar: function detectar(event) {
       if (this.query.length == 0) this.show = false;
+    },
+    goToMap: function goToMap(value) {
+      this.$emit('goToMap', value);
     }
   }
 });
@@ -3336,7 +3323,8 @@ __webpack_require__.r(__webpack_exports__);
     itemSelect: function itemSelect(lat, lng) {
       this.$emit('itemSelect', {
         lat: lat,
-        lng: lng
+        lng: lng,
+        id: this.id
       });
     }
   }
@@ -3353,6 +3341,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -3400,7 +3389,9 @@ __webpack_require__.r(__webpack_exports__);
         return console.log(error);
       });
     },
-    goToMap: function goToMap(lat, lng) {}
+    itemSelect: function itemSelect(value) {
+      this.$emit('itemSelect', value);
+    }
   }
 });
 
@@ -40293,7 +40284,14 @@ var render = function() {
       _c(
         "div",
         { attrs: { id: "r-side" } },
-        [_c("map-component"), _vm._v(" "), _c("list-component")],
+        [
+          _c("map-component", {
+            ref: "MapComponent",
+            attrs: { coords: this.coords }
+          }),
+          _vm._v(" "),
+          _c("list-component")
+        ],
         1
       ),
       _vm._v(" "),
@@ -40330,7 +40328,11 @@ var render = function() {
     _c(
       "div",
       { attrs: { id: "flex-between" } },
-      [_c("search-component"), _vm._v(" "), _vm._m(1)],
+      [
+        _c("search-component", { on: { goToMap: _vm.goToMapHeader } }),
+        _vm._v(" "),
+        _vm._m(1)
+      ],
       1
     )
   ])
@@ -40713,7 +40715,10 @@ var render = function() {
         { attrs: { name: "fade" } },
         [
           _vm.show
-            ? _c("search-list-component", { attrs: { query: _vm.query } })
+            ? _c("search-list-component", {
+                attrs: { query: _vm.query },
+                on: { itemSelect: _vm.goToMap }
+              })
             : _vm._e()
         ],
         1
@@ -40826,7 +40831,8 @@ var render = function() {
           lat: r.ComLat,
           lng: r.ComLgn,
           id: r.ComId
-        }
+        },
+        on: { itemSelect: _vm.itemSelect }
       })
     }),
     1
@@ -56255,14 +56261,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************************!*\
   !*** ./resources/js/components/SearchListComponent.vue ***!
   \*********************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SearchListComponent_vue_vue_type_template_id_5f6ef8c8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SearchListComponent.vue?vue&type=template&id=5f6ef8c8& */ "./resources/js/components/SearchListComponent.vue?vue&type=template&id=5f6ef8c8&");
 /* harmony import */ var _SearchListComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SearchListComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/SearchListComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _SearchListComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SearchListComponent.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/SearchListComponent.vue?vue&type=style&index=0&lang=css&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _SearchListComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _SearchListComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _SearchListComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SearchListComponent.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/SearchListComponent.vue?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -56294,7 +56301,7 @@ component.options.__file = "resources/js/components/SearchListComponent.vue"
 /*!**********************************************************************************!*\
   !*** ./resources/js/components/SearchListComponent.vue?vue&type=script&lang=js& ***!
   \**********************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

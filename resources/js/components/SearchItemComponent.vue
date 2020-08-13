@@ -58,7 +58,7 @@
         },
         methods: {
             itemSelect: function(lat, lng){
-                this.$emit('itemSelect', {lat: lat, lng: lng});
+                this.$emit('itemSelect', {lat: lat, lng: lng, id:this.id});
             }
         }
     }

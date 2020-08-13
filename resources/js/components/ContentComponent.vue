@@ -1,7 +1,7 @@
 <template>
     <div id="content">
         <div id="r-side">
-            <map-component></map-component>
+            <map-component ref="MapComponent" v-bind:coords="this.coords"></map-component>
             <list-component></list-component>
         </div>
         <information-component></information-component>
@@ -20,8 +20,26 @@
 
 <script>
     export default {
+        data(){
+            return{
+                coords: {
+                    lat: 0,
+                    lng: 0
+                },
+                id: 0,
+            }
+        },
         mounted() {
             console.log('Component mounted.')
+        },
+        methods: {
+            gotoxyMap : function(value){
+                this.coords = {
+                    lat : value.lat,
+                    lng : value.lng
+                }
+                this.id = value.id;
+            }
         }
     }
 </script>

@@ -1,6 +1,7 @@
 <template>
     <div id="results-box">
-        <search-item-component 
+        <search-item-component
+        v-on:itemSelect="itemSelect" 
         :key="index"
         v-for="(r,index) in results"
         v-bind:nombre="r.ComNom"
@@ -43,8 +44,8 @@
                     this.results = response.data.comisarias;
                 }).catch(error => console.log(error));
             },
-            goToMap: function(lat, lng){
-                
+            itemSelect: function(value){
+                this.$emit('itemSelect', value);
             }
         }
     }

@@ -4,7 +4,7 @@
             <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/c_scale,w_210/v1594699993/comigeo/ugvpuhf3xu8o3rvgaeii.svg" alt="Comigeo-Logo" width="210px">
         </div>
         <div id="flex-between">
-            <search-component> </search-component>
+            <search-component v-on:goToMap="goToMapHeader"> </search-component>
             <div id="view-toggler">
                 <span>Cambiar de vista</span>
                 <div id="radios-button">
@@ -23,6 +23,19 @@
     </div>
     
 </template>
+
+<script>
+    export default {
+        mounted() {
+            console.log('Component mounted.')
+        },
+        methods: {
+            goToMapHeader: function(value){
+                this.$emit('goToMap', value);
+            }
+        }
+    }
+</script>
 
 <style>
     #header{
@@ -89,10 +102,4 @@
     }
 </style>
 
-<script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
-    }
-</script>
+

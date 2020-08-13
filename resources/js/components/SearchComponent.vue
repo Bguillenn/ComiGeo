@@ -9,7 +9,7 @@
             v-model="query"/>
         <img src="https://res.cloudinary.com/dtg90uzhc/image/upload/v1597091198/comigeo/v9wdfud5nmko2b1az1ak.svg" alt="search-icon" id="icon-search"/>
         <transition name="fade">
-            <search-list-component v-if="show" v-bind:query="query"/>
+            <search-list-component v-if="show" v-bind:query="query" v-on:itemSelect="goToMap"/>
         </transition>
     </div>
 </template>
@@ -63,13 +63,18 @@
         methods: {
             buscar: function(event){
                 if(this.query.length > 0)
+                    {this.show = false;
                     this.show = true;
+                    }
                 else
                     this.show = false;
             },
             detectar: function(event){
                 if(this.query.length == 0)
                     this.show = false;
+            },
+            goToMap: function(value){
+                this.$emit('goToMap', value);
             }
         }
     }
