@@ -37,7 +37,6 @@
         },
         methods: {
             loadResults: function(){
-                alert("el usuario termino de escribir");
                 axios.get('https://35.203.21.243/comisarias/'+this.query).
                 then(response => {
                     this.results = response.data.comisarias;

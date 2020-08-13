@@ -3282,8 +3282,11 @@ __webpack_require__.r(__webpack_exports__);
       if (this.queryData.length > 0) {
         clearTimeout(this.timeout);
         this.timeout = setTimeout(function () {
-          _this.query = _this.queryData;
-          _this.show = true;
+          if (_this.queryData.length > 0) {
+            _this.query = _this.queryData;
+            _this.show = true;
+          }
+
           clearTimeout(_this.timeout);
         }, 1000);
       } else this.show = false;
@@ -3426,7 +3429,6 @@ __webpack_require__.r(__webpack_exports__);
     loadResults: function loadResults() {
       var _this = this;
 
-      alert("el usuario termino de escribir");
       axios.get('https://35.203.21.243/comisarias/' + this.query).then(function (response) {
         _this.results = response.data.comisarias;
       })["catch"](function (error) {

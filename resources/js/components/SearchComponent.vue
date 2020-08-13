@@ -65,8 +65,10 @@
                 if(this.queryData.length > 0){
                     clearTimeout(this.timeout);
                     this.timeout = setTimeout(() => {
-                        this.query = this.queryData;
-                        this.show = true;
+                        if(this.queryData.length > 0){
+                            this.query = this.queryData;
+                            this.show = true;
+                        }
                         clearTimeout(this.timeout);
                     }, 1000);
                 }else
