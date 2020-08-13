@@ -64,7 +64,7 @@
                     id : this.id
                 }
 
-                console.log("Evento click SIC: "+value);
+                console.log("Evento click SIC: "+value.lat+" "+value.lng+" "+value.id);
                 this.$emit('itemSelect', value);
             }
         }
