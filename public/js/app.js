@@ -2958,7 +2958,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      view: "map"
+      view: this.viewProp
     };
   },
   watch: {

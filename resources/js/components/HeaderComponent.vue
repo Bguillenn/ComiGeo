@@ -31,7 +31,7 @@
         },
         data(){
             return{
-                view: "map",
+                view: this.viewProp,
             }
         },
         watch:{
