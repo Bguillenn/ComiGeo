@@ -3004,8 +3004,8 @@ __webpack_require__.r(__webpack_exports__);
   watch: {
     cominfo: function cominfo(newValue, oldValue) {
       this.comdata = this.cominfo;
-      obtenerImagenes();
-      obtenerDistancia();
+      this.obtenerImagenes();
+      this.obtenerDistancia();
     }
   },
   data: function data() {

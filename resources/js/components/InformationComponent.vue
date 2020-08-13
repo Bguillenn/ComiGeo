@@ -67,8 +67,8 @@
         watch:{
             cominfo: function(newValue, oldValue){
                 this.comdata = this.cominfo;
-                obtenerImagenes();
-                obtenerDistancia();
+                this.obtenerImagenes();
+                this.obtenerDistancia();
             }
         },
         data() {
