@@ -99,6 +99,13 @@
                 }
             }
         },
+        watch:{
+            coordinates: function(newVal, oldVal){
+                this.$refs.mapRef.$mapPromise.then((map) => {
+                        map.panTo(coordinates);
+                })
+            }
+        },
         mounted() {
             
             let url = "https://35.203.21.243/comisarias";

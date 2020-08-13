@@ -20,11 +20,12 @@
         mounted(){
             console.log("main montado");
         },
+
         methods: {
             goToMap: function(value){
                 console.log("Manejando desde el main "+value.lat+" "+value.lng+" "+value.id);
                 this.searchData = value;
-                this.key = -this.key;
+                //this.key = -this.key;
             }
         }
     }

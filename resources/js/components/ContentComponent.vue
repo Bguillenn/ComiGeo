@@ -39,14 +39,16 @@
         mounted() {
             console.log('Component mounted.')
         },
-        methods: {
-            gotoxyMap : function(value){
+        watch: {
+            searchData: function(newVal, oldVal){
                 this.coords = {
-                    lat : value.lat,
-                    lng : value.lng
+                    lat : newVal.lat,
+                    lng : newVal.lng
                 }
-                this.id = value.id;
+                this.id = newVal.id;
             }
+        },
+        methods: {
         }
     }
 </script>
