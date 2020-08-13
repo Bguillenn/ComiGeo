@@ -1,7 +1,7 @@
 <template>
     <div>
-        <header-component v-on:itemSelect="goToMap" v-on:cambiarVista="cambiarVista" v-bind:viewProp="this.view"></header-component>
-        <content-component :key="this.key" v-bind:searchData="this.searchData" v-bind:view="this.view"></content-component>
+        <header-component v-on:itemSelect="goToMap" v-on:cambiarVista="cambiarVista" v-bind:viewProp="this.viewValue"></header-component>
+        <content-component :key="this.key" v-bind:searchData="this.searchData" v-bind:view="this.viewValue"></content-component>
     </div>
 </template>
 
@@ -15,7 +15,7 @@
                     id: 0,
                 },
                 key: 1,
-                view: "map",
+                viewValue: 'map',
             }
         },
         mounted(){
@@ -29,7 +29,7 @@
                 //this.key = -this.key;
             }, //gottomap
             cambiarVista: function(value){
-                this.view = value;
+                this.viewValue = value;
             }
         }
     }

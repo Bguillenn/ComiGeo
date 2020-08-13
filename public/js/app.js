@@ -3191,7 +3191,7 @@ __webpack_require__.r(__webpack_exports__);
         id: 0
       },
       key: 1,
-      view: "map"
+      viewValue: 'map'
     };
   },
   mounted: function mounted() {
@@ -3204,7 +3204,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     //gottomap
     cambiarVista: function cambiarVista(value) {
-      this.view = value;
+      this.viewValue = value;
     }
   }
 });
@@ -40518,13 +40518,13 @@ var render = function() {
         "div",
         { attrs: { id: "r-side" } },
         [
-          this.view == "map"
-            ? _c("map-component", {
-                ref: "MapComponent",
-                attrs: { coordinates: this.coords },
-                on: { cargarComisaria: _vm.cargarComisaria }
-              })
-            : _c("list-component")
+          _c("map-component", {
+            ref: "MapComponent",
+            attrs: { coordinates: this.coords },
+            on: { cargarComisaria: _vm.cargarComisaria }
+          }),
+          _vm._v(" "),
+          _c("list-component")
         ],
         1
       ),
@@ -40867,13 +40867,13 @@ var render = function() {
     "div",
     [
       _c("header-component", {
-        attrs: { viewProp: this.view },
+        attrs: { viewProp: this.viewValue },
         on: { itemSelect: _vm.goToMap, cambiarVista: _vm.cambiarVista }
       }),
       _vm._v(" "),
       _c("content-component", {
         key: this.key,
-        attrs: { searchData: this.searchData, view: this.view }
+        attrs: { searchData: this.searchData, view: this.viewValue }
       })
     ],
     1
