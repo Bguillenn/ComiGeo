@@ -68,11 +68,6 @@
 
 <style scoped>
 
-    .slide-image{
-        width: 400px;
-        height: 200px;
-        object-fit: cover;
-    }
 
     #images > div{
         height: 100%;
@@ -221,5 +216,11 @@
 
     #options button:focus{
         outline: none;
+    }
+    
+    .slide-image{
+        width: 400px !important;
+        height: 200px !important;
+        object-fit: cover !important;
     }
 </style>
