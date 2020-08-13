@@ -64,6 +64,10 @@ class ComisariaController extends Controller{
 		{
 			return response()->json(['mensaje'=>'No se encuentra la comisaria','codigo'=>404],404);
 		}
+		if($comisaria->ComLon == $lon && $comisaria->ComLat == $lat)
+		{
+			return response()->json(['distancia'=>['kms'=>0]],200);
+		}
 		$dist = round($this->distanceCalculation($lat,$lon,$comisaria), 3);
 		return response()->json(['distancia'=>['kms'=>$dist]],200);
 	}
