@@ -49,6 +49,7 @@
                     lng : newVal.lng
                 }
                 this.id = newVal.id;
+                obtenerComisaria();
             }
         },
         methods: {

@@ -2848,6 +2848,7 @@ __webpack_require__.r(__webpack_exports__);
         lng: newVal.lng
       };
       this.id = newVal.id;
+      obtenerComisaria();
     }
   },
   methods: {
