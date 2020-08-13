@@ -3282,11 +3282,10 @@ __webpack_require__.r(__webpack_exports__);
       if (this.queryData.length > 0) {
         clearTimeout(this.timeout);
         this.timeout = setTimeout(function () {
-          alert("Termino de escribir");
           _this.query = _this.queryData;
           _this.show = true;
           clearTimeout(_this.timeout);
-        }, 100);
+        }, 500);
       } else this.show = false;
     },
     itemSelect: function itemSelect(value) {
@@ -56501,6 +56500,14 @@ __webpack_require__.r(__webpack_exports__);
   \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! D:\Universidad [2020-A]\Cursos\Ingenieria de Procesos y Software\ComiGeo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Universidad [2020-A]\Cursos\Ingenieria de Procesos y Software\ComiGeo\resources\sass\app.scss */"./resources/sass/app.scss");
+
+
+/***/ })
+
+/******/ });ck_require__) {
 
 __webpack_require__(/*! D:\Universidad [2020-A]\Cursos\Ingenieria de Procesos y Software\ComiGeo\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! D:\Universidad [2020-A]\Cursos\Ingenieria de Procesos y Software\ComiGeo\resources\sass\app.scss */"./resources/sass/app.scss");
