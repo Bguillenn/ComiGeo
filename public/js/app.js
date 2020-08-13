@@ -2822,12 +2822,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
+    view: 'map',
     searchData: {
       lat: -1,
       lng: -1,
       id: 0
-    },
-    view: String
+    }
   },
   data: function data() {
     return {
@@ -2836,6 +2836,7 @@ __webpack_require__.r(__webpack_exports__);
         lng: -1
       },
       id: 0,
+      view: 'map',
       comdata: {}
     };
   },
