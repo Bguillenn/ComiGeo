@@ -130,7 +130,7 @@
                     let url = "https://35.203.21.243/comisarias/"+this.comdata.id+"/"+coordinates.lat+"/"+coordinates.lng;
                     axios.get(url)
                     .then( response => {
-                        alert()
+                        
                         this.distancia = response.data.distancia.kms;
                     } )
                     .catch( error => {

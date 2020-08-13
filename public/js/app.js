@@ -2872,6 +2872,12 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         return console.log(error);
       });
+    },
+    goToMap: function goToMap(value) {
+      this.coords = {
+        lat: value.lat,
+        lng: value.lng
+      };
     }
   }
 });
@@ -3064,7 +3070,6 @@ __webpack_require__.r(__webpack_exports__);
       this.$getLocation({}).then(function (coordinates) {
         var url = "https://35.203.21.243/comisarias/" + _this2.comdata.id + "/" + coordinates.lat + "/" + coordinates.lng;
         axios.get(url).then(function (response) {
-          alert();
           _this2.distancia = response.data.distancia.kms;
         })["catch"](function (error) {
           console.log(error);
@@ -40467,7 +40472,10 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("information-component", { attrs: { cominfo: this.comdata } })
+      _c("information-component", {
+        attrs: { cominfo: this.comdata },
+        on: { centrarMapa: _vm.goToMap }
+      })
     ],
     1
   )

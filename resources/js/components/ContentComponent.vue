@@ -4,7 +4,7 @@
             <map-component ref="MapComponent" v-bind:coordinates="this.coords"></map-component>
             <list-component></list-component>
         </div>
-        <information-component v-bind:cominfo="this.comdata"></information-component>
+        <information-component v-bind:cominfo="this.comdata" v-on:centrarMapa="goToMap"></information-component>
     </div>
 </template>
 
@@ -71,6 +71,13 @@
                     }
                 } )
                 .catch( error => console.log(error) );
+            },
+
+            goToMap: function(value){
+                this.coords = {
+                    lat: value.lat,
+                    lng: value.lng
+                }
             }
         }
     }
