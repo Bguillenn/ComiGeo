@@ -40518,13 +40518,13 @@ var render = function() {
         "div",
         { attrs: { id: "r-side" } },
         [
-          _c("map-component", {
-            ref: "MapComponent",
-            attrs: { coordinates: this.coords },
-            on: { cargarComisaria: _vm.cargarComisaria }
-          }),
-          _vm._v(" "),
-          _c("list-component")
+          this.vista == "map"
+            ? _c("map-component", {
+                ref: "MapComponent",
+                attrs: { coordinates: this.coords },
+                on: { cargarComisaria: _vm.cargarComisaria }
+              })
+            : _c("list-component")
         ],
         1
       ),
