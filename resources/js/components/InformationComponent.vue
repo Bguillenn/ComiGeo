@@ -9,8 +9,8 @@
             </div>
             <div id="title-data" class="data-content">
                 <div>
-                    <p id="nombre-comisaria">NINGUNA COMISARIA SELECCIONADA</p>
-                    <span>No Select, No Select, No Select</span>
+                    <p id="nombre-comisaria">{{ this.comdata.nombre }}</p>
+                    <span>{{this.comdata.dep}}, {{this.comdata.pro}}, {{this.comdata.dis}}</span>
                 </div>
                 <div id="vote-info">
                     <span id="average-votes">5</span>
@@ -21,21 +21,21 @@
 
                 <div class="body-info">
                     <span class="body-info-title">MACRO REGION POLICIAL</span>
-                    <span class="body-info-data">---</span>
+                    <span class="body-info-data">{{this.comdata.mp}}</span>
                 </div>
                 <div class="body-info">
                     <span class="body-info-title">REGION POLICIAL</span>
-                    <span class="body-info-data">---</span>
+                    <span class="body-info-data">{{this.comdata.rp}}</span>
                 </div>
                 <div class="body-info">
                     <span class="body-info-title">DIVISION POLICIAL</span>
-                    <span class="body-info-data">---</span>
+                    <span class="body-info-data">{{this.comdata.dp}}</span>
                 </div>
 
             </div>
             <div id="distance-data" class="data-content">
                 <span class="body-info-title">DISTANCIA DE LA COMISARIA A TU UBICACION</span>
-                <span class="body-info-data">5 Km. Aprox.</span>
+                <span class="body-info-data">{{this.comdata.distancia}}</span>
             </div>
             <div id="options" class="data-content">
                  <!-- AQUI IRA LO DE LOS VOTOS -->
@@ -50,11 +50,29 @@
 
 <script>
     export default {
+        props: {
+            cominfo: {
+                nombre: String,
+                dep: String,
+                pro: String,
+                dis: String,
+                mp: String,
+                rp: String,
+                dp: String,
+            }
+        },
         data() {
             return {
                 comdata: {
-
+                    nombre: "NINGUNA COMISARIA SELECCIONADA",
+                    dep: "No select",
+                    pro: "No select",
+                    dis: "No select",
+                    mp: "---",
+                    rp: "---",
+                    dp: "---",
                 },
+                distancia: 0,
                 data: [
                 '<img src="https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png" alt="no-image" style="width: 400px;height: 200px !important;object-fit: cover;"/>',
                 ],

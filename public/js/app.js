@@ -2963,9 +2963,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    cominfo: {
+      nombre: String,
+      dep: String,
+      pro: String,
+      dis: String,
+      mp: String,
+      rp: String,
+      dp: String
+    }
+  },
   data: function data() {
     return {
-      comdata: {},
+      comdata: {
+        nombre: "NINGUNA COMISARIA SELECCIONADA",
+        dep: "No select",
+        pro: "No select",
+        dis: "No select",
+        mp: "---",
+        rp: "---",
+        dp: "---"
+      },
+      distancia: 0,
       data: ['<img src="https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png" alt="no-image" style="width: 400px;height: 200px !important;object-fit: cover;"/>']
     };
   },
@@ -40480,13 +40500,73 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _vm._m(1),
+      _c("div", { staticClass: "data-content", attrs: { id: "title-data" } }, [
+        _c("div", [
+          _c("p", { attrs: { id: "nombre-comisaria" } }, [
+            _vm._v(_vm._s(this.comdata.nombre))
+          ]),
+          _vm._v(" "),
+          _c("span", [
+            _vm._v(
+              _vm._s(this.comdata.dep) +
+                ", " +
+                _vm._s(this.comdata.pro) +
+                ", " +
+                _vm._s(this.comdata.dis)
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._m(1)
+      ]),
       _vm._v(" "),
-      _vm._m(2),
+      _c("div", { staticClass: "data-content", attrs: { id: "body-data" } }, [
+        _c("div", { staticClass: "body-info" }, [
+          _c("span", { staticClass: "body-info-title" }, [
+            _vm._v("MACRO REGION POLICIAL")
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "body-info-data" }, [
+            _vm._v(_vm._s(this.comdata.mp))
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "body-info" }, [
+          _c("span", { staticClass: "body-info-title" }, [
+            _vm._v("REGION POLICIAL")
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "body-info-data" }, [
+            _vm._v(_vm._s(this.comdata.rp))
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "body-info" }, [
+          _c("span", { staticClass: "body-info-title" }, [
+            _vm._v("DIVISION POLICIAL")
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "body-info-data" }, [
+            _vm._v(_vm._s(this.comdata.dp))
+          ])
+        ])
+      ]),
       _vm._v(" "),
-      _vm._m(3),
+      _c(
+        "div",
+        { staticClass: "data-content", attrs: { id: "distance-data" } },
+        [
+          _c("span", { staticClass: "body-info-title" }, [
+            _vm._v("DISTANCIA DE LA COMISARIA A TU UBICACION")
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "body-info-data" }, [
+            _vm._v(_vm._s(this.comdata.distancia))
+          ])
+        ]
+      ),
       _vm._v(" "),
-      _vm._m(4)
+      _vm._m(2)
     ])
   ])
 }
@@ -40503,81 +40583,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "data-content", attrs: { id: "title-data" } },
-      [
-        _c("div", [
-          _c("p", { attrs: { id: "nombre-comisaria" } }, [
-            _vm._v("NINGUNA COMISARIA SELECCIONADA")
-          ]),
-          _vm._v(" "),
-          _c("span", [_vm._v("No Select, No Select, No Select")])
-        ]),
-        _vm._v(" "),
-        _c("div", { attrs: { id: "vote-info" } }, [
-          _c("span", { attrs: { id: "average-votes" } }, [_vm._v("5")]),
-          _vm._v(" "),
-          _c("img", {
-            attrs: {
-              src:
-                "https://res.cloudinary.com/dtg90uzhc/image/upload/v1597119144/comigeo/mrpkxpjami8m0fdhzcog.png",
-              alt: "star-filled"
-            }
-          })
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "data-content", attrs: { id: "body-data" } },
-      [
-        _c("div", { staticClass: "body-info" }, [
-          _c("span", { staticClass: "body-info-title" }, [
-            _vm._v("MACRO REGION POLICIAL")
-          ]),
-          _vm._v(" "),
-          _c("span", { staticClass: "body-info-data" }, [_vm._v("---")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "body-info" }, [
-          _c("span", { staticClass: "body-info-title" }, [
-            _vm._v("REGION POLICIAL")
-          ]),
-          _vm._v(" "),
-          _c("span", { staticClass: "body-info-data" }, [_vm._v("---")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "body-info" }, [
-          _c("span", { staticClass: "body-info-title" }, [
-            _vm._v("DIVISION POLICIAL")
-          ]),
-          _vm._v(" "),
-          _c("span", { staticClass: "body-info-data" }, [_vm._v("---")])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "data-content", attrs: { id: "distance-data" } },
-      [
-        _c("span", { staticClass: "body-info-title" }, [
-          _vm._v("DISTANCIA DE LA COMISARIA A TU UBICACION")
-        ]),
-        _vm._v(" "),
-        _c("span", { staticClass: "body-info-data" }, [_vm._v("5 Km. Aprox.")])
-      ]
-    )
+    return _c("div", { attrs: { id: "vote-info" } }, [
+      _c("span", { attrs: { id: "average-votes" } }, [_vm._v("5")]),
+      _vm._v(" "),
+      _c("img", {
+        attrs: {
+          src:
+            "https://res.cloudinary.com/dtg90uzhc/image/upload/v1597119144/comigeo/mrpkxpjami8m0fdhzcog.png",
+          alt: "star-filled"
+        }
+      })
+    ])
   },
   function() {
     var _vm = this
