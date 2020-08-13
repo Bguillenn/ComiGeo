@@ -146,7 +146,7 @@
 
             }, //obtenerDistancia
             centrarMapa: function(){
-                this.emit('centrarMapa', {lat: this.comdata.lat, lng: this.comdata.lng});
+                this.$emit('centrarMapa', {lat: this.comdata.lat, lng: this.comdata.lng});
             }
         }
     }

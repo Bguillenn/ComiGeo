@@ -3084,7 +3084,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     //obtenerDistancia
     centrarMapa: function centrarMapa() {
-      this.emit('centrarMapa', {
+      this.$emit('centrarMapa', {
         lat: this.comdata.lat,
         lng: this.comdata.lng
       });
