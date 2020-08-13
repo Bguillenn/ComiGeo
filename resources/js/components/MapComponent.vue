@@ -124,6 +124,8 @@
                     }
                 });
             }
+
+            console.log("Coordenadas "+coordinates.lat+" "+coordinats.lng);
             
         
         },
