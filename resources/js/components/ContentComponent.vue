@@ -67,7 +67,7 @@
                         rp: "RP "+response.data[0].ComMacRegPol,
                         dp: response.data[0].ComDivPol,
                         lat: response.data[0].ComLat,
-                        lng: response.data[0].ComLng
+                        lng: response.data[0].ComLgn
                     }
                 } )
                 .catch( error => console.log(error) );

@@ -2867,7 +2867,7 @@ __webpack_require__.r(__webpack_exports__);
           rp: "RP " + response.data[0].ComMacRegPol,
           dp: response.data[0].ComDivPol,
           lat: response.data[0].ComLat,
-          lng: response.data[0].ComLng
+          lng: response.data[0].ComLgn
         };
       })["catch"](function (error) {
         return console.log(error);
@@ -40639,7 +40639,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("span", { staticClass: "body-info-data" }, [
-            _vm._v(_vm._s(this.comdata.distancia))
+            _vm._v(_vm._s(this.comdata.distancia) + " Km Aprox.")
           ])
         ]
       ),

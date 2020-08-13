@@ -35,8 +35,8 @@
             </div>
             <div id="distance-data" class="data-content">
                 <span class="body-info-title">DISTANCIA DE LA COMISARIA A TU UBICACION</span>
-                <span class="body-info-data">{{this.comdata.distancia}}</span>
-            </div>
+                <span class="body-info-data">{{this.comdata.distancia}} Km Aprox.</span>
+            </div> 
             <div id="options" class="data-content">
                  <!-- AQUI IRA LO DE LOS VOTOS -->
                  <button>
