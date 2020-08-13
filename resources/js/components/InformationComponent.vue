@@ -124,14 +124,26 @@
             }, //obtenerImagenes
 
             obtenerDistancia: function(){
-                let url = "https://35.203.21.243/comisarias/"+this.comdata.id+"/"+this.comdata.lat+"/"+this.comdata.lng;
-                axios.get(url)
-                .then( response => {
-                    this.distancia = response.data.distancia.kms;
-                } )
-                .catch( error => {
-                    console.log(error);
-                } );
+
+                 this.$getLocation({})
+                .then(coordinates => {
+                    let url = "https://35.203.21.243/comisarias/"+this.comdata.id+"/"+coordinates.lat+"/"+coordinates.lng;
+                    axios.get(url)
+                    .then( response => {
+                        alert()
+                        this.distancia = response.data.distancia.kms;
+                    } )
+                    .catch( error => {
+                        console.log(error);
+                    } );
+                }).catch(error => {
+                    alert("No se puede acceder a tu ubicacion");
+                    this.coordinates = {
+                        lat: 16.3989,
+                        lng: 71.535
+                    }
+                });
+
             } //obtenerDistancia
         }
     }

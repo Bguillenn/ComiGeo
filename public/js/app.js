@@ -3061,11 +3061,20 @@ __webpack_require__.r(__webpack_exports__);
     obtenerDistancia: function obtenerDistancia() {
       var _this2 = this;
 
-      var url = "https://35.203.21.243/comisarias/" + this.comdata.id + "/" + this.comdata.lat + "/" + this.comdata.lng;
-      axios.get(url).then(function (response) {
-        _this2.distancia = response.data.distancia.kms;
+      this.$getLocation({}).then(function (coordinates) {
+        var url = "https://35.203.21.243/comisarias/" + _this2.comdata.id + "/" + coordinates.lat + "/" + coordinates.lng;
+        axios.get(url).then(function (response) {
+          alert();
+          _this2.distancia = response.data.distancia.kms;
+        })["catch"](function (error) {
+          console.log(error);
+        });
       })["catch"](function (error) {
-        console.log(error);
+        alert("No se puede acceder a tu ubicacion");
+        _this2.coordinates = {
+          lat: 16.3989,
+          lng: 71.535
+        };
       });
     } //obtenerDistancia
 
