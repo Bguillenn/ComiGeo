@@ -26,7 +26,7 @@
                 lng: -1,
                 id: 0,
             },
-            view: 'map'
+            view: String,
         },
         data(){
             return{

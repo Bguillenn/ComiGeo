@@ -2827,7 +2827,7 @@ __webpack_require__.r(__webpack_exports__);
       lng: -1,
       id: 0
     },
-    view: 'map'
+    view: String
   },
   data: function data() {
     return {
