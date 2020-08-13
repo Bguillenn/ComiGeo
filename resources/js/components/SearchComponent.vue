@@ -68,7 +68,7 @@
                         this.query = this.queryData;
                         this.show = true;
                         clearTimeout(this.timeout);
-                    }, 500);
+                    }, 1000);
                 }else
                     this.show = false;
             },
