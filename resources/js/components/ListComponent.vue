@@ -38,7 +38,7 @@
             </div>
         </div>
         <div id="list">
-
+            <list-item-component />
         </div>
     </div>
 </template>
@@ -85,5 +85,6 @@
         width: 800px;
         height: 450px;
         box-shadow: 0 4px 4px rgba(143,143,143,.25);
+        padding: 10px 20px;
     }
 </style>

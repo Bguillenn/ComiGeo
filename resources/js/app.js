@@ -59,6 +59,7 @@ Vue.component('list-component', require('./components/ListComponent').default);
 Vue.component('information-component', require('./components/InformationComponent').default);
 Vue.component('search-list-component', require('./components/SearchListComponent').default);
 Vue.component('search-item-component', require('./components/SearchItemComponent').default);
+Vue.component('list-item-component', require('./components/ListItemComponent').default);
 Vue.component(VueCarousel.name, VueCarousel);
 
 /**
