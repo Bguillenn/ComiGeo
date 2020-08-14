@@ -3395,6 +3395,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       }).then(function (response) {
         if (response.status == 200) {
+          console.log(response.data);
           var photos = response.data.results[0].photos;
           var urlImg = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference=" + photos[0].photo_reference + "&key=AIzaSyD-cej55YJwDg749MFqK6LTKjKk7k65fDE";
           _this.img = urlImg;

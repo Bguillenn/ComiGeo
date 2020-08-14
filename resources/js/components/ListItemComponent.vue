@@ -56,6 +56,7 @@
                     }
                 }).then( response => {
                     if(response.status == 200){
+                        console.log(response.data);
                         let photos = response.data.results[0].photos;
                         var urlImg = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference="
                                         +photos[0].photo_reference
