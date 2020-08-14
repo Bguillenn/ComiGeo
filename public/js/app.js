@@ -3213,9 +3213,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      departamentos: [],
-      provincias: [],
-      distritos: [],
+      departamentos: {},
+      provincias: {},
+      distritos: {},
       cbxDepartamento: "",
       cbxProvincia: "",
       cbxDistrito: ""
@@ -3223,6 +3223,21 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     console.log('Component mounted.');
+  },
+  created: function created() {
+    //obtener departamentos y añadirlos
+    var urlDep = "https://35.203.21.243/departamentos";
+    axios.get(urlDep).then(function (response) {
+      for (var dep in response.data.departamentos) {
+        console.log(dep[0].name + " | " + dep[1].DepNom);
+      }
+    })["catch"](function (error) {
+      return console.log(error);
+    });
+  },
+  methods: {
+    obtenerProvincias: function obtenerProvincias(depId) {},
+    obtenerDistritos: function obtenerDistritos(proId) {}
   }
 });
 

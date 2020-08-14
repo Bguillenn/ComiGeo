@@ -58,9 +58,9 @@
     export default {
         data(){
             return {
-                departamentos: [],
-                provincias: [],
-                distritos: [],
+                departamentos: {},
+                provincias: {},
+                distritos: {},
                 cbxDepartamento: "",
                 cbxProvincia: "",
                 cbxDistrito: ""
@@ -68,6 +68,25 @@
         },
         mounted() {
             console.log('Component mounted.')
+        },
+        created(){
+            //obtener departamentos y añadirlos
+            let urlDep = "https://35.203.21.243/departamentos"
+            axios.get(urlDep)
+            .then( response => {
+                for(let dep in response.data.departamentos){
+                    console.log(dep[0].name+" | "+dep[1].DepNom);
+                }
+            })
+            .catch( error => console.log(error));
+        },
+        methods: {
+            obtenerProvincias: function(depId){
+
+            },
+            obtenerDistritos: function(proId){
+
+            }
         }
     }
 </script>
