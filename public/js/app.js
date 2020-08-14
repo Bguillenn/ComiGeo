@@ -3232,9 +3232,9 @@ __webpack_require__.r(__webpack_exports__);
     axios.get(urlDep).then(function (response) {
       alert("peticion depas");
       var aux = [];
+      console.log(response.data);
 
       for (var dep in response.data.departamentos) {
-        console.log(dep.DepNom + " " + dep.depCod);
         aux.push({
           nombre: dep.DepNom,
           codigo: dep.DepCod

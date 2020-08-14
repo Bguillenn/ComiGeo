@@ -76,9 +76,10 @@
             .then( response => {
                 alert("peticion depas");
                 let aux = [];
+                console.log(response.data)
                 for(let dep in response.data.departamentos){
 
-                    console.log(dep.DepNom+" "+dep.depCod)
+                    
                     aux.push({
                         nombre: dep.DepNom,
                         codigo: dep.DepCod,
