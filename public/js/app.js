@@ -3200,16 +3200,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3218,7 +3208,8 @@ __webpack_require__.r(__webpack_exports__);
       distritos: [],
       cbxDepartamento: "",
       cbxProvincia: "",
-      cbxDistrito: ""
+      cbxDistrito: "",
+      comisarias: []
     };
   },
   mounted: function mounted() {
@@ -3270,6 +3261,8 @@ __webpack_require__.r(__webpack_exports__);
         _this2.cbxProvincia = _this2.provincias[0].codigo;
 
         _this2.obtenerDistritos(auxPro[0].codigo);
+
+        _this2.obtenerComisarias();
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -3292,6 +3285,31 @@ __webpack_require__.r(__webpack_exports__);
 
         _this3.distritos = auxDis;
         _this3.cbxDistrito = _this3.distritos[0].codigo;
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    },
+    obtenerComisarias: function obtenerComisarias() {
+      var _this4 = this;
+
+      var url = "https://35.203.21.243/buscar/" + this.cbxDepartamento + "/" + this.cbxProvincia + "/" + this.cbxDistrito;
+      axios.get(url).then(function (response) {
+        var aux = [];
+        var data = response.data.comisarias;
+
+        for (var i = 0; i < data.length; i++) {
+          aux.push({
+            id: data[i].ComId,
+            nombre: data[i].ComNom,
+            lat: data[i].ComLat,
+            lng: data[i].ComLgn,
+            dep: data[i].DepNom,
+            pro: data[i].ProNom,
+            dis: data[i].DisNom
+          });
+        }
+
+        _this4.comisarias = aux;
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -41302,31 +41320,9 @@ var render = function() {
     _c(
       "div",
       { attrs: { id: "list" } },
-      [
-        _c("list-item-component"),
-        _vm._v(" "),
-        _c("list-item-component"),
-        _vm._v(" "),
-        _c("list-item-component"),
-        _vm._v(" "),
-        _c("list-item-component"),
-        _vm._v(" "),
-        _c("list-item-component"),
-        _vm._v(" "),
-        _c("list-item-component"),
-        _vm._v(" "),
-        _c("list-item-component"),
-        _vm._v(" "),
-        _c("list-item-component"),
-        _vm._v(" "),
-        _c("list-item-component"),
-        _vm._v(" "),
-        _c("list-item-component"),
-        _vm._v(" "),
-        _c("list-item-component"),
-        _vm._v(" "),
-        _c("list-item-component")
-      ],
+      _vm._l(_vm.comisarias, function(c, index) {
+        return _c("list-item-component", { key: index, attrs: { comdata: c } })
+      }),
       1
     )
   ])
@@ -41353,40 +41349,46 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "list-item" }, [
+    _c("div", { staticClass: "list-item-info" }, [
+      _c("img", {
+        staticClass: "list-item-img",
+        attrs: {
+          src:
+            "https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png",
+          alt: "comi-image"
+        }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "list-item-data" }, [
+        _c("h3", { staticClass: "list-item-name" }, [
+          _vm._v(_vm._s(_vm.cominfo.nombre))
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "list-item-dir" }, [
+          _vm._v(
+            _vm._s(_vm.cominfo.dep) +
+              ", " +
+              _vm._s(_vm.cominfo.pro) +
+              ", " +
+              _vm._s(_vm.cominfo.dis)
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _vm._m(0)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "list-item" }, [
-      _c("div", { staticClass: "list-item-info" }, [
-        _c("img", {
-          staticClass: "list-item-img",
-          attrs: {
-            src:
-              "https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png",
-            alt: "comi-image"
-          }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "list-item-data" }, [
-          _c("h3", { staticClass: "list-item-name" }, [
-            _vm._v("CPNP ZAMACOLA")
-          ]),
-          _vm._v(" "),
-          _c("span", { staticClass: "list-item-dir" }, [
-            _vm._v("Arequia, Arequipa, Cerro Colorado")
-          ])
-        ])
-      ]),
+    return _c("div", { staticClass: "list-item-options" }, [
+      _c("button", [_vm._v("\n            Ver en mapa\n        ")]),
       _vm._v(" "),
-      _c("div", { staticClass: "list-item-options" }, [
-        _c("button", [_vm._v("\n            Ver en mapa\n        ")]),
-        _vm._v(" "),
-        _c("button", [_vm._v("\n            Mostrar detalles\n        ")])
-      ])
+      _c("button", [_vm._v("\n            Mostrar detalles\n        ")])
     ])
   }
 ]

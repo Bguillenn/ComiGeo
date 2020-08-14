@@ -3,8 +3,8 @@
         <div class="list-item-info">
             <img class="list-item-img" src="https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png" alt="comi-image">
             <div class="list-item-data">
-                <h3 class="list-item-name">CPNP ZAMACOLA</h3>
-                <span class="list-item-dir">Arequia, Arequipa, Cerro Colorado</span>
+                <h3 class="list-item-name">{{cominfo.nombre}}</h3>
+                <span class="list-item-dir">{{cominfo.dep}}, {{cominfo.pro}}, {{cominfo.dis}}</span>
             </div>
         </div>
         <div class="list-item-options">

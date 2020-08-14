@@ -135,7 +135,7 @@ class ComisariaController extends Controller{
 		{
 			$codigo=$comisaria->ComCod;
 			$datos=$this->datos($comisaria);
-			$result[$codigo]=$datos;
+			array_push($result,$datos);
 		}
 
 		return response()->json(['comisarias'=>$result],200);
@@ -159,7 +159,7 @@ class ComisariaController extends Controller{
 		{
 			$codigo=$comisaria->ComCod;
 			$datos=$this->datos($comisaria);
-			$result[$codigo]=$datos;
+			array_push($result,$datos);
 		}
 
 		return response()->json(['comisarias'=>$result],200);
@@ -192,7 +192,7 @@ class ComisariaController extends Controller{
 		{
 			$codigo=$comisaria->ComCod;
 			$datos=$this->datos($comisaria);
-			$result[$codigo]=$datos;
+			array_push($result,$datos);
 		}
 
 		return response()->json(['comisarias'=>$result],200);

@@ -38,18 +38,8 @@
             </div>
         </div>
         <div id="list">
-            <list-item-component />
-            <list-item-component />
-            <list-item-component />
-            <list-item-component />
-            <list-item-component />
-            <list-item-component />
-            <list-item-component />
-            <list-item-component />
-            <list-item-component />
-            <list-item-component />
-            <list-item-component />
-            <list-item-component />
+            <list-item-component :key="index" v-for="(c,index) in comisarias"
+                :comdata="c"/>
         </div>
     </div>
 </template>
@@ -63,7 +53,8 @@
                 distritos: [],
                 cbxDepartamento: "",
                 cbxProvincia: "",
-                cbxDistrito: ""
+                cbxDistrito: "",
+                comisarias: []
             }
         },
         mounted() {
@@ -109,6 +100,7 @@
                     this.provincias = auxPro;
                     this.cbxProvincia = this.provincias[0].codigo;
                     this.obtenerDistritos(auxPro[0].codigo);
+                    this.obtenerComisarias();
                 })
                 .catch( error => console.log(error));
             },
@@ -129,6 +121,28 @@
                     this.cbxDistrito = this.distritos[0].codigo;
                 })
                 .catch( error => console.log(error))
+            },
+            obtenerComisarias: function(){
+                let url = "https://35.203.21.243/buscar/"+this.cbxDepartamento+"/"+this.cbxProvincia+"/"+this.cbxDistrito;
+                axios.get(url)
+                .then( response => {
+                    let aux = []
+                    let data = response.data.comisarias;
+                    for(var i=0; i<data.length;i++){
+                        aux.push({
+                            id: data[i].ComId,
+                            nombre: data[i].ComNom,
+                            lat: data[i].ComLat,
+                            lng: data[i].ComLgn,
+                            dep: data[i].DepNom,
+                            pro: data[i].ProNom,
+                            dis: data[i].DisNom,
+                        });
+                    }
+
+                    this.comisarias = aux;
+                })
+                .catch( error => console.log(error));
             }
         }
     }
