@@ -1,7 +1,7 @@
 <template>
     <div class="list-item">
         <div class="list-item-info">
-            <img class="list-item-img" src="https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png" alt="comi-image">
+            <img class="list-item-img" :src="this.img" alt="comi-image">
             <div class="list-item-data">
                 <h3 class="list-item-name">{{cominfo.nombre}}</h3>
                 <span class="list-item-dir">{{cominfo.dep}}, {{cominfo.pro}}, {{cominfo.dis}}</span>
@@ -41,7 +41,27 @@
             console.log('component mounted');
         },
         methods: {
+             obtenerImagenes: function(){
+                axios.
+                get("https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json" ,{
+                    params: {
+                        location: this.cominfo.lat+","+this.cominfo.lng,
+                        radius: 100,
+                        keyword: this.cominfo.nombre,
+                        key: 'AIzaSyCKnBKQiMWepRPmxDEeGKlG_WMhtm3jQ6c'
+                        //key: 'AIzaSyD-cej55YJwDg749MFqK6LTKjKk7k65fDE'
+                    }
+                }).then( response => {
+                    if(response.status == 200){
+                        let photos = response.data.results[0].photos;
+                        var urlImg = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference="
+                                        +photos[0].photo_reference
+                                        +"&key=AIzaSyD-cej55YJwDg749MFqK6LTKjKk7k65fDE";
 
+                        this.img = urlImg;
+                    }
+                }).catch( error => console.log(error));
+            }, //obtenerImagenes
         }
     }
 </script>

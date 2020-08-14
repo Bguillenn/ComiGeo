@@ -3301,7 +3301,6 @@ __webpack_require__.r(__webpack_exports__);
     obtenerComisarias: function obtenerComisarias() {
       var _this4 = this;
 
-      alert("llamando comisarias");
       var url = "https://35.203.21.243/buscar/" + this.cbxDepartamento + "/" + this.cbxProvincia + "/" + this.cbxDistrito;
       axios.get(url).then(function (response) {
         var aux = [];
@@ -3379,7 +3378,30 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     console.log('component mounted');
   },
-  methods: {}
+  methods: {
+    obtenerImagenes: function obtenerImagenes() {
+      var _this = this;
+
+      axios.get("https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json", {
+        params: {
+          location: this.cominfo.lat + "," + this.cominfo.lng,
+          radius: 100,
+          keyword: this.cominfo.nombre,
+          key: 'AIzaSyCKnBKQiMWepRPmxDEeGKlG_WMhtm3jQ6c' //key: 'AIzaSyD-cej55YJwDg749MFqK6LTKjKk7k65fDE'
+
+        }
+      }).then(function (response) {
+        if (response.status == 200) {
+          var photos = response.data.results[0].photos;
+          var urlImg = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference=" + photos[0].photo_reference + "&key=AIzaSyD-cej55YJwDg749MFqK6LTKjKk7k65fDE";
+          _this.img = urlImg;
+        }
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    } //obtenerImagenes
+
+  }
 });
 
 /***/ }),
@@ -41363,11 +41385,7 @@ var render = function() {
     _c("div", { staticClass: "list-item-info" }, [
       _c("img", {
         staticClass: "list-item-img",
-        attrs: {
-          src:
-            "https://www.worldloppet.com/wp-content/uploads/2018/10/no-img-placeholder.png",
-          alt: "comi-image"
-        }
+        attrs: { src: this.img, alt: "comi-image" }
       }),
       _vm._v(" "),
       _c("div", { staticClass: "list-item-data" }, [
