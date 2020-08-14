@@ -112,7 +112,6 @@
                     this.provincias = auxPro;
                     this.cbxProvincia = this.provincias[0].codigo;
                     this.obtenerDistritos(auxPro[0].codigo);
-                    this.obtenerComisarias();
                 })
                 .catch( error => console.log(error));
             },
@@ -130,6 +129,7 @@
                     }
                     this.distritos = auxDis;
                     this.cbxDistrito = this.distritos[0].codigo;
+                    this.obtenerComisarias();
                 })
                 .catch( error => console.log(error))
             },

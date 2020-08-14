@@ -3273,8 +3273,6 @@ __webpack_require__.r(__webpack_exports__);
         _this2.cbxProvincia = _this2.provincias[0].codigo;
 
         _this2.obtenerDistritos(auxPro[0].codigo);
-
-        _this2.obtenerComisarias();
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -3296,6 +3294,8 @@ __webpack_require__.r(__webpack_exports__);
 
         _this3.distritos = auxDis;
         _this3.cbxDistrito = _this3.distritos[0].codigo;
+
+        _this3.obtenerComisarias();
       })["catch"](function (error) {
         return console.log(error);
       });
