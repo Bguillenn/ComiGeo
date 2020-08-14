@@ -6,8 +6,8 @@
                 <span class="cbx-label">Departamento: </span>
                 <div class="custom-select">
                     <select name="departamentos" id="dep" v-model="cbxDepartamento" class="combobox">
-                        <option :key="index" v-for="(d,index) in this.departamentos" :value="d.DepCod">
-                            {{d.DepNom}}
+                        <option :key="index" v-for="(d,index) in this.departamentos" :value="d.codigo">
+                            {{d.nombre}}
                         </option>
                     </select>
                 </div>
@@ -18,8 +18,8 @@
                 <div class="custom-select">
                     <select name="provincias" id="pro" v-model="cbxProvincia" class="combobox">
                         <option value="">Cualquiera</option>
-                        <option :key="index" v-for="(p,index) in this.provincias" :value="p.ProCod">
-                            {{p.ProNom}}
+                        <option :key="index" v-for="(p,index) in this.provincias" :value="p.codigo">
+                            {{p.nombre}}
                         </option>
                     </select>
                 </div>
@@ -30,8 +30,8 @@
                 <div class="custom-select">
                     <select name="departamentos" id="dep" v-model="cbxDepartamento" class="combobox">
                         <option value="" selected>Cualquiera</option>
-                        <option :key="index" v-for="(d,index) in this.departamentos" :value="d.DepCod">
-                            {{d.DepNom}}
+                        <option :key="index" v-for="(d,index) in this.departamentos" :value="d.codigo">
+                            {{d.nombre}}
                         </option>
                     </select>
                 </div>

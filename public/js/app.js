@@ -41166,11 +41166,11 @@ var render = function() {
             _vm._l(this.departamentos, function(d, index) {
               return _c(
                 "option",
-                { key: index, domProps: { value: d.DepCod } },
+                { key: index, domProps: { value: d.codigo } },
                 [
                   _vm._v(
                     "\n                        " +
-                      _vm._s(d.DepNom) +
+                      _vm._s(d.nombre) +
                       "\n                    "
                   )
                 ]
@@ -41220,11 +41220,11 @@ var render = function() {
               _vm._l(this.provincias, function(p, index) {
                 return _c(
                   "option",
-                  { key: index, domProps: { value: p.ProCod } },
+                  { key: index, domProps: { value: p.codigo } },
                   [
                     _vm._v(
                       "\n                        " +
-                        _vm._s(p.ProNom) +
+                        _vm._s(p.nombre) +
                         "\n                    "
                     )
                   ]
@@ -41277,11 +41277,11 @@ var render = function() {
               _vm._l(this.departamentos, function(d, index) {
                 return _c(
                   "option",
-                  { key: index, domProps: { value: d.DepCod } },
+                  { key: index, domProps: { value: d.codigo } },
                   [
                     _vm._v(
                       "\n                        " +
-                        _vm._s(d.DepNom) +
+                        _vm._s(d.nombre) +
                         "\n                    "
                     )
                   ]
