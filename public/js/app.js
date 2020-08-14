@@ -3235,6 +3235,7 @@ __webpack_require__.r(__webpack_exports__);
       console.log(response.data.departamentos);
 
       for (var dep in response.data.departamentos) {
+        console.log(dep);
         aux.push({
           nombre: dep.DepNom,
           codigo: dep.DepCod

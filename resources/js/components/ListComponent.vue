@@ -79,7 +79,7 @@
                 console.log(response.data.departamentos);
                 for(let dep in response.data.departamentos){
 
-                    
+                    console.log(dep);
                     aux.push({
                         nombre: dep.DepNom,
                         codigo: dep.DepCod,
