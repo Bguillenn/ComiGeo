@@ -40,6 +40,9 @@
         mounted(){
             console.log('component mounted');
         },
+        created(){
+            this.obtenerImagenes();
+        },
         methods: {
              obtenerImagenes: function(){
                 axios.
