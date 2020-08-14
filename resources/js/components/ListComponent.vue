@@ -108,7 +108,7 @@
 
                     this.provincias = auxPro;
                     this.cbxProvincia = this.provincias[0].codigo;
-                    this.obtenerDistritos(aux.codigo);
+                    this.obtenerDistritos(auxPro[0].codigo);
                 })
                 .catch( error => console.log(error));
             },

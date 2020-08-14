@@ -3269,7 +3269,7 @@ __webpack_require__.r(__webpack_exports__);
         _this2.provincias = auxPro;
         _this2.cbxProvincia = _this2.provincias[0].codigo;
 
-        _this2.obtenerDistritos(aux.codigo);
+        _this2.obtenerDistritos(auxPro[0].codigo);
       })["catch"](function (error) {
         return console.log(error);
       });
