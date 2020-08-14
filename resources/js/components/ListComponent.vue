@@ -74,7 +74,7 @@
             let urlDep = "https://35.203.21.243/departamentos"
             axios.get(urlDep)
             .then( response => {
-                for(let dep in response.data.departamentos){
+                for(let dep in response.data.departamentos.entries()){
                     console.log(dep[0].name+" | "+dep[1].DepNom);
                 }
             })

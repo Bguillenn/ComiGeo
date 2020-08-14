@@ -3228,7 +3228,7 @@ __webpack_require__.r(__webpack_exports__);
     //obtener departamentos y añadirlos
     var urlDep = "https://35.203.21.243/departamentos";
     axios.get(urlDep).then(function (response) {
-      for (var dep in response.data.departamentos) {
+      for (var dep in response.data.departamentos.entries()) {
         console.log(dep[0].name + " | " + dep[1].DepNom);
       }
     })["catch"](function (error) {
