@@ -133,6 +133,7 @@
                 .catch( error => console.log(error))
             },
             obtenerComisarias: function(){
+                alert("llamando comisarias");
                 let url = "https://35.203.21.243/buscar/"+this.cbxDepartamento+"/"+this.cbxProvincia+"/"+this.cbxDistrito;
                 axios.get(url)
                 .then( response => {

@@ -3302,6 +3302,7 @@ __webpack_require__.r(__webpack_exports__);
     obtenerComisarias: function obtenerComisarias() {
       var _this4 = this;
 
+      alert("llamando comisarias");
       var url = "https://35.203.21.243/buscar/" + this.cbxDepartamento + "/" + this.cbxProvincia + "/" + this.cbxDistrito;
       axios.get(url).then(function (response) {
         var aux = [];
