@@ -76,13 +76,12 @@
             .then( response => {
                 alert("peticion depas");
                 let aux = [];
-                console.log(response.data.departamentos);
-                for(let dep in response.data.departamentos){
+                let data = response.data.departamentos;
+                for(var i = 0; i<data.length; i++){
 
-                    console.log(dep);
                     aux.push({
-                        nombre: dep.DepNom,
-                        codigo: dep.DepCod,
+                        nombre: data[i].DepNom,
+                        codigo: data[i].DepCod,
                     });
                 }
 
@@ -99,10 +98,11 @@
                 let url = "https://35.203.21.243/departamentos/"+depId+"/provincias";
                 axios.get(url)
                 .then( response => {
-                    for(let pro in response.data.provincias){
+                    let data = response.data.provincias;
+                    for(var i=0; i<data.length;i++ ){
                         auxPro.push({
-                            nombre: pro.ProNom,
-                            codigo: pro.ProCod
+                            nombre: data[i].ProNom,
+                            codigo: data[i].ProCod
                         });
                     }
 
@@ -118,10 +118,11 @@
                 let url = "https://35.203.21.243/provincias/"+proId+"/distritos";
                 axios.get(url)
                 .then( response => {
-                    for(let dis in response.data.distritos){
+                    let data = response.data.distritos;
+                    for(var i=0; i<data.length;i++){
                         auxDis.push({
-                            nombre: dis.DisNom,
-                            codigo: dis.DisCod
+                            nombre: data[i].DisNom,
+                            codigo: data[i].DisCod
                         });
                     }
                     this.distritos = auxDis;

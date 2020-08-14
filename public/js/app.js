@@ -3232,13 +3232,12 @@ __webpack_require__.r(__webpack_exports__);
     axios.get(urlDep).then(function (response) {
       alert("peticion depas");
       var aux = [];
-      console.log(response.data.departamentos);
+      var data = response.data.departamentos;
 
-      for (var dep in response.data.departamentos) {
-        console.log(dep);
+      for (var i = 0; i < data.length; i++) {
         aux.push({
-          nombre: dep.DepNom,
-          codigo: dep.DepCod
+          nombre: data[i].DepNom,
+          codigo: data[i].DepCod
         });
       }
 
@@ -3258,10 +3257,12 @@ __webpack_require__.r(__webpack_exports__);
       var auxPro = [];
       var url = "https://35.203.21.243/departamentos/" + depId + "/provincias";
       axios.get(url).then(function (response) {
-        for (var pro in response.data.provincias) {
+        var data = response.data.provincias;
+
+        for (var i = 0; i < data.length; i++) {
           auxPro.push({
-            nombre: pro.ProNom,
-            codigo: pro.ProCod
+            nombre: data[i].ProNom,
+            codigo: data[i].ProCod
           });
         }
 
@@ -3280,10 +3281,12 @@ __webpack_require__.r(__webpack_exports__);
       var auxDis = [];
       var url = "https://35.203.21.243/provincias/" + proId + "/distritos";
       axios.get(url).then(function (response) {
-        for (var dis in response.data.distritos) {
+        var data = response.data.distritos;
+
+        for (var i = 0; i < data.length; i++) {
           auxDis.push({
-            nombre: dis.DisNom,
-            codigo: dis.DisCod
+            nombre: data[i].DisNom,
+            codigo: data[i].DisCod
           });
         }
 
