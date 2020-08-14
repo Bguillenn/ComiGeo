@@ -3230,6 +3230,7 @@ __webpack_require__.r(__webpack_exports__);
     //obtener departamentos y añadirlos
     var urlDep = "https://35.203.21.243/departamentos";
     axios.get(urlDep).then(function (response) {
+      alert("peticion depas");
       var aux = [];
 
       for (var dep in response.data.departamentos) {
@@ -3251,6 +3252,7 @@ __webpack_require__.r(__webpack_exports__);
     obtenerProvincias: function obtenerProvincias(depId) {
       var _this2 = this;
 
+      alert("peticion provincias");
       var auxPro = [];
       var url = "https://35.203.21.243/departamentos/" + depId + "/provincias";
       axios.get(url).then(function (response) {
@@ -3272,6 +3274,7 @@ __webpack_require__.r(__webpack_exports__);
     obtenerDistritos: function obtenerDistritos(proId) {
       var _this3 = this;
 
+      alert("peticion distritos");
       var auxDis = [];
       var url = "https://35.203.21.243/provincias/" + proId + "/distritos";
       axios.get(url).then(function (response) {

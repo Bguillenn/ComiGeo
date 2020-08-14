@@ -74,6 +74,7 @@
             let urlDep = "https://35.203.21.243/departamentos"
             axios.get(urlDep)
             .then( response => {
+                alert("peticion depas");
                 let aux = [];
                 for(let dep in response.data.departamentos){
                     aux.push({
@@ -90,6 +91,7 @@
         },
         methods: {
             obtenerProvincias: function(depId){
+                alert("peticion provincias");
                 let auxPro = [];
                 let url = "https://35.203.21.243/departamentos/"+depId+"/provincias";
                 axios.get(url)
@@ -108,6 +110,7 @@
                 .catch( error => console.log(error));
             },
             obtenerDistritos: function(proId){
+                alert("peticion distritos");
                 let auxDis = [];
                 let url = "https://35.203.21.243/provincias/"+proId+"/distritos";
                 axios.get(url)
