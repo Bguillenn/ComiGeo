@@ -21,7 +21,7 @@ class DepartamentoController extends Controller
 			}
 			else
 			{
-				array_push($resuls,['DepCod' => $departamento->DepCod, 'DepNom'=>$departamento->DepNom]);
+				array_push($result,['DepCod' => $departamento->DepCod, 'DepNom'=>$departamento->DepNom]);
 			}
 		}
 		return response()->json(['departamentos'=>$result],200);
