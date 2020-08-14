@@ -57,6 +57,19 @@
                 comisarias: []
             }
         },
+        watch:{
+            cbxDepartamento: function(newVal, oldVal){
+                this.obtenerProvincias(newVal);
+                this.obtenerComisarias();
+            },
+            cbxProvincia: function(newVal, oldVal){
+                this.obtenerDistritos(newVal);
+                this.obtenerComisarias();
+            },
+            cbxDistrito: function(newVal, oldVal){
+                this.obtenerComisarias();
+            }
+        },
         mounted() {
             console.log('Component mounted.')
         },

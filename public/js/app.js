@@ -3212,6 +3212,19 @@ __webpack_require__.r(__webpack_exports__);
       comisarias: []
     };
   },
+  watch: {
+    cbxDepartamento: function cbxDepartamento(newVal, oldVal) {
+      this.obtenerProvincias(newVal);
+      this.obtenerComisarias();
+    },
+    cbxProvincia: function cbxProvincia(newVal, oldVal) {
+      this.obtenerDistritos(newVal);
+      this.obtenerComisarias();
+    },
+    cbxDistrito: function cbxDistrito(newVal, oldVal) {
+      this.obtenerComisarias();
+    }
+  },
   mounted: function mounted() {
     console.log('Component mounted.');
   },
