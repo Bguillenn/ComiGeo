@@ -56,7 +56,7 @@
             <p>En esta grafica se muestra la cantidad de denuncias por violencia familiar puesta cada mes por hombres y mujeres</p>
             
             <div>
-                <div id="linechart" style="width: 750px; height: 350px"></div>
+                <div id="linechart" style="width: 750px; height: 350px; z-index: 1"></div>
                 <div id="data">
                     <h2>CIFRAS</h2>
                     <h6>Total de denuncias</h6>
