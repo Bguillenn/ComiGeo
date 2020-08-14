@@ -37,9 +37,12 @@
                 </div>
             </div>
         </div>
-        <div id="list">
+        <div id="list" v-if="distritos==0">
             <list-item-component :key="index" v-for="(c,index) in comisarias"
                 :comdata="c"/>
+        </div>
+        <div v-else class="list">
+            <center>No hay resultados</center>
         </div>
     </div>
 </template>
