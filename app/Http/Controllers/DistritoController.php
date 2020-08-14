@@ -25,13 +25,15 @@ class DistritoController extends Controller
 		{
 			if(strlen($distrito->DisCod) == '5')
 			{
-				$result['0'.$distrito->DisCod]=['DisNom'=>$distrito->DisNom,
+				$result['0'.$distrito->DisCod]=['DisCod'=>'0'.$distrito->DisCod,
+												'DisNom'=>$distrito->DisNom,
 												'DepCod'=>$distrito->DepCod,
 												'ProCod'=>$distrito->ProCod];
 			}
 			else
 			{
-				$result[$distrito->DisCod]=['DisNom'=>$distrito->DisNom,
+				$result[$distrito->DisCod]=['DisCod'=>$distrito->DisCod,
+											'DisNom'=>$distrito->DisNom,
 											'DepCod'=>$distrito->DepCod,
 											'ProCod'=>$distrito->ProCod];
 			}

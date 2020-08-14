@@ -58,9 +58,9 @@
     export default {
         data(){
             return {
-                departamentos: {},
-                provincias: {},
-                distritos: {},
+                departamentos: [],
+                provincias: [],
+                distritos: [],
                 cbxDepartamento: "",
                 cbxProvincia: "",
                 cbxDistrito: ""
@@ -74,18 +74,54 @@
             let urlDep = "https://35.203.21.243/departamentos"
             axios.get(urlDep)
             .then( response => {
-                for(let dep in response.data.departamentos.entries()){
-                    console.log(dep[0].name+" | "+dep[1].DepNom);
+                let aux = [];
+                for(let dep in response.data.departamentos){
+                    aux.push({
+                        nombre: dep.DepNom,
+                        codigo: dep.DepCod,
+                    });
                 }
+
+                this.departamentos = aux;
+                this.cbxDepartamento = this.departamentos[0].codigo;
+                this.obtenerProvincias(this.cbxDepartamento[0].codigo);
             })
             .catch( error => console.log(error));
         },
         methods: {
             obtenerProvincias: function(depId){
+                let auxPro = [];
+                let url = "https://35.203.21.243/departamentos/"+depId+"/provincias";
+                axios.get(url)
+                .then( response => {
+                    for(let pro in response.data.provincias){
+                        auxPro.push({
+                            nombre: pro.ProNom,
+                            codigo: pro.ProCod
+                        });
+                    }
 
+                    this.provincias = auxPro;
+                    this.cbxProvincia = this.provincias[0].codigo;
+                    this.obtenerDistritos(this.provincias[0].codigo);
+                })
+                .catch( error => console.log(error));
             },
             obtenerDistritos: function(proId){
-
+                let auxDis = [];
+                let url = "https://35.203.21.243/provincias/"+proId+"/distritos";
+                axios.get(url)
+                .then( response => {
+                    for(let dis in response.data.distritos){
+                        auxDis.push({
+                            nombre: dis.DisNom,
+                            codigo: dis.DisCod
+                        });
+                    }
+                    this.distritos = auxDis;
+                    this.cbxDistrito = this.distritos[0].codigo;
+                })
+                .catch( error => console.log(error))
             }
         }
     }

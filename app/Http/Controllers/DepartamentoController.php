@@ -17,11 +17,11 @@ class DepartamentoController extends Controller
 		{
 			if(strlen($departamento->DepCod) == 1)
 			{
-				$result['0'.$departamento->DepCod]=['DepNom'=>$departamento->DepNom];
+				$result['0'.$departamento->DepCod]=['DepCod' => '0'.$departamento->DepCod, 'DepNom'=>$departamento->DepNom];
 			}
 			else
 			{
-				$result[$departamento->DepCod]=['DepNom'=>$departamento->DepNom];
+				$result[$departamento->DepCod]=['DepCod' => $departamento->DepCod, 'DepNom'=>$departamento->DepNom];
 			}
 		}
 		return response()->json(['departamentos'=>$result],200);

@@ -25,12 +25,14 @@ class ProvinciaController extends Controller
 		{
 			if(strlen($provincia->ProCod) == '3')
 			{
-				$result['0'.$provincia->ProCod]=['ProNom'=>$provincia->ProNom,
+				$result['0'.$provincia->ProCod]=['ProCod' => '0'.$provincia->ProCod,
+												'ProNom'=>$provincia->ProNom,
 												'DepCod'=>$provincia->DepCod];
 			}
 			else
 			{
-				$result[$provincia->ProCod]=['ProNom'=>$provincia->ProNom,
+				$result[$provincia->ProCod]=[	'ProCod' => $provincia->ProCod,
+												'ProNom'=>$provincia->ProNom,
 												'DepCod'=>$provincia->DepCod];
 			}
 		}

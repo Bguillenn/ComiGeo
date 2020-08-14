@@ -3213,9 +3213,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      departamentos: {},
-      provincias: {},
-      distritos: {},
+      departamentos: [],
+      provincias: [],
+      distritos: [],
       cbxDepartamento: "",
       cbxProvincia: "",
       cbxDistrito: ""
@@ -3225,19 +3225,69 @@ __webpack_require__.r(__webpack_exports__);
     console.log('Component mounted.');
   },
   created: function created() {
+    var _this = this;
+
     //obtener departamentos y añadirlos
     var urlDep = "https://35.203.21.243/departamentos";
     axios.get(urlDep).then(function (response) {
-      for (var dep in response.data.departamentos.entries()) {
-        console.log(dep[0].name + " | " + dep[1].DepNom);
+      var aux = [];
+
+      for (var dep in response.data.departamentos) {
+        aux.push({
+          nombre: dep.DepNom,
+          codigo: dep.DepCod
+        });
       }
+
+      _this.departamentos = aux;
+      _this.cbxDepartamento = _this.departamentos[0].codigo;
+
+      _this.obtenerProvincias(_this.cbxDepartamento[0].codigo);
     })["catch"](function (error) {
       return console.log(error);
     });
   },
   methods: {
-    obtenerProvincias: function obtenerProvincias(depId) {},
-    obtenerDistritos: function obtenerDistritos(proId) {}
+    obtenerProvincias: function obtenerProvincias(depId) {
+      var _this2 = this;
+
+      var auxPro = [];
+      var url = "https://35.203.21.243/departamentos/" + depId + "/provincias";
+      axios.get(url).then(function (response) {
+        for (var pro in response.data.provincias) {
+          auxPro.push({
+            nombre: pro.ProNom,
+            codigo: pro.ProCod
+          });
+        }
+
+        _this2.provincias = auxPro;
+        _this2.cbxProvincia = _this2.provincias[0].codigo;
+
+        _this2.obtenerDistritos(_this2.provincias[0].codigo);
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    },
+    obtenerDistritos: function obtenerDistritos(proId) {
+      var _this3 = this;
+
+      var auxDis = [];
+      var url = "https://35.203.21.243/provincias/" + proId + "/distritos";
+      axios.get(url).then(function (response) {
+        for (var dis in response.data.distritos) {
+          auxDis.push({
+            nombre: dis.DisNom,
+            codigo: dis.DisCod
+          });
+        }
+
+        _this3.distritos = auxDis;
+        _this3.cbxDistrito = _this3.distritos[0].codigo;
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    }
   }
 });
 
