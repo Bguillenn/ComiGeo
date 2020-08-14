@@ -26,11 +26,11 @@
             </div>
             <!-- Tercer combobox distritos -->
             <div>
-                <span class="cbx-label">Departamento: </span>
+                <span class="cbx-label">Distrito: </span>
                 <div class="custom-select">
-                    <select name="departamentos" id="dep" v-model="cbxDepartamento" class="combobox">
+                    <select name="distritos" id="dep" v-model="cbxDistrito" class="combobox">
                         <option value="" selected>Cualquiera</option>
-                        <option :key="index" v-for="(d,index) in this.departamentos" :value="d.codigo">
+                        <option :key="index" v-for="(d,index) in this.distritos" :value="d.codigo">
                             {{d.nombre}}
                         </option>
                     </select>
@@ -87,7 +87,7 @@
 
                 this.departamentos = aux;
                 this.cbxDepartamento = this.departamentos[0].codigo;
-                this.obtenerProvincias(this.cbxDepartamento[0].codigo);
+                this.obtenerProvincias(aux[0].codigo);
             })
             .catch( error => console.log(error));
         },
@@ -108,7 +108,7 @@
 
                     this.provincias = auxPro;
                     this.cbxProvincia = this.provincias[0].codigo;
-                    this.obtenerDistritos(this.provincias[0].codigo);
+                    this.obtenerDistritos(aux.codigo);
                 })
                 .catch( error => console.log(error));
             },

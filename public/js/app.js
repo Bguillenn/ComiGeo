@@ -3244,7 +3244,7 @@ __webpack_require__.r(__webpack_exports__);
       _this.departamentos = aux;
       _this.cbxDepartamento = _this.departamentos[0].codigo;
 
-      _this.obtenerProvincias(_this.cbxDepartamento[0].codigo);
+      _this.obtenerProvincias(aux[0].codigo);
     })["catch"](function (error) {
       return console.log(error);
     });
@@ -3269,7 +3269,7 @@ __webpack_require__.r(__webpack_exports__);
         _this2.provincias = auxPro;
         _this2.cbxProvincia = _this2.provincias[0].codigo;
 
-        _this2.obtenerDistritos(_this2.provincias[0].codigo);
+        _this2.obtenerDistritos(aux.codigo);
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -41242,7 +41242,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", [
-        _c("span", { staticClass: "cbx-label" }, [_vm._v("Departamento: ")]),
+        _c("span", { staticClass: "cbx-label" }, [_vm._v("Distrito: ")]),
         _vm._v(" "),
         _c("div", { staticClass: "custom-select" }, [
           _c(
@@ -41252,12 +41252,12 @@ var render = function() {
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.cbxDepartamento,
-                  expression: "cbxDepartamento"
+                  value: _vm.cbxDistrito,
+                  expression: "cbxDistrito"
                 }
               ],
               staticClass: "combobox",
-              attrs: { name: "departamentos", id: "dep" },
+              attrs: { name: "distritos", id: "dep" },
               on: {
                 change: function($event) {
                   var $$selectedVal = Array.prototype.filter
@@ -41268,7 +41268,7 @@ var render = function() {
                       var val = "_value" in o ? o._value : o.value
                       return val
                     })
-                  _vm.cbxDepartamento = $event.target.multiple
+                  _vm.cbxDistrito = $event.target.multiple
                     ? $$selectedVal
                     : $$selectedVal[0]
                 }
@@ -41279,7 +41279,7 @@ var render = function() {
                 _vm._v("Cualquiera")
               ]),
               _vm._v(" "),
-              _vm._l(this.departamentos, function(d, index) {
+              _vm._l(this.distritos, function(d, index) {
                 return _c(
                   "option",
                   { key: index, domProps: { value: d.codigo } },
