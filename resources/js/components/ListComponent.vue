@@ -77,7 +77,7 @@
                 alert("peticion depas");
                 let aux = [];
                 console.log(response.data.departamentos);
-                for(let dep in response.data.departamentos.values()){
+                for(let dep in response.data.departamentos){
 
                     console.log(dep);
                     aux.push({

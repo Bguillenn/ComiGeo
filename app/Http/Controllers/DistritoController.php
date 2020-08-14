@@ -25,17 +25,17 @@ class DistritoController extends Controller
 		{
 			if(strlen($distrito->DisCod) == '5')
 			{
-				$result['0'.$distrito->DisCod]=['DisCod'=>'0'.$distrito->DisCod,
+				array_push($result,['DisCod'=>'0'.$distrito->DisCod,
 												'DisNom'=>$distrito->DisNom,
 												'DepCod'=>$distrito->DepCod,
-												'ProCod'=>$distrito->ProCod];
+												'ProCod'=>$distrito->ProCod]);
 			}
 			else
 			{
-				$result[$distrito->DisCod]=['DisCod'=>$distrito->DisCod,
+				array_push($result,['DisCod'=>$distrito->DisCod,
 											'DisNom'=>$distrito->DisNom,
 											'DepCod'=>$distrito->DepCod,
-											'ProCod'=>$distrito->ProCod];
+											'ProCod'=>$distrito->ProCod]);
 			}
 		}
 		return response()->json(['distritos'=>$result],200);

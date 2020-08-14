@@ -25,15 +25,15 @@ class ProvinciaController extends Controller
 		{
 			if(strlen($provincia->ProCod) == '3')
 			{
-				$result['0'.$provincia->ProCod]=['ProCod' => '0'.$provincia->ProCod,
+				array_push($result,['ProCod' => '0'.$provincia->ProCod,
 												'ProNom'=>$provincia->ProNom,
-												'DepCod'=>$provincia->DepCod];
+												'DepCod'=>$provincia->DepCod]);
 			}
 			else
 			{
-				$result[$provincia->ProCod]=[	'ProCod' => $provincia->ProCod,
+				array_push($result,[	'ProCod' => $provincia->ProCod,
 												'ProNom'=>$provincia->ProNom,
-												'DepCod'=>$provincia->DepCod];
+												'DepCod'=>$provincia->DepCod]);
 			}
 		}
 		return response()->json(['provincias'=>$result],200);
